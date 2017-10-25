@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>我道</title>
+    <meta name="description" content="我叫1900，普通男青年，学过三年编程。湖南人，现在在四川工作。2015年花了26天骑过一次318。有点伪文艺，喜欢比较玄学的东西。性格多变，疑似有人格分裂。" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="/css/screen.css" />
+    <link rel="stylesheet" href="/css/iDisqus.min.css">
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/monokai-sublime.css">
+
+
+</head>
+<body class="home-template" id="s-top">
+
+    <div class="nav">
+<div class="nav_body">
+  <div class="b_logo"> 
+      <a class="blog-logo" href="/"><img src="/img/logo-mini.png" alt="我道" /></a>
+  </div>
+  <div class="b_class"> 
+    <ul>
+    	/ || 首页
+
+        <li class="nav-"><a class="" href="/rss">订阅</a></li>
+
+    </ul>
+  </div>
+</div>
+</div>
+    <div class="post-bg" style="background-image: url(/img/default.jpg);"></div>
+<div class="site-wrapper" page-type="c-post">
+<main class="content" role="main">
+	<div class="post-toppic" style="">
+        <div class="picbox">
+          <img node-type="articleHeaderPic" src="/img/default.jpg">
+        </div>
+     </div>
+    <article class="post">
+
+        <header class="post-header">
+            <h1 class="post-title">正则表达式-表单验证</h1>
+            <section class="post-meta">
+                <time class="post-date" datetime="Wed Apr 19 2017 22:03:13 GMT+0800">2017/4/19</time> [object Object]
+            </section>
+        </header>
+
+        <section class="post-content">
+            <h3 id="一步一步"><a href="#一步一步" class="headerlink" title="一步一步"></a>一步一步</h3><p>今天终于开始写表单了，进度有点慢，时间不是很充裕，每天只有晚上这点时间可以折腾。而且这么久没写项目了感觉脑袋有点跟不上了..项目进度等这个添加用户的功能做好之后再来一次汇整总结把！</p>
+<p>因为要写表单了，所以需要考虑上数据的验证问题。自己查阅了framework7的官方文档和百度、知乎这些资料平台后发现似乎并没验证表单的组件。无奈之下本来打算选择jquery，然后使用jquery的一些组件。后来不知道怎么的忽然想起了微信的weui.js，里面不仅有我需要的表单验证功能还有之后会用到的上传组件。所以我就直接拿过来用了，没想到和framework7契合度似乎还挺高的~~~</p>
+<p><img src="http://cdn.4zen.top/image/0/be/871d5e3a01d48a724f4ee750cbd29.png" alt=""></p>
+<h3 id="使用weui-js"><a href="#使用weui-js" class="headerlink" title="使用weui.js"></a>使用weui.js</h3><p>我们网页内引用weui.js后就可以通过<code>weui.form.validate()</code>这种方式来访问了，其他的函数也都是同理，具体函数列表参见<a href="https://github.com/weui/weui.js" target="_blank" rel="external">weui.js</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;!--  head处引入css(css必须引入，可以使用cdn。因为weui.js里面生成的页面元素会用到) --&gt;</div><div class="line">&lt;link href=&quot;https://cdn.bootcss.com/weui/1.1.2/style/weui.min.css&quot; rel=&quot;stylesheet&quot;&gt;</div><div class="line">&lt;!-- 底部处引入js文件(weui.js没有cdn，需要自己下载到项目中) --&gt;</div><div class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;js/weui.min.js&quot;&gt;&lt;/script&gt;</div></pre></td></tr></table></figure>
+<p>我根据我的理解写的一个DEMO<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">&lt;form id=&quot;myform&quot;&gt;</div><div class="line">	&lt;input name=&quot;id&quot; /&gt;</div><div class="line">	&lt;!--  可以直接设置pattern属性，或者使用参数传入格式为：REG_定义的标识名字，这里电话的验证就是通过REG_TEL定义  --&gt;</div><div class="line">	&lt;input type=&quot;text&quot; name=&quot;ppaccount&quot; placeholder=&quot;请输入帐号&quot; notmatchtips=&quot;请输入4位以上的帐号&quot; pattern=&quot;^\d&#123;4&#125;&quot; required&gt;</div><div class="line">	&lt;input type=&quot;tel&quot; placeholder=&quot;输入你现在的手机号&quot; emptyTips=&quot;请输入手机号&quot; notMatchTips=&quot;请输入正确的手机号&quot; pattern=&quot;REG_TEL&quot;&gt;</div><div class="line">	&lt;input type=&quot;button&quot; id=&quot;btn&quot; value=&quot;验证&quot; &gt;</div><div class="line"></div><div class="line">&lt;/form&gt;</div><div class="line"></div><div class="line">&lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">	//点击按钮时验证</div><div class="line">	$$(document).on(&apos;click&apos;, &apos;#btn&apos;, function() &#123;</div><div class="line">		weui.form.validate(&apos;#myform&apos;, function(error) &#123;</div><div class="line">			if(!error) &#123;</div><div class="line">				var loading = weui.loading(&apos;提交中...&apos;);</div><div class="line">				setTimeout(function() &#123;</div><div class="line">					loading.hide();</div><div class="line">					weui.toast(&apos;提交成功&apos;, 3000);</div><div class="line">				&#125;, 1500);</div><div class="line">			&#125;</div><div class="line">			// return true; // 当return true时，不会显示错误</div><div class="line">		&#125;, &#123;</div><div class="line">			//定义正则表达式</div><div class="line">			regexp: &#123;</div><div class="line">				TEL: /(?:^\d&#123;15&#125;$)|(?:^\d&#123;18&#125;$)|^\d&#123;17&#125;[\dXx]$/</div><div class="line">			&#125;</div><div class="line">		&#125;);</div><div class="line">	&#125;)</div><div class="line">	//输入元素失去焦点时验证，但是我这里没有生效</div><div class="line">	weui.form.checkIfBlur(&apos;#myform&apos;, &#123;</div><div class="line">		regexp: &#123;</div><div class="line">			IDNUM: /(?:^\d&#123;15&#125;$)|(?:^\d&#123;18&#125;$)|^\d&#123;17&#125;[\dXx]$/,</div><div class="line">			VCODE: /^.&#123;4&#125;$/</div><div class="line">		&#125;</div><div class="line">	&#125;);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
+<h3 id="一些关于正则表达式的资料"><a href="#一些关于正则表达式的资料" class="headerlink" title="一些关于正则表达式的资料"></a>一些关于正则表达式的资料</h3><p>在网上搜集了一些相关的资料[^]</p>
+<p>固定格式验证是指对输入的内容是否符合格式要求的验证，写法为if(v.match())，natch里面放正则表达式，如果匹配成功，return的是输入的内容，如果匹配失败，return的是null。正则表达式是对输入的内容的格式的要求，比如邮箱地址、电话号码、身份证号码等。常用的正则表达式符号有：</p>
+<p>//：正则表达式的书写规则，//中间写正则表达式的内容，/内容/；</p>
+<p>^：匹配开头，/^ve表示以ve开头；</p>
+<p>$：匹配结尾，ve$/表示以ve结束；</p>
+<p>\d：一个任意的数字，等于0-9；</p>
+<p>\m：一个任意的数字或者字母，包括下划线；</p>
+<p>\s：任意的不可见的字符串，例如空格、换行；</p>
+<p>\S：任意的可见的字符；</p>
+<p>{n}：前面的表达式重复n变，n等于几就是几遍；</p>
+<p>{m，n}：把前面的表达式重复至少m遍，最多n遍；<br>{m， }：把前面的表达式重复至少m遍，最多不限；</p>
+<p>+：左边的表达式，至少出现1次，至多不限，相当于{1, };</p>
+<p>*：左边的表达式，至少出现0次，至多不限，相当于{0, };</p>
+<p>？：左边的表达式，至少出现0次，最多出现1次，相当于{0,1}；</p>
+<p>[a,b,c]：只能取方括号中内容之一；</p>
+<p>[a-z]或[1-9]：在a-z或者0-9取值；</p>
+<p>\r：表示换行；</p>
+<p>\n：表示换行；</p>
+<p>\t：表示Tab键；</p>
+<p>\：表示\；</p>
+<p>\”：”</p>
+<p>x|y：可以匹配x或者y；</p>
+<p>[^xyz]：不匹配[]里面的内容；</p>
+<p>常用的正则表达式：</p>
+<ul>
+<li>Email地址：<code>^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$</code></li>
+<li>域名：<code>[a-zA-Z0-9][-a-zA-Z0-9]{0,62}(/.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+/.?</code></li>
+<li>InternetURL：<code>[a-zA-z]+://[^\s]* 或 ^http://([\w-]+\.)+[\w-]+(/[\w-./?%&amp;=]*)?$</code></li>
+<li>手机号码：<code>^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$</code></li>
+<li>电话号码(“XXX-XXXXXXX”、”XXXX-XXXXXXXX”、”XXX-XXXXXXX”、”XXX-XXXXXXXX”、”XXXXXXX”和”XXXXXXXX)：<code>^($\d{3,4}-)|\d{3.4}-)?\d{7,8}$</code></li>
+<li>国内电话号码(0511-4405222、021-87888822)：<code>\d{3}-\d{8}|\d{4}-\d{7}</code></li>
+<li>身份证号(18位数字)：<code>/^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}([0-9]|X)$/</code></li>
+<li>身份证号(15位数字)：<code>/^[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$/</code></li>
+<li>短身份证号码(数字、字母x结尾)：<code>^([0-9]){7,18}(x|X)?$ 或 ^\d{8,18}|[0-9x]{8,18}|[0-9X]{8,18}?$</code></li>
+<li>帐号是否合法(字母开头，允许5-16字节，允许字母数字下划线)：<code>^[a-zA-Z][a-zA-Z0-9_]{4,15}$</code></li>
+<li>密码(以字母开头，长度在6~18之间，只能包含字母、数字和下划线)：<code>^[a-zA-Z]\w{5,17}$</code></li>
+<li>强密码(必须包含大小写字母和数字的组合，不能使用特殊字符，长度在8-10之间)：<code>^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,10}$</code></li>
+<li>日期格式：<code>^\d{4}-\d{1,2}-\d{1,2}</code></li>
+<li>一年的12个月(01～09和1～12)：<code>^(0?[1-9]|1[0-2])$</code></li>
+<li>一个月的31天(01～09和1～31)：<code>^((0?[1-9])|((1|2)[0-9])|30|31)$</code></li>
+<li>钱的输入格式：有四种钱的表示形式我们可以接受:”10000.00″ 和 “10,000.00”, 和没有 “分” 的 “10000” 和 “10,000”：<code>^[1-9][0-9]*$</code></li>
+<li>xml文件：<code>^([a-zA-Z]+-?)+[a-zA-Z0-9]+\\.[x|X][m|M][l|L]$</code></li>
+<li>中文字符的正则表达式：<code>[\u4e00-\u9fa5]</code></li>
+<li>双字节字符：<code>[^\x00-\xff]</code> (包括汉字在内，可以用来计算字符串的长度(一个双字节字符长度计2，ASCII字符计1))</li>
+<li>空白行的正则表达式：<code>\n\s*\r</code> (可以用来删除空白行)</li>
+<li>HTML标记的正则表达式：<code>&lt;(\S*?)[^&gt;]*&gt;.*?&lt;/\1&gt;|&lt;.*? /&gt;</code> (网上流传的版本太糟糕，上面这个也仅仅能部分，对于复杂的嵌套标记依旧无能为力)</li>
+<li>首尾空白字符的正则表达式：<code>^\s*|\s*$或(^\s*)|(\s*$)</code> (可以用来删除行首行尾的空白字符(包括空格、制表符、换页符等等)，非常有用的表达式)</li>
+<li>腾讯QQ号：<code>[1-9][0-9]{4,}</code> (腾讯QQ号从10000开始)</li>
+<li>中国邮政编码：<code>[1-9]\d{5}(?!\d)</code> (中国邮政编码为6位数字)</li>
+<li>IP地址：<code>\d+\.\d+\.\d+\.\d+</code> (提取IP地址时有用)</li>
+<li>IP地址：<code>((?:(?:25[0-5]|2[0-4]\\d|[01]?\\d?\\d)\\.){3}(?:25[0-5]|2[0-4]\\d|[01]?\\d?</code></li>
+</ul>
+
+        </section>
+
+        <footer class="post-footer">
+
+            <figure class="author-image">
+                <a class="img" href="" style="background-image: url(/img/avatar.png)"><span class="hidden">的头像</span></a>
+            </figure>
+
+
+            <section class="author">
+                <h4><a href=""></a></h4>
+
+                    <p>我叫1900，普通男青年，学过三年编程。湖南人，现在在四川工作。2015年花了26天骑过一次318。有点伪文艺，喜欢比较玄学的东西。性格多变，疑似有人格分裂。</p>
+
+                    <p>继续阅读此作者的<a href="http://www.4zen.top">更多文章</a>。</p>
+
+                <div class="author-meta">
+                    <span class="author-location icon-location">自贡</span>
+                    <span class="author-link icon-link"><a href="http://www.4zen.top">http://www.4zen.top</a></span> 
+                </div>
+            </section>
+
+
+            <section class="share">
+                <h4>分享此博文</h4>
+                <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+            </section>
+
+        </footer>
+	<div id="comment"></div>
+    </article>
+
+</main>
+    <aside class="read-next">
+        
+        <a class="read-next-story" style="background-image: url(/img/default.jpg)" href="/weibo/">
+            <section class="post">
+                <h2>你人生中的最大遗憾是什么？</h2>
+                <p>&hellip;</p>
+            </section>
+
+        </a>
+        
+        
+        <a class="read-next-story prev " style="background-image: url(/img/default.jpg" href="/ci-on-windows-apache-rewrite-model/">
+            <section class="post">
+                <h2>CongdeIgniter在windows下开启Apache的Rewrite模块</h2>
+                <p>在用CI框架的时候发现访问控制器的默认情况下是需要加index.php，格式如下：
+
+http://localhost/index.php/yourctrl
+
+查看官方的手册后发现这一章节有说到怎么处&hellip;</p>
+            </section>
+        </a>
+        
+    </aside>
+
+    </div>
+
+    <div class="sidebar">  
+        <a href="#s-top" class="s-top" to="#s-top"><i class="fa fa-chevron-up" action-type="goTop"></i></a>
+    </div>
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">我道</a> &copy; </section>
+        <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a> &amp; <a href="http://www.ghostchina.com">GhostChina</a></section>
+    </footer>
+
+    <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    <script src="/js/plugin.js"></script>
+    <script src="/js/index.js"></script>
+
+</body>
+</html>

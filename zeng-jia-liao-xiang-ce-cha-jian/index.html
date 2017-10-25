@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>我道</title>
+    <meta name="description" content="我叫1900，普通男青年，学过三年编程。湖南人，现在在四川工作。2015年花了26天骑过一次318。有点伪文艺，喜欢比较玄学的东西。性格多变，疑似有人格分裂。" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="/css/screen.css" />
+    <link rel="stylesheet" href="/css/iDisqus.min.css">
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/monokai-sublime.css">
+
+
+</head>
+<body class="home-template" id="s-top">
+
+    <div class="nav">
+<div class="nav_body">
+  <div class="b_logo"> 
+      <a class="blog-logo" href="/"><img src="/img/logo-mini.png" alt="我道" /></a>
+  </div>
+  <div class="b_class"> 
+    <ul>
+    	/ || 首页
+
+        <li class="nav-"><a class="" href="/rss">订阅</a></li>
+
+    </ul>
+  </div>
+</div>
+</div>
+    <div class="post-bg" style="background-image: url(http://cdn.4zen.top/image/1/c8/677d5e5349c05b1a2cb53491aefdf.jpg);"></div>
+<div class="site-wrapper" page-type="c-post">
+<main class="content" role="main">
+	<div class="post-toppic" style="">
+        <div class="picbox">
+          <img node-type="articleHeaderPic" src="http://cdn.4zen.top/image/1/c8/677d5e5349c05b1a2cb53491aefdf.jpg">
+        </div>
+     </div>
+    <article class="post">
+
+        <header class="post-header">
+            <h1 class="post-title">之前相册页面的后序</h1>
+            <section class="post-meta">
+                <time class="post-date" datetime="Tue Dec 13 2016 18:18:53 GMT+0800">2016/12/13</time> [object Object]
+            </section>
+        </header>
+
+        <section class="post-content">
+            <p>###流产的相册页面<br>之前有写过一篇文章：<a href="http://www.4zen.top/the-gallery-page/" target="_blank" rel="external">写了个相册页面</a>，当时做了一个页面打算专门用来展示博客之内的所有图片。但是钻了牛角尖在处理后面获取文章内的图片数据时遇到了难题，并且我并不熟悉node.js的编写，也不熟悉Handlebars，对全英文的ghost的api文档更只是一知半解，所以苦于无法下手而搁置流产了。</p>
+<p><img src="http://cdn.4zen.top/image/7/4e/256df8d7aa47e617eddddcbb686b4.png" alt="之前的效果"></p>
+<p>###新的思路<br>之前<a href="http://www.timem.cn/" target="_blank" rel="external">匿名者</a>推荐过一个主题，作者是<a href="http://www.akina.pw/" target="_blank" rel="external">akina</a>，但是是一个wordpress的主题，并不适用，在浏览作者博客时发现他的相册页面我似乎可以借鉴过来。总结了一下他的设计</p>
+<ol>
+<li>相册以文章形式展示，并设置封面图。</li>
+<li>相册文章设置特定类别用作和其他文章区分。</li>
+<li>列表状态下展示文章特色图片</li>
+</ol>
+<p>相较我之前的想法来说更合理也更容易在Ghost上实现。</p>
+<p>而后我查看了akina的相册插件，使用的是一款名为：<a href="https://github.com/feimosi/baguetteBox.js" target="_blank" rel="external">baguetteBox</a>的js插件，可以以顶层模态窗口的形式展示图片，并且有很多动画效果、支持多浏览器、支持针对不同分辨率展现不同的图片等等，具体情况可以点击左边github链接进去看看，现在用在我博客效果如下：</p>
+<p><img src="http://cdn.4zen.top/image/e/71/f0501654f57e245c0b7839c6aed6d.png" alt="baguetteBox效果图"></p>
+<p>###插件的使用<br>插件使用很简单，先在head处导入js代码和css文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;link rel=&quot;stylesheet&quot; href=&quot;css/baguetteBox.min.css&quot;&gt;</div><div class="line">&lt;script src=&quot;js/baguetteBox.min.js&quot; async&gt;&lt;/script&gt;</div></pre></td></tr></table></figure></p>
+<p>并在需要实现效果的地方增加以下格式，图片被a链接包裹，链接href指向图片地址（这里可以设置为图片显示为缩略图，a链接的href指向原图）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;gallery&quot;&gt;</div><div class="line">    &lt;a href=&quot;img/2-1.jpg&quot; data-caption=&quot;Image caption&quot;&gt;</div><div class="line">        &lt;img src=&quot;img/thumbs/2-1.jpg&quot; alt=&quot;First image&quot;&gt;</div><div class="line">    &lt;/a&gt;</div><div class="line">    &lt;a href=&quot;img/2-2.jpg&quot;&gt;</div><div class="line">        &lt;img src=&quot;img/thumbs/2-2.jpg&quot; alt=&quot;Second image&quot;&gt;</div><div class="line">    &lt;/a&gt;</div><div class="line">    ...</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
+<p>之后再在网页底部编写js，在文档加载完之后初始化相册组件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;script type=&quot;text/javascript&quot; &gt;</div><div class="line">  baguetteBox.run(&apos;.gallery&apos;, &#123;</div><div class="line">      // Custom options</div><div class="line">  &#125;);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
+<p>###适配实际情况<br>由于ghost使用了Handlebars做为模版语言，而我并不会做相关的后台代码编写所以只能在前台用js实现了。我的想法是在文档加载完之后获取文章主题内的所有img元素，并通过jquery的函数给每一个img标签增加a标签的父元素，并设置href属性。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">function()&#123;</div><div class="line">    $(&quot;.content img&quot;).each(function()&#123; </div><div class="line">            $(this).wrap(&quot;&lt;a href=&quot;+this.src+&quot;&gt;&lt;/a&gt;&quot;)</div><div class="line">    &#125;);</div><div class="line">    $(&quot;.content&quot;).addClass(&quot;gallery&quot;);</div><div class="line">    baguetteBox.run(&apos;.gallery&apos;, &#123;animation: &apos;fadeIn&apos;&#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><img src="http://cdn.4zen.top/image/8/ad/366a4c352dfa3411cd38312e4f1ca.png" alt="akina相册"><br>这里我想实现akina上的悬浮效果：鼠标悬浮的图片突出显示，其他图片淡化显示。但是我又不想让所有图片都这样，只有上传的系列图片时才做这样的显示。所以我这里在上面的代码中间增加了一个判断，因为上传图片时在ghost后台只能设置alt属性，所以我在系列图片的alt属性里增加一个字符G，并在增加完文章之后用jquery查询文章中所有alt中带G的图片，并用wrapAll函数将这些元素包裹在指定元素中。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">if($(&quot;[alt=&apos;G&apos;]&quot;).length != 0)&#123;</div><div class="line">    $(&quot;[alt=&apos;G&apos;]&quot;).parent().wrapAll(&quot;&lt;div class=&apos;ggrid&apos;&gt;&lt;/div&gt;&quot;);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>并编写相关的CSS，这里利用的是not:hover这个元素实现的效果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">.ggrid a&#123;</div><div class="line">  -moz-transition:all 0.25s ease;</div><div class="line">  -webkit-transition:all 0.25s ease;</div><div class="line">  -o-transition:all 0.25s ease;</div><div class="line">  -ms-transition:all 0.25s ease;</div><div class="line">  transition:all 0.25s ease;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.ggrid:hover a:not(:hover)&#123;</div><div class="line">  opacity:0.7;</div><div class="line">  -moz-transform:scale(0.9);</div><div class="line">  -ms-transform:scale(0.9);</div><div class="line">  -webkit-transform:scale(0.9);</div><div class="line">  -o-transform:scale(0.9);transform:scale(0.9);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>最后我这里实现的最终效果请查看这个<a href="http://www.4zen.top/freedom-of-wild-life/" target="_blank" rel="external">页面</a>。</p>
+<p>###最后<br>目前还有列表以块状展示的效果还没有实现，争取早点写好css。另外，这里虽然我已经在akina上留言说过我已经借鉴他的相关代码，但是还没有经过同意，我这算是先斩后奏了…如果不允许我只有再另外写了…</p>
+<p>###12月14日更新<br>!:如果想要显示图片说明信息需要设置a链接的title属性，官方文档写的不清不楚，搞的我把信息设置在img标签的alt上，一直显示不出来，害我查了好久。。。</p>
+
+        </section>
+
+        <footer class="post-footer">
+
+            <figure class="author-image">
+                <a class="img" href="" style="background-image: url(/img/avatar.png)"><span class="hidden">的头像</span></a>
+            </figure>
+
+
+            <section class="author">
+                <h4><a href=""></a></h4>
+
+                    <p>我叫1900，普通男青年，学过三年编程。湖南人，现在在四川工作。2015年花了26天骑过一次318。有点伪文艺，喜欢比较玄学的东西。性格多变，疑似有人格分裂。</p>
+
+                    <p>继续阅读此作者的<a href="http://www.4zen.top">更多文章</a>。</p>
+
+                <div class="author-meta">
+                    <span class="author-location icon-location">自贡</span>
+                    <span class="author-link icon-link"><a href="http://www.4zen.top">http://www.4zen.top</a></span> 
+                </div>
+            </section>
+
+
+            <section class="share">
+                <h4>分享此博文</h4>
+                <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+            </section>
+
+        </footer>
+	<div id="comment"></div>
+    </article>
+
+</main>
+    <aside class="read-next">
+        
+        <a class="read-next-story" style="background-image: url(http://cdn.4zen.top/image/6/8b/d1a5a5880ddb07b6a67e75d22b084.jpg)" href="/sheng-huo-suo-sui/">
+            <section class="post">
+                <h2>生活留影</h2>
+                <p>不想像让记忆变成沙城，一碰就塌。所以我用相机记录下我看到的这些点点滴滴，再以后的时间里能让记忆不在那么虚无缥缈。
+
+&hellip;</p>
+            </section>
+
+        </a>
+        
+        
+        <a class="read-next-story prev " style="background-image: url(http://cdn.4zen.top/image/e/9f/249b334a2901085a91a87f9baeb54.jpg" href="/you-name-and-faded-mad/">
+            <section class="post">
+                <h2>你的名字&Faded</h2>
+                <p>
+###《你的名字》
+新海诚的作品我搞的清楚看过的大概就是《秒速五厘米》和《言叶之庭》了把？哦，对了，还有《追逐繁星的孩子》。《秒速》的记忆有点模糊了，依稀记得是五六年看的了把，现在只记得那些漫天飞舞&hellip;</p>
+            </section>
+        </a>
+        
+    </aside>
+
+    </div>
+
+    <div class="sidebar">  
+        <a href="#s-top" class="s-top" to="#s-top"><i class="fa fa-chevron-up" action-type="goTop"></i></a>
+    </div>
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">我道</a> &copy; </section>
+        <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a> &amp; <a href="http://www.ghostchina.com">GhostChina</a></section>
+    </footer>
+
+    <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    <script src="/js/plugin.js"></script>
+    <script src="/js/index.js"></script>
+
+</body>
+</html>
