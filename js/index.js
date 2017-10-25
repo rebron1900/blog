@@ -37,7 +37,7 @@
         var disq = new iDisqus('comment', {
             forum: '4zen',
             api: 'http://api.fooleap.org/4zen',
-            site: 'http://www.4zen.top',
+            site: 'http://www.1900.live',
             mode: 1,
             timeout: 3000,
             init: true
