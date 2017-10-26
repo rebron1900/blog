@@ -71,13 +71,54 @@
 <p>相较我之前的想法来说更合理也更容易在Ghost上实现。</p>
 <p>而后我查看了akina的相册插件，使用的是一款名为：<a href="https://github.com/feimosi/baguetteBox.js" target="_blank" rel="external">baguetteBox</a>的js插件，可以以顶层模态窗口的形式展示图片，并且有很多动画效果、支持多浏览器、支持针对不同分辨率展现不同的图片等等，具体情况可以点击左边github链接进去看看，现在用在我博客效果如下：</p>
 <p><img src="http://cdn.4zen.top/image/e/71/f0501654f57e245c0b7839c6aed6d.png" alt="baguetteBox效果图"></p>
-<h3 id="插件的使用"><a href="#插件的使用" class="headerlink" title="插件的使用"></a>插件的使用</h3><p>插件使用很简单，先在head处导入js代码和css文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;link rel=&quot;stylesheet&quot; href=&quot;css/baguetteBox.min.css&quot;&gt;</div><div class="line">&lt;script src=&quot;js/baguetteBox.min.js&quot; async&gt;&lt;/script&gt;</div></pre></td></tr></table></figure></p>
-<p>并在需要实现效果的地方增加以下格式，图片被a链接包裹，链接href指向图片地址（这里可以设置为图片显示为缩略图，a链接的href指向原图）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;gallery&quot;&gt;</div><div class="line">    &lt;a href=&quot;img/2-1.jpg&quot; data-caption=&quot;Image caption&quot;&gt;</div><div class="line">        &lt;img src=&quot;img/thumbs/2-1.jpg&quot; alt=&quot;First image&quot;&gt;</div><div class="line">    &lt;/a&gt;</div><div class="line">    &lt;a href=&quot;img/2-2.jpg&quot;&gt;</div><div class="line">        &lt;img src=&quot;img/thumbs/2-2.jpg&quot; alt=&quot;Second image&quot;&gt;</div><div class="line">    &lt;/a&gt;</div><div class="line">    ...</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
-<p>之后再在网页底部编写js，在文档加载完之后初始化相册组件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;script type=&quot;text/javascript&quot; &gt;</div><div class="line">  baguetteBox.run(&apos;.gallery&apos;, &#123;</div><div class="line">      // Custom options</div><div class="line">  &#125;);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
-<h3 id="适配实际情况"><a href="#适配实际情况" class="headerlink" title="适配实际情况"></a>适配实际情况</h3><p>由于ghost使用了Handlebars做为模版语言，而我并不会做相关的后台代码编写所以只能在前台用js实现了。我的想法是在文档加载完之后获取文章主题内的所有img元素，并通过jquery的函数给每一个img标签增加a标签的父元素，并设置href属性。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">function()&#123;</div><div class="line">    $(&quot;.content img&quot;).each(function()&#123; </div><div class="line">            $(this).wrap(&quot;&lt;a href=&quot;+this.src+&quot;&gt;&lt;/a&gt;&quot;)</div><div class="line">    &#125;);</div><div class="line">    $(&quot;.content&quot;).addClass(&quot;gallery&quot;);</div><div class="line">    baguetteBox.run(&apos;.gallery&apos;, &#123;animation: &apos;fadeIn&apos;&#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p><img src="http://cdn.4zen.top/image/8/ad/366a4c352dfa3411cd38312e4f1ca.png" alt="akina相册"><br>这里我想实现akina上的悬浮效果：鼠标悬浮的图片突出显示，其他图片淡化显示。但是我又不想让所有图片都这样，只有上传的系列图片时才做这样的显示。所以我这里在上面的代码中间增加了一个判断，因为上传图片时在ghost后台只能设置alt属性，所以我在系列图片的alt属性里增加一个字符G，并在增加完文章之后用jquery查询文章中所有alt中带G的图片，并用wrapAll函数将这些元素包裹在指定元素中。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">if($(&quot;[alt=&apos;G&apos;]&quot;).length != 0)&#123;</div><div class="line">    $(&quot;[alt=&apos;G&apos;]&quot;).parent().wrapAll(&quot;&lt;div class=&apos;ggrid&apos;&gt;&lt;/div&gt;&quot;);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>并编写相关的CSS，这里利用的是not:hover这个元素实现的效果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">.ggrid a&#123;</div><div class="line">  -moz-transition:all 0.25s ease;</div><div class="line">  -webkit-transition:all 0.25s ease;</div><div class="line">  -o-transition:all 0.25s ease;</div><div class="line">  -ms-transition:all 0.25s ease;</div><div class="line">  transition:all 0.25s ease;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.ggrid:hover a:not(:hover)&#123;</div><div class="line">  opacity:0.7;</div><div class="line">  -moz-transform:scale(0.9);</div><div class="line">  -ms-transform:scale(0.9);</div><div class="line">  -webkit-transform:scale(0.9);</div><div class="line">  -o-transform:scale(0.9);transform:scale(0.9);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>最后我这里实现的最终效果请查看这个<a href="http://www.4zen.top/freedom-of-wild-life/" target="_blank" rel="external">页面</a>。</p>
+<h3 id="插件的使用"><a href="#插件的使用" class="headerlink" title="插件的使用"></a>插件的使用</h3><p>插件使用很简单，先在head处导入js代码和css文件</p>
+<pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/baguetteBox.min.css&quot;&gt;
+&lt;script src=&quot;js/baguetteBox.min.js&quot; async&gt;&lt;/script&gt;
+</code></pre><p>并在需要实现效果的地方增加以下格式，图片被a链接包裹，链接href指向图片地址（这里可以设置为图片显示为缩略图，a链接的href指向原图）</p>
+<pre><code>&lt;div class=&quot;gallery&quot;&gt;
+    &lt;a href=&quot;img/2-1.jpg&quot; data-caption=&quot;Image caption&quot;&gt;
+        &lt;img src=&quot;img/thumbs/2-1.jpg&quot; alt=&quot;First image&quot;&gt;
+    &lt;/a&gt;
+    &lt;a href=&quot;img/2-2.jpg&quot;&gt;
+        &lt;img src=&quot;img/thumbs/2-2.jpg&quot; alt=&quot;Second image&quot;&gt;
+    &lt;/a&gt;
+    ...
+&lt;/div&gt;
+</code></pre><p>之后再在网页底部编写js，在文档加载完之后初始化相册组件</p>
+<pre><code>&lt;script type=&quot;text/javascript&quot; &gt;
+  baguetteBox.run(&#39;.gallery&#39;, {
+      // Custom options
+  });
+&lt;/script&gt;
+</code></pre><h3 id="适配实际情况"><a href="#适配实际情况" class="headerlink" title="适配实际情况"></a>适配实际情况</h3><p>由于ghost使用了Handlebars做为模版语言，而我并不会做相关的后台代码编写所以只能在前台用js实现了。我的想法是在文档加载完之后获取文章主题内的所有img元素，并通过jquery的函数给每一个img标签增加a标签的父元素，并设置href属性。</p>
+<pre><code>function(){
+    $(&quot;.content img&quot;).each(function(){ 
+            $(this).wrap(&quot;&lt;a href=&quot;+this.src+&quot;&gt;&lt;/a&gt;&quot;)
+    });
+    $(&quot;.content&quot;).addClass(&quot;gallery&quot;);
+    baguetteBox.run(&#39;.gallery&#39;, {animation: &#39;fadeIn&#39;});
+}
+</code></pre><p><img src="http://cdn.4zen.top/image/8/ad/366a4c352dfa3411cd38312e4f1ca.png" alt="akina相册"><br>这里我想实现akina上的悬浮效果：鼠标悬浮的图片突出显示，其他图片淡化显示。但是我又不想让所有图片都这样，只有上传的系列图片时才做这样的显示。所以我这里在上面的代码中间增加了一个判断，因为上传图片时在ghost后台只能设置alt属性，所以我在系列图片的alt属性里增加一个字符G，并在增加完文章之后用jquery查询文章中所有alt中带G的图片，并用wrapAll函数将这些元素包裹在指定元素中。</p>
+<pre><code>    if($(&quot;[alt=&#39;G&#39;]&quot;).length != 0){
+        $(&quot;[alt=&#39;G&#39;]&quot;).parent().wrapAll(&quot;&lt;div class=&#39;ggrid&#39;&gt;&lt;/div&gt;&quot;);
+    }
+</code></pre><p>并编写相关的CSS，这里利用的是not:hover这个元素实现的效果</p>
+<pre><code>.ggrid a{
+  -moz-transition:all 0.25s ease;
+  -webkit-transition:all 0.25s ease;
+  -o-transition:all 0.25s ease;
+  -ms-transition:all 0.25s ease;
+  transition:all 0.25s ease;
+}
+
+.ggrid:hover a:not(:hover){
+  opacity:0.7;
+  -moz-transform:scale(0.9);
+  -ms-transform:scale(0.9);
+  -webkit-transform:scale(0.9);
+  -o-transform:scale(0.9);transform:scale(0.9);
+}
+</code></pre><p>最后我这里实现的最终效果请查看这个<a href="http://www.4zen.top/freedom-of-wild-life/" target="_blank" rel="external">页面</a>。</p>
 <h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><p>目前还有列表以块状展示的效果还没有实现，争取早点写好css。另外，这里虽然我已经在akina上留言说过我已经借鉴他的相关代码，但是还没有经过同意，我这算是先斩后奏了…如果不允许我只有再另外写了…</p>
 <h3 id="12月14日更新"><a href="#12月14日更新" class="headerlink" title="12月14日更新"></a>12月14日更新</h3><p>!:如果想要显示图片说明信息需要设置a链接的title属性，官方文档写的不清不楚，搞的我把信息设置在img标签的alt上，一直显示不出来，害我查了好久。。。</p>
 

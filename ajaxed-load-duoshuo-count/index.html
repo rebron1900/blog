@@ -71,8 +71,34 @@
 <p>目前来说就是上面这几个，除了disqus我都有用过，目前来说多说更复合我的需求，不过多说的服务器之前有些小抽风，时常加在不出评论框，希望官方能做下一改进。</p>
 <h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>多说支持动态加载评论框，也有单独的评论数展示。但是有一个问题，单独的评论数展示在ajax页面加载之后并不会加载出来。这个数据应该是多说的js只在页面onload的时候才会加载，由于ajax加载出来的数据并不会去执行里面的js函数，所以我们需要再单独调用多说的相关加载函数。</p>
 <h3 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h3><p>我翻看了多说的官方api文档，只发现了动态加载评论框的相关介绍，并没有提到关于评论数的加载。无果，我只得看了下多说的js文件，发现页面加载的时候会执行一系列的初始化函数，其中就有评论数的相关初始化。</p>
-<p>经过一些测试，我发现DUOSHUO.initView()函数似乎就是初始化页面的主函数，这个函数中创建了一个json数组，是页面当中的各种元素的选择器，其中就有评论数的页面元素的class。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">O = S.selectors = &#123;</div><div class="line">    &quot;.ds-thread&quot;: &#123;</div><div class="line">        type: &quot;EmbedThread&quot;</div><div class="line">    &#125;,</div><div class="line">    &quot;.ds-recent-comments&quot;: &#123;</div><div class="line">        type: &quot;RecentComments&quot;</div><div class="line">    &#125;,</div><div class="line">    &quot;.ds-recent-visitors&quot;: &#123;</div><div class="line">        type: &quot;RecentVisitors&quot;</div><div class="line">    &#125;,</div><div class="line">    &quot;.ds-top-users&quot;: &#123;</div><div class="line">        type: &quot;TopUsers&quot;</div><div class="line">    &#125;,</div><div class="line">    &quot;.ds-top-threads&quot;: &#123;</div><div class="line">        type: &quot;TopThreads&quot;</div><div class="line">    &#125;,</div><div class="line">    &quot;.ds-login&quot;: &#123;</div><div class="line">        type: &quot;LoginWidget&quot;</div><div class="line">    &#125;,</div><div class="line">    &quot;.ds-thread-count&quot;: &#123;</div><div class="line">        type: &quot;ThreadCount&quot;</div><div class="line">    &#125;,</div><div class="line">    &quot;.ds-share&quot;: &#123;</div><div class="line">        type: &quot;ShareWidget&quot;</div><div class="line">    &#125;</div><div class="line">&#125;,</div></pre></td></tr></table></figure></p>
-<p>之后我尝试在页面加载后的处理函数中手动调用该函数后发现评论数可以正常加载了。不知道可不可以获取喜欢该文章的统计？下次再做个尝试。</p>
+<p>经过一些测试，我发现DUOSHUO.initView()函数似乎就是初始化页面的主函数，这个函数中创建了一个json数组，是页面当中的各种元素的选择器，其中就有评论数的页面元素的class。</p>
+<pre><code>        O = S.selectors = {
+            &quot;.ds-thread&quot;: {
+                type: &quot;EmbedThread&quot;
+            },
+            &quot;.ds-recent-comments&quot;: {
+                type: &quot;RecentComments&quot;
+            },
+            &quot;.ds-recent-visitors&quot;: {
+                type: &quot;RecentVisitors&quot;
+            },
+            &quot;.ds-top-users&quot;: {
+                type: &quot;TopUsers&quot;
+            },
+            &quot;.ds-top-threads&quot;: {
+                type: &quot;TopThreads&quot;
+            },
+            &quot;.ds-login&quot;: {
+                type: &quot;LoginWidget&quot;
+            },
+            &quot;.ds-thread-count&quot;: {
+                type: &quot;ThreadCount&quot;
+            },
+            &quot;.ds-share&quot;: {
+                type: &quot;ShareWidget&quot;
+            }
+        },
+</code></pre><p>之后我尝试在页面加载后的处理函数中手动调用该函数后发现评论数可以正常加载了。不知道可不可以获取喜欢该文章的统计？下次再做个尝试。</p>
 <p>希望能帮到需要实现此功能的朋友。</p>
 <h3 id="多说炸了"><a href="#多说炸了" class="headerlink" title="多说炸了"></a>多说炸了</h3><p>多说这小霸王服务器真心无语，今天打开博客发现这个方法似乎已经失效了，已经去官网反应了这个问题，不过凭之前的经验，得到答复或者解决方案应该是遥遥无期了。</p>
 <h3 id="2016年12月9日"><a href="#2016年12月9日" class="headerlink" title="2016年12月9日"></a>2016年12月9日</h3><p>得到反馈说是服务器的问题，方法并没有什么问题。</p>

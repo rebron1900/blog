@@ -92,8 +92,17 @@
 <li>2016年12月13日：参考了akina的博客中的相册插件增加了主题内页文章主体中的图片的幻灯片、相册浏览：<a href="http://www.4zen.top/zeng-jia-liao-xiang-ce-cha-jian/" target="_blank" rel="external">之前相册页面的后序</a></li>
 <li>2016年12月16日：修复了<a href="http://www.iqong.com/" target="_blank" rel="external">杨三味</a>反应的评论组件加载后点击div后会重新加载的bug。</li>
 <li>2016年12月18日：增加了悬浮菜单用于到达评论区、返回顶部、打开菜单等功能</li>
-<li>2016年12月18日：优化了文章归档页的实现，之前xknow写的js感觉略微繁琐，这次改用之前发现的jquery选择器，用[year=”2015”]这种选择器语法直接获得当前年份的所有文章数，7行代码就搞定了，之后完善下细节，增加年份月份折叠等功能把。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">var currentYear = &quot;&quot;;</div><div class="line">$(&quot;#hidden-temp-container ul li&quot;).each(function(i)&#123;</div><div class="line">    var year = $(this).find(&quot;em&quot;).attr(&quot;year&quot;);</div><div class="line">    if(year &lt; currentYear || currentYear == &quot;&quot;)&#123;</div><div class="line">        currentYear = year;</div><div class="line">        $(this).before(&quot;&lt;h3 class=&apos;&quot;+currentYear+&quot;&apos;&gt;&quot;+currentYear+&quot;&lt;/h3&gt;&lt;em&gt;(&quot; + $(&quot;[year=&apos;&quot;+ currentYear +&quot;&apos;]&quot;).length +&quot;篇文章)&lt;/em&gt;&quot;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-</li>
+<li><p>2016年12月18日：优化了文章归档页的实现，之前xknow写的js感觉略微繁琐，这次改用之前发现的jquery选择器，用[year=”2015”]这种选择器语法直接获得当前年份的所有文章数，7行代码就搞定了，之后完善下细节，增加年份月份折叠等功能把。</p>
+<pre><code>  var currentYear = &quot;&quot;;
+  $(&quot;#hidden-temp-container ul li&quot;).each(function(i){
+      var year = $(this).find(&quot;em&quot;).attr(&quot;year&quot;);
+      if(year &lt; currentYear || currentYear == &quot;&quot;){
+          currentYear = year;
+          $(this).before(&quot;&lt;h3 class=&#39;&quot;+currentYear+&quot;&#39;&gt;&quot;+currentYear+&quot;&lt;/h3&gt;&lt;em&gt;(&quot; + $(&quot;[year=&#39;&quot;+ currentYear +&quot;&#39;]&quot;).length +&quot;篇文章)&lt;/em&gt;&quot;);
+      }
+
+  });
+</code></pre></li>
 </ul>
 
         </section>

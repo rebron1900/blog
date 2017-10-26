@@ -1,5 +1,6 @@
 ---
-title: rep-hexo-marked
+title: 解决hexo渲染的页面中有br的问题
+permalink: rep-hexo-marked
 date: 2017-10-26 12:20:48
 tags: 流水账
 image: http://cdn.4zen.top/imgs/171026/ega7GBJLhl.jpg

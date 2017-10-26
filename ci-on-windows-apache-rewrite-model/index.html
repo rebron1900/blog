@@ -67,9 +67,15 @@
 <p>查看官方的手册后发现<a href="http://codeigniter.org.cn/user_guide/general/urls.html#url-index-php" target="_blank" rel="external">这一章节</a>有说到怎么处理。我们需要开启apache的rewrite模块，并在网站的根目录简历。htaccess文件，并写入相应的重写规则。</p>
 <h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><ul>
 <li>首先在apache的conf目录下httpd.conf中找到<code>LoadModule rewrite_module modules/mod_rewrite.so</code>并去掉前面的#号注释。</li>
-<li><p>再同一个配置文件中找到如下代码段，目的是允许在网站下的任何目录中使用<code>.htaccess</code>文件，将<code>AllowOverride改成All</code>（默认为<code>None</code>）。注意，这个文件中有两个这种选项，请选择如下这段修改：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">DocumentRoot  &quot;G:\你的网站路径\WWW&quot;</div><div class="line">&lt;Directory /&gt;</div><div class="line">    Options +Indexes +FollowSymLinks +ExecCGI</div><div class="line">    AllowOverride All</div><div class="line">    Order allow,deny</div><div class="line">    Allow from all</div><div class="line">    Require all granted</div><div class="line">&lt;/Directory&gt;</div></pre></td></tr></table></figure>
-</li>
+<li>再同一个配置文件中找到如下代码段，目的是允许在网站下的任何目录中使用<code>.htaccess</code>文件，将<code>AllowOverride改成All</code>（默认为<code>None</code>）。注意，这个文件中有两个这种选项，请选择如下这段修改：<pre><code>DocumentRoot  &quot;G:\你的网站路径\WWW&quot;
+&lt;Directory /&gt;
+  Options +Indexes +FollowSymLinks +ExecCGI
+  AllowOverride All
+  Order allow,deny
+  Allow from all
+  Require all granted
+&lt;/Directory&gt;
+</code></pre></li>
 <li><p>在网站根目录建立<code>.htaccess</code>文件。因为Windows系统的关系，我们不能建立没有名字的文件，所以我们可以在命令行下使用<code>echo a&gt; .htaccess</code>建立后使用记事本编辑，对应的重写规则。 </p>
 </li>
 <li><p>打开浏览器输入不带index.php的地址试试看！如没有问题应该就成功了！有问题我也没办法，自己百度，哈哈！</p>

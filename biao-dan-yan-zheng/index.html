@@ -64,9 +64,48 @@
 <p>因为要写表单了，所以需要考虑上数据的验证问题。自己查阅了framework7的官方文档和百度、知乎这些资料平台后发现似乎并没验证表单的组件。无奈之下本来打算选择jquery，然后使用jquery的一些组件。后来不知道怎么的忽然想起了微信的weui.js，里面不仅有我需要的表单验证功能还有之后会用到的上传组件。所以我就直接拿过来用了，没想到和framework7契合度似乎还挺高的~~~</p>
 <p><img src="http://cdn.4zen.top/image/0/be/871d5e3a01d48a724f4ee750cbd29.png" alt=""></p>
 <h3 id="使用weui-js"><a href="#使用weui-js" class="headerlink" title="使用weui.js"></a>使用weui.js</h3><p>我们网页内引用weui.js后就可以通过<code>weui.form.validate()</code>这种方式来访问了，其他的函数也都是同理，具体函数列表参见<a href="https://github.com/weui/weui.js" target="_blank" rel="external">weui.js</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;!--  head处引入css(css必须引入，可以使用cdn。因为weui.js里面生成的页面元素会用到) --&gt;</div><div class="line">&lt;link href=&quot;https://cdn.bootcss.com/weui/1.1.2/style/weui.min.css&quot; rel=&quot;stylesheet&quot;&gt;</div><div class="line">&lt;!-- 底部处引入js文件(weui.js没有cdn，需要自己下载到项目中) --&gt;</div><div class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;js/weui.min.js&quot;&gt;&lt;/script&gt;</div></pre></td></tr></table></figure>
-<p>我根据我的理解写的一个DEMO<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">&lt;form id=&quot;myform&quot;&gt;</div><div class="line">	&lt;input name=&quot;id&quot; /&gt;</div><div class="line">	&lt;!--  可以直接设置pattern属性，或者使用参数传入格式为：REG_定义的标识名字，这里电话的验证就是通过REG_TEL定义  --&gt;</div><div class="line">	&lt;input type=&quot;text&quot; name=&quot;ppaccount&quot; placeholder=&quot;请输入帐号&quot; notmatchtips=&quot;请输入4位以上的帐号&quot; pattern=&quot;^\d&#123;4&#125;&quot; required&gt;</div><div class="line">	&lt;input type=&quot;tel&quot; placeholder=&quot;输入你现在的手机号&quot; emptyTips=&quot;请输入手机号&quot; notMatchTips=&quot;请输入正确的手机号&quot; pattern=&quot;REG_TEL&quot;&gt;</div><div class="line">	&lt;input type=&quot;button&quot; id=&quot;btn&quot; value=&quot;验证&quot; &gt;</div><div class="line"></div><div class="line">&lt;/form&gt;</div><div class="line"></div><div class="line">&lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">	//点击按钮时验证</div><div class="line">	$$(document).on(&apos;click&apos;, &apos;#btn&apos;, function() &#123;</div><div class="line">		weui.form.validate(&apos;#myform&apos;, function(error) &#123;</div><div class="line">			if(!error) &#123;</div><div class="line">				var loading = weui.loading(&apos;提交中...&apos;);</div><div class="line">				setTimeout(function() &#123;</div><div class="line">					loading.hide();</div><div class="line">					weui.toast(&apos;提交成功&apos;, 3000);</div><div class="line">				&#125;, 1500);</div><div class="line">			&#125;</div><div class="line">			// return true; // 当return true时，不会显示错误</div><div class="line">		&#125;, &#123;</div><div class="line">			//定义正则表达式</div><div class="line">			regexp: &#123;</div><div class="line">				TEL: /(?:^\d&#123;15&#125;$)|(?:^\d&#123;18&#125;$)|^\d&#123;17&#125;[\dXx]$/</div><div class="line">			&#125;</div><div class="line">		&#125;);</div><div class="line">	&#125;)</div><div class="line">	//输入元素失去焦点时验证，但是我这里没有生效</div><div class="line">	weui.form.checkIfBlur(&apos;#myform&apos;, &#123;</div><div class="line">		regexp: &#123;</div><div class="line">			IDNUM: /(?:^\d&#123;15&#125;$)|(?:^\d&#123;18&#125;$)|^\d&#123;17&#125;[\dXx]$/,</div><div class="line">			VCODE: /^.&#123;4&#125;$/</div><div class="line">		&#125;</div><div class="line">	&#125;);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
-<h3 id="一些关于正则表达式的资料"><a href="#一些关于正则表达式的资料" class="headerlink" title="一些关于正则表达式的资料"></a>一些关于正则表达式的资料</h3><p>在网上搜集了一些相关的资料<sup><a href="#fn_" id="reffn_"></a></sup></p>
+<pre><code>&lt;!--  head处引入css(css必须引入，可以使用cdn。因为weui.js里面生成的页面元素会用到) --&gt;
+&lt;link href=&quot;https://cdn.bootcss.com/weui/1.1.2/style/weui.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;!-- 底部处引入js文件(weui.js没有cdn，需要自己下载到项目中) --&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;js/weui.min.js&quot;&gt;&lt;/script&gt;
+</code></pre><p>我根据我的理解写的一个DEMO</p>
+<pre><code>&lt;form id=&quot;myform&quot;&gt;
+    &lt;input name=&quot;id&quot; /&gt;
+    &lt;!--  可以直接设置pattern属性，或者使用参数传入格式为：REG_定义的标识名字，这里电话的验证就是通过REG_TEL定义  --&gt;
+    &lt;input type=&quot;text&quot; name=&quot;ppaccount&quot; placeholder=&quot;请输入帐号&quot; notmatchtips=&quot;请输入4位以上的帐号&quot; pattern=&quot;^\d{4}&quot; required&gt;
+    &lt;input type=&quot;tel&quot; placeholder=&quot;输入你现在的手机号&quot; emptyTips=&quot;请输入手机号&quot; notMatchTips=&quot;请输入正确的手机号&quot; pattern=&quot;REG_TEL&quot;&gt;
+    &lt;input type=&quot;button&quot; id=&quot;btn&quot; value=&quot;验证&quot; &gt;
+
+&lt;/form&gt;
+
+&lt;script type=&quot;text/javascript&quot;&gt;
+    //点击按钮时验证
+    $$(document).on(&#39;click&#39;, &#39;#btn&#39;, function() {
+        weui.form.validate(&#39;#myform&#39;, function(error) {
+            if(!error) {
+                var loading = weui.loading(&#39;提交中...&#39;);
+                setTimeout(function() {
+                    loading.hide();
+                    weui.toast(&#39;提交成功&#39;, 3000);
+                }, 1500);
+            }
+            // return true; // 当return true时，不会显示错误
+        }, {
+            //定义正则表达式
+            regexp: {
+                TEL: /(?:^\d{15}$)|(?:^\d{18}$)|^\d{17}[\dXx]$/
+            }
+        });
+    })
+    //输入元素失去焦点时验证，但是我这里没有生效
+    weui.form.checkIfBlur(&#39;#myform&#39;, {
+        regexp: {
+            IDNUM: /(?:^\d{15}$)|(?:^\d{18}$)|^\d{17}[\dXx]$/,
+            VCODE: /^.{4}$/
+        }
+    });
+&lt;/script&gt;
+</code></pre><h3 id="一些关于正则表达式的资料"><a href="#一些关于正则表达式的资料" class="headerlink" title="一些关于正则表达式的资料"></a>一些关于正则表达式的资料</h3><p>在网上搜集了一些相关的资料<sup><a href="#fn_" id="reffn_"></a></sup></p>
 <p>固定格式验证是指对输入的内容是否符合格式要求的验证，写法为if(v.match())，natch里面放正则表达式，如果匹配成功，return的是输入的内容，如果匹配失败，return的是null。正则表达式是对输入的内容的格式的要求，比如邮箱地址、电话号码、身份证号码等。常用的正则表达式符号有：</p>
 <p>//：正则表达式的书写规则，//中间写正则表达式的内容，/内容/；</p>
 <p>^：匹配开头，/^ve表示以ve开头；</p>

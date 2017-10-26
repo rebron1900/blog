@@ -99,8 +99,33 @@
 <p>总得来说框架的效果还是不错的，打包后在手机上使用也没有什么大问题。但是有人说低端手机如果直接使用会有卡顿的情况，需要搭配crosswalk才行。我也不太懂，到时候遇到了再说把。</p>
 <p>具体的示例代码我就不写了，f7的初始化代码比较多而且有些复杂。</p>
 <h4 id="artTemplate"><a href="#artTemplate" class="headerlink" title="artTemplate"></a>artTemplate</h4><p>模版引擎我不是太了解，但是在使用ghost的时候用到过一种：<a href="http://handlebarsjs.com/" target="_blank" rel="external">Handlebars.js</a>，本来打算使用这个，但是考虑到中文资料偏少所以还是选择了国人写的artTemplate，口碑也非常不错。而且兼容多种模版语法，甚至可以自定义模版语法。使用起来也相对简单例如，连我这种从来没学习过的人看了几分钟后就能使用了，以下是我个人理解的示例：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">//在头部引入js文件</div><div class="line">&lt;script src=&quot;../../lib/template-web.js&quot;&gt;&lt;/script&gt;</div><div class="line">...</div><div class="line">//模板化后的html填充的容器</div><div class="line">&lt;div id=&quot;content&quot;&gt;&lt;/div&gt;</div><div class="line">//定义模版区域</div><div class="line">&lt;script id=&quot;test&quot; type=&quot;text/html&quot;&gt;</div><div class="line">&lt;ul&gt;</div><div class="line">//开始循环填入数据，这里list为要循环的json对象，后面的value则为循环中读取出来的值，i则是索引。</div><div class="line">//另外，传入进来的json对象名默认为$data</div><div class="line">    &#123;&#123;each list value i&#125;&#125;</div><div class="line">        &lt;li&gt;索引 &#123;&#123;i + 1&#125;&#125; ：&#123;&#123;value&#125;&#125;&lt;/li&gt;</div><div class="line">    &#123;&#123;/each&#125;&#125;</div><div class="line">&lt;/ul&gt;</div><div class="line">&lt;/script&gt;</div><div class="line"></div><div class="line">&lt;script&gt;</div><div class="line">var data = &#123;</div><div class="line">	title: &apos;基本例子&apos;,</div><div class="line">	isAdmin: true,</div><div class="line">	list: [&apos;文艺&apos;, &apos;博客&apos;, &apos;摄影&apos;, &apos;电影&apos;, &apos;民谣&apos;, &apos;旅行&apos;, &apos;吉他&apos;]</div><div class="line">&#125;;</div><div class="line">//生成模版化后的html</div><div class="line">var html = template(&apos;test&apos;, data);</div><div class="line">document.getElementById(&apos;content&apos;).innerHTML = html;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<pre><code>//在头部引入js文件
+&lt;script src=&quot;../../lib/template-web.js&quot;&gt;&lt;/script&gt;
+...
+//模板化后的html填充的容器
+&lt;div id=&quot;content&quot;&gt;&lt;/div&gt;
+//定义模版区域
+&lt;script id=&quot;test&quot; type=&quot;text/html&quot;&gt;
+&lt;ul&gt;
+//开始循环填入数据，这里list为要循环的json对象，后面的value则为循环中读取出来的值，i则是索引。
+//另外，传入进来的json对象名默认为$data
+    {{each list value i}}
+        &lt;li&gt;索引 {{i + 1}} ：{{value}}&lt;/li&gt;
+    {{/each}}
+&lt;/ul&gt;
+&lt;/script&gt;
 
+&lt;script&gt;
+var data = {
+    title: &#39;基本例子&#39;,
+    isAdmin: true,
+    list: [&#39;文艺&#39;, &#39;博客&#39;, &#39;摄影&#39;, &#39;电影&#39;, &#39;民谣&#39;, &#39;旅行&#39;, &#39;吉他&#39;]
+};
+//生成模版化后的html
+var html = template(&#39;test&#39;, data);
+document.getElementById(&#39;content&#39;).innerHTML = html;
+&lt;/script&gt;
+</code></pre>
         </section>
 
         <footer class="post-footer">
