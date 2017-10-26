@@ -28,14 +28,16 @@
   <div class="b_class"> 
     <ul>
     	
-    	<li class="nav-"><a class="" href="/">首页</a></li>
-        
-    	<li class="nav-"><a class="" href="/links.html">左邻</a></li>
-        
-    	<li class="nav-"><a class="" href="/about.html">关于</a></li>
-        
-    	<li class="nav-"><a class="" href="/rss.xml">订阅</a></li>
-        
+    	<li class="nav-"><a class="" n_type="" href="/">首页</a></li>
+      
+    	<li class="nav-"><a class="" n_type="" href="/links.html">左邻</a></li>
+      
+    	<li class="nav-"><a class="" n_type="" href="/archive.html">归档</a></li>
+      
+    	<li class="nav-"><a class="" n_type="" href="/about.html">关于</a></li>
+      
+    	<li class="nav-"><a class="" n_type="" href="/rss.xml">订阅</a></li>
+      
     </ul>
   </div>
 </div>
@@ -58,28 +60,25 @@
         </header>
 
         <section class="post-content">
-            <p><img src="http://cdn.4zen.top/image/e/3e/feb12900610f9c2a057e3cb31eaa0.png" alt=""></p>
-<p>###前言</p>
-<p>ghost的系统并没有自带评论系统，所以基本大家使用的都是第三方的评论组件。目前提供这种服务的有：</p>
-<ol>
-<li><a href="http://www.disqus.com" target="_blank" rel="external">Disqus</a>：目前在墙外，基本上不会科学上网的话是加载不出来的。</li>
-<li><a href="http://www.duoshuo.com" target="_blank" rel="external">多说</a>：就我感觉应该是国内目前最好用的了把？没有过多的硬性要求，还过的去的api系统，也是我目前在使用的服务。</li>
-<li><a href="http://changyan.kuaizhan.com" target="_blank" rel="external">畅言</a>：我使用过一段时间，感觉功能花哨，而且不能游客评论，不是很喜欢。</li>
-<li><a href="http://uyan.cc" target="_blank" rel="external">友言</a>：我感觉是最差的一个评论组件了，可自定义程度低，基本没有api文档，想自定义实现的功能我基本上不知道该怎么下手…</li>
-</ol>
-<p>目前来说就是上面这几个，除了disqus我都有用过，目前来说多说更复合我的需求，不过多说的服务器之前有些小抽风，时常加在不出评论框，希望官方能做下一改进。</p>
-<p>###问题</p>
-<p>多说支持动态加载评论框，也有单独的评论数展示。但是有一个问题，单独的评论数展示在ajax页面加载之后并不会加载出来。这个数据应该是多说的js只在页面onload的时候才会加载，由于ajax加载出来的数据并不会去执行里面的js函数，所以我们需要再单独调用多说的相关加载函数。</p>
-<p>###解决</p>
-<p>我翻看了多说的官方api文档，只发现了动态加载评论框的相关介绍，并没有提到关于评论数的加载。无果，我只得看了下多说的js文件，发现页面加载的时候会执行一系列的初始化函数，其中就有评论数的相关初始化。</p>
-<p>经过一些测试，我发现DUOSHUO.initView()函数似乎就是初始化页面的主函数，这个函数中创建了一个json数组，是页面当中的各种元素的选择器，其中就有评论数的页面元素的class。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">O = S.selectors = &#123;</div><div class="line">    &quot;.ds-thread&quot;: &#123;</div><div class="line">        type: &quot;EmbedThread&quot;</div><div class="line">    &#125;,</div><div class="line">    &quot;.ds-recent-comments&quot;: &#123;</div><div class="line">        type: &quot;RecentComments&quot;</div><div class="line">    &#125;,</div><div class="line">    &quot;.ds-recent-visitors&quot;: &#123;</div><div class="line">        type: &quot;RecentVisitors&quot;</div><div class="line">    &#125;,</div><div class="line">    &quot;.ds-top-users&quot;: &#123;</div><div class="line">        type: &quot;TopUsers&quot;</div><div class="line">    &#125;,</div><div class="line">    &quot;.ds-top-threads&quot;: &#123;</div><div class="line">        type: &quot;TopThreads&quot;</div><div class="line">    &#125;,</div><div class="line">    &quot;.ds-login&quot;: &#123;</div><div class="line">        type: &quot;LoginWidget&quot;</div><div class="line">    &#125;,</div><div class="line">    &quot;.ds-thread-count&quot;: &#123;</div><div class="line">        type: &quot;ThreadCount&quot;</div><div class="line">    &#125;,</div><div class="line">    &quot;.ds-share&quot;: &#123;</div><div class="line">        type: &quot;ShareWidget&quot;</div><div class="line">    &#125;</div><div class="line">&#125;,</div></pre></td></tr></table></figure></p>
-<p>之后我尝试在页面加载后的处理函数中手动调用该函数后发现评论数可以正常加载了。不知道可不可以获取喜欢该文章的统计？下次再做个尝试。</p>
-<p>希望能帮到需要实现此功能的朋友。</p>
-<p>###多说炸了<br>多说这小霸王服务器真心无语，今天打开博客发现这个方法似乎已经失效了，已经去官网反应了这个问题，不过凭之前的经验，得到答复或者解决方案应该是遥遥无期了。</p>
-<p>###2016年12月9日<br>得到反馈说是服务器的问题，方法并没有什么问题。</p>
-<p>###2016年12月9日<br>该方法已经恢复正常，可以正常加载评论数据。多说这个服务真的需要加强了，很担心到时候直接停止服务或者丢失数据。。。</p>
-<p>另外无意间在<a href="http://www.jisida1994.com" target="_blank" rel="external">吉思达</a>的博客中看到另外一篇文章：<a href="http://www.jisida1994.com/Pages/Index/Index.php#index%3D3%23articlePageIndex%3D1%23selectType%3DselectAll%23articleID%3D67" target="_blank" rel="external">如何动态获取多说插件的评论数</a>，也能实现该功能。</p>
-<p>上面清单中的排除，国内还有其他能用的第三方评论服务吗？</p>
+            &lt;p&gt;&lt;img src=&#34;http://cdn.4zen.top/image/e/3e/feb12900610f9c2a057e3cb31eaa0.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;前言&#34;&gt;&lt;a href=&#34;#前言&#34; class=&#34;headerlink&#34; title=&#34;前言&#34;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;ghost的系统并没有自带评论系统，所以基本大家使用的都是第三方的评论组件。目前提供这种服务的有：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.disqus.com&#34; target=&#34;_blank&#34; rel=&#34;external&#34;&gt;Disqus&lt;/a&gt;：目前在墙外，基本上不会科学上网的话是加载不出来的。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.duoshuo.com&#34; target=&#34;_blank&#34; rel=&#34;external&#34;&gt;多说&lt;/a&gt;：就我感觉应该是国内目前最好用的了把？没有过多的硬性要求，还过的去的api系统，也是我目前在使用的服务。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://changyan.kuaizhan.com&#34; target=&#34;_blank&#34; rel=&#34;external&#34;&gt;畅言&lt;/a&gt;：我使用过一段时间，感觉功能花哨，而且不能游客评论，不是很喜欢。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://uyan.cc&#34; target=&#34;_blank&#34; rel=&#34;external&#34;&gt;友言&lt;/a&gt;：我感觉是最差的一个评论组件了，可自定义程度低，基本没有api文档，想自定义实现的功能我基本上不知道该怎么下手…&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;目前来说就是上面这几个，除了disqus我都有用过，目前来说多说更复合我的需求，不过多说的服务器之前有些小抽风，时常加在不出评论框，希望官方能做下一改进。&lt;/p&gt;
+&lt;h3 id=&#34;问题&#34;&gt;&lt;a href=&#34;#问题&#34; class=&#34;headerlink&#34; title=&#34;问题&#34;&gt;&lt;/a&gt;问题&lt;/h3&gt;&lt;p&gt;多说支持动态加载评论框，也有单独的评论数展示。但是有一个问题，单独的评论数展示在ajax页面加载之后并不会加载出来。这个数据应该是多说的js只在页面onload的时候才会加载，由于ajax加载出来的数据并不会去执行里面的js函数，所以我们需要再单独调用多说的相关加载函数。&lt;/p&gt;
+&lt;h3 id=&#34;解决&#34;&gt;&lt;a href=&#34;#解决&#34; class=&#34;headerlink&#34; title=&#34;解决&#34;&gt;&lt;/a&gt;解决&lt;/h3&gt;&lt;p&gt;我翻看了多说的官方api文档，只发现了动态加载评论框的相关介绍，并没有提到关于评论数的加载。无果，我只得看了下多说的js文件，发现页面加载的时候会执行一系列的初始化函数，其中就有评论数的相关初始化。&lt;/p&gt;
+&lt;p&gt;经过一些测试，我发现DUOSHUO.initView()函数似乎就是初始化页面的主函数，这个函数中创建了一个json数组，是页面当中的各种元素的选择器，其中就有评论数的页面元素的class。&lt;br&gt;&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;div class=&#34;line&#34;&gt;1&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;2&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;3&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;4&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;5&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;6&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;7&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;8&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;9&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;10&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;11&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;12&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;13&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;14&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;15&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;16&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;17&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;18&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;19&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;20&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;21&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;22&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;23&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;24&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;25&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;26&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;div class=&#34;line&#34;&gt;O = S.selectors = &amp;#123;&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;    &amp;quot;.ds-thread&amp;quot;: &amp;#123;&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;        type: &amp;quot;EmbedThread&amp;quot;&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;    &amp;#125;,&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;    &amp;quot;.ds-recent-comments&amp;quot;: &amp;#123;&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;        type: &amp;quot;RecentComments&amp;quot;&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;    &amp;#125;,&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;    &amp;quot;.ds-recent-visitors&amp;quot;: &amp;#123;&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;        type: &amp;quot;RecentVisitors&amp;quot;&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;    &amp;#125;,&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;    &amp;quot;.ds-top-users&amp;quot;: &amp;#123;&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;        type: &amp;quot;TopUsers&amp;quot;&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;    &amp;#125;,&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;    &amp;quot;.ds-top-threads&amp;quot;: &amp;#123;&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;        type: &amp;quot;TopThreads&amp;quot;&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;    &amp;#125;,&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;    &amp;quot;.ds-login&amp;quot;: &amp;#123;&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;        type: &amp;quot;LoginWidget&amp;quot;&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;    &amp;#125;,&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;    &amp;quot;.ds-thread-count&amp;quot;: &amp;#123;&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;        type: &amp;quot;ThreadCount&amp;quot;&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;    &amp;#125;,&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;    &amp;quot;.ds-share&amp;quot;: &amp;#123;&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;        type: &amp;quot;ShareWidget&amp;quot;&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;&amp;#125;,&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;之后我尝试在页面加载后的处理函数中手动调用该函数后发现评论数可以正常加载了。不知道可不可以获取喜欢该文章的统计？下次再做个尝试。&lt;/p&gt;
+&lt;p&gt;希望能帮到需要实现此功能的朋友。&lt;/p&gt;
+&lt;h3 id=&#34;多说炸了&#34;&gt;&lt;a href=&#34;#多说炸了&#34; class=&#34;headerlink&#34; title=&#34;多说炸了&#34;&gt;&lt;/a&gt;多说炸了&lt;/h3&gt;&lt;p&gt;多说这小霸王服务器真心无语，今天打开博客发现这个方法似乎已经失效了，已经去官网反应了这个问题，不过凭之前的经验，得到答复或者解决方案应该是遥遥无期了。&lt;/p&gt;
+&lt;h3 id=&#34;2016年12月9日&#34;&gt;&lt;a href=&#34;#2016年12月9日&#34; class=&#34;headerlink&#34; title=&#34;2016年12月9日&#34;&gt;&lt;/a&gt;2016年12月9日&lt;/h3&gt;&lt;p&gt;得到反馈说是服务器的问题，方法并没有什么问题。&lt;/p&gt;
+&lt;h3 id=&#34;2016年12月9日-1&#34;&gt;&lt;a href=&#34;#2016年12月9日-1&#34; class=&#34;headerlink&#34; title=&#34;2016年12月9日&#34;&gt;&lt;/a&gt;2016年12月9日&lt;/h3&gt;&lt;p&gt;该方法已经恢复正常，可以正常加载评论数据。多说这个服务真的需要加强了，很担心到时候直接停止服务或者丢失数据。。。&lt;/p&gt;
+&lt;p&gt;另外无意间在&lt;a href=&#34;http://www.jisida1994.com&#34; target=&#34;_blank&#34; rel=&#34;external&#34;&gt;吉思达&lt;/a&gt;的博客中看到另外一篇文章：&lt;a href=&#34;http://www.jisida1994.com/Pages/Index/Index.php#index%3D3%23articlePageIndex%3D1%23selectType%3DselectAll%23articleID%3D67&#34; target=&#34;_blank&#34; rel=&#34;external&#34;&gt;如何动态获取多说插件的评论数&lt;/a&gt;，也能实现该功能。&lt;/p&gt;
+&lt;p&gt;上面清单中的排除，国内还有其他能用的第三方评论服务吗？&lt;/p&gt;
 
         </section>
 

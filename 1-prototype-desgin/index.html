@@ -28,14 +28,16 @@
   <div class="b_class"> 
     <ul>
     	
-    	<li class="nav-"><a class="" href="/">首页</a></li>
-        
-    	<li class="nav-"><a class="" href="/links.html">左邻</a></li>
-        
-    	<li class="nav-"><a class="" href="/about.html">关于</a></li>
-        
-    	<li class="nav-"><a class="" href="/rss.xml">订阅</a></li>
-        
+    	<li class="nav-"><a class="" n_type="" href="/">首页</a></li>
+      
+    	<li class="nav-"><a class="" n_type="" href="/links.html">左邻</a></li>
+      
+    	<li class="nav-"><a class="" n_type="" href="/archive.html">归档</a></li>
+      
+    	<li class="nav-"><a class="" n_type="" href="/about.html">关于</a></li>
+      
+    	<li class="nav-"><a class="" n_type="" href="/rss.xml">订阅</a></li>
+      
     </ul>
   </div>
 </div>
@@ -58,46 +60,46 @@
         </header>
 
         <section class="post-content">
-            <h3 id="一、行业情况"><a href="#一、行业情况" class="headerlink" title="一、行业情况"></a>一、行业情况</h3><p>行业情况：目前所有的零售行业都存在厂家会给销售进行返利的情况，那么返利通过什么来确定呢？最有力的当然是销售小票了！目前就我了解的情况来说基本上都是使用微信或者QQ拍照发到群内然后由返利人员审核后发放红包。</p>
-<p>但是，这个存在一个问题，就是使用如果参与返利的人员过多的话会存在漏发或者发错的情况。并且如果要统计销售数据的话必须还要另外用表格或者手写的方式统计登记，无形之中增加了办公成本。</p>
-<p><hr></p>
-<h3 id="二、需求分析"><a href="#二、需求分析" class="headerlink" title="二、需求分析"></a>二、需求分析</h3><p>分析了一下业务逻辑，这个里面主要有2个角色：</p>
-<ol>
-<li><strong>营业员：</strong>要做的事情就是销售指定的品种之后拍照并发送到微信群</li>
-<li><strong>管理员：</strong>查看各个人员的销售单据，并核算返利金额。如果单据无误就发放红包。单据有误或者有特殊情况便需要在群里告知相关人员。</li>
-</ol>
-<p>所以实际的软件具备的功能因具备以下功能</p>
-<ol>
-<li><strong>登录系统：</strong>有角色区分。登陆后显示不同的操作页面。</li>
-</ol>
-<p><strong>营业员登陆后的业务流程：</strong></p>
-<ol>
-<li>系统列出所有可以参与返利的品种，</li>
-<li>营业员选择需要晒单的品种，并设置对应的销售数量。</li>
-<li>跳转至信息统计页面，这个页面显示了已选择的晒单品种、数量、单项统计金额、合计金额。并且可以上传销售单据。选择完后点提交即可。</li>
-<li>有一个历史晒单界面可以显示目前所有晒过的单据，并且显示所有已通过审核获得返利的总金额，点击可查看单据详情。</li>
-<li>单据详情页面显示晒单品种、数量、单项统计金额、合计金额、管理员审核信息。</li>
-</ol>
-<p><strong>管理员登陆后的业务流程：</strong></p>
-<ol>
-<li>系统列出所有人员晒出来的单据情况，点击后如果是待审核单据跳转至单据审核页面，已审核或者未通过单据跳转至单据详情页面。</li>
-<li>单据审核页面会显示单据的晒单品种、数量、单项统计金额、合计金额，可填入审核信息，可选择拒绝或者通过。</li>
-<li>单据的查询页面，可根据条件查询指定单据，目前设想的条件为：开始时间、结束时间、晒单人，点击查询后显示对应的数据，查询出来的数据点击后进入对应的单据详情页面。<br><hr><h3 id="三、APP原型设计"><a href="#三、APP原型设计" class="headerlink" title="三、APP原型设计"></a>三、APP原型设计</h3>本来打算用CDR来画的，后来百度了一下发现原型设计可以通过现成的软件来快速制作，然后发现了一个还蛮方便简单的在线设计APP：<a href="https://modao.cc/" target="_blank" rel="external"><strong>墨刀</strong></a>（本来以为是个本地软件，后来才发现也可以在线编辑，另外注意：他们的本地软件用的时候如果拖动大量控件的话容易有很长时间卡顿，在线版还没有测试），使用起来简单好用，界面也很漂亮，最关键的是可以免费使用到处功能，而且可以打包成APK或者IOS软件，而且还可以在线预览！超方便的！像这样↓</li>
-</ol>
-<p>因为是专门的原型设计工具，大概花了半个小时做如下的软件原型。(PS：刚刚在做这张图片的时候发现似乎有三张很重要的页面没有做：晒单品种的增删改查)</p>
-<p><iframe src="https://modao.cc/app/aE7DaIsyTnsycQZtFdSe1IxP8G30vn0/embed" width="478" height="884" allowtransparency="true" frameborder="0"></iframe></p>
-<audio class="wp-audio-shortcode" id="artbgm" loop="1" preload="auto" style="width: 100%;" controls="controls" src="http://cdn.4zen.top/California%20Dreaming%20%28%E9%87%8D%E5%BA%86%E6%A3%AE%E6%9E%97%29.mp3"></audio>
+            &lt;h3 id=&#34;一、行业情况&#34;&gt;&lt;a href=&#34;#一、行业情况&#34; class=&#34;headerlink&#34; title=&#34;一、行业情况&#34;&gt;&lt;/a&gt;一、行业情况&lt;/h3&gt;&lt;p&gt;行业情况：目前所有的零售行业都存在厂家会给销售进行返利的情况，那么返利通过什么来确定呢？最有力的当然是销售小票了！目前就我了解的情况来说基本上都是使用微信或者QQ拍照发到群内然后由返利人员审核后发放红包。&lt;/p&gt;
+&lt;p&gt;但是，这个存在一个问题，就是使用如果参与返利的人员过多的话会存在漏发或者发错的情况。并且如果要统计销售数据的话必须还要另外用表格或者手写的方式统计登记，无形之中增加了办公成本。&lt;/p&gt;
+&lt;p&gt;&lt;hr&gt;&lt;/p&gt;
+&lt;h3 id=&#34;二、需求分析&#34;&gt;&lt;a href=&#34;#二、需求分析&#34; class=&#34;headerlink&#34; title=&#34;二、需求分析&#34;&gt;&lt;/a&gt;二、需求分析&lt;/h3&gt;&lt;p&gt;分析了一下业务逻辑，这个里面主要有2个角色：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;营业员：&lt;/strong&gt;要做的事情就是销售指定的品种之后拍照并发送到微信群&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;管理员：&lt;/strong&gt;查看各个人员的销售单据，并核算返利金额。如果单据无误就发放红包。单据有误或者有特殊情况便需要在群里告知相关人员。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;所以实际的软件具备的功能因具备以下功能&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;登录系统：&lt;/strong&gt;有角色区分。登陆后显示不同的操作页面。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;营业员登陆后的业务流程：&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;系统列出所有可以参与返利的品种，&lt;/li&gt;
+&lt;li&gt;营业员选择需要晒单的品种，并设置对应的销售数量。&lt;/li&gt;
+&lt;li&gt;跳转至信息统计页面，这个页面显示了已选择的晒单品种、数量、单项统计金额、合计金额。并且可以上传销售单据。选择完后点提交即可。&lt;/li&gt;
+&lt;li&gt;有一个历史晒单界面可以显示目前所有晒过的单据，并且显示所有已通过审核获得返利的总金额，点击可查看单据详情。&lt;/li&gt;
+&lt;li&gt;单据详情页面显示晒单品种、数量、单项统计金额、合计金额、管理员审核信息。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;管理员登陆后的业务流程：&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;系统列出所有人员晒出来的单据情况，点击后如果是待审核单据跳转至单据审核页面，已审核或者未通过单据跳转至单据详情页面。&lt;/li&gt;
+&lt;li&gt;单据审核页面会显示单据的晒单品种、数量、单项统计金额、合计金额，可填入审核信息，可选择拒绝或者通过。&lt;/li&gt;
+&lt;li&gt;单据的查询页面，可根据条件查询指定单据，目前设想的条件为：开始时间、结束时间、晒单人，点击查询后显示对应的数据，查询出来的数据点击后进入对应的单据详情页面。&lt;br&gt;&lt;hr&gt;&lt;h3 id=&#34;三、APP原型设计&#34;&gt;&lt;a href=&#34;#三、APP原型设计&#34; class=&#34;headerlink&#34; title=&#34;三、APP原型设计&#34;&gt;&lt;/a&gt;三、APP原型设计&lt;/h3&gt;本来打算用CDR来画的，后来百度了一下发现原型设计可以通过现成的软件来快速制作，然后发现了一个还蛮方便简单的在线设计APP：&lt;a href=&#34;https://modao.cc/&#34; target=&#34;_blank&#34; rel=&#34;external&#34;&gt;&lt;strong&gt;墨刀&lt;/strong&gt;&lt;/a&gt;（本来以为是个本地软件，后来才发现也可以在线编辑，另外注意：他们的本地软件用的时候如果拖动大量控件的话容易有很长时间卡顿，在线版还没有测试），使用起来简单好用，界面也很漂亮，最关键的是可以免费使用到处功能，而且可以打包成APK或者IOS软件，而且还可以在线预览！超方便的！像这样↓&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;因为是专门的原型设计工具，大概花了半个小时做如下的软件原型。(PS：刚刚在做这张图片的时候发现似乎有三张很重要的页面没有做：晒单品种的增删改查)&lt;/p&gt;
+&lt;p&gt;&lt;iframe src=&#34;https://modao.cc/app/aE7DaIsyTnsycQZtFdSe1IxP8G30vn0/embed&#34; width=&#34;478&#34; height=&#34;884&#34; allowtransparency=&#34;true&#34; frameborder=&#34;0&#34;&gt;&lt;/iframe&gt;&lt;/p&gt;
+&lt;audio class=&#34;wp-audio-shortcode&#34; id=&#34;artbgm&#34; loop=&#34;1&#34; preload=&#34;auto&#34; style=&#34;width: 100%;&#34; controls=&#34;controls&#34; src=&#34;http://cdn.4zen.top/California%20Dreaming%20%28%E9%87%8D%E5%BA%86%E6%A3%AE%E6%9E%97%29.mp3&#34;&gt;&lt;/audio&gt;
 
-<h3 id="四、框架选择"><a href="#四、框架选择" class="headerlink" title="四、框架选择"></a>四、框架选择</h3><p>说道这里，我想起我七年前写代码的时候。那时候啥也不懂，一个刚毕业的小白，只懂学校里教的一些固化的东西，所有的功能都是自己造轮子一个个写出来的。</p>
-<p>看看现在的开发环境，各种框架、ide，各种方便的快速开发，我就不由得感叹，真是变化得太快了，新技术层出不穷好像永远不会停止似得。不过也庆幸自己以前有一些基础，即便六七年后再来写代码也不会觉得太难受，虽然以前学的技术可能用不上了，但是思维还在，万变不离其宗。</p>
-<p><strong>前端框架：framework7，模版引擎：artTemplate</strong></p>
-<p>Framework7项目地址：<a href="https://github.com/nolimits4web/Framework7" target="_blank" rel="external">github</a> | <a href="http://www.framework7.cn/" target="_blank" rel="external">中文站</a> | <a href="http://docs.framework7.cn/" target="_blank" rel="external">中文文档</a></p>
-<p>artTemplate项目地址：<a href="https://github.com/aui/art-template" target="_blank" rel="external">github</a>(没有官方网站，github上有详细介绍)</p>
-<h4 id="framework7"><a href="#framework7" class="headerlink" title="framework7"></a>framework7</h4><p>为什么用f7？只是因为知乎上有一个人说它有几乎完美的使用体验，而且国内淘宝在负责维护。使用过后感觉还可以，但是虽然是淘宝在维护，但是中文资料偏少、而且学习环境真的是很差(这一点请看这篇文章：<a href="http://www.4zen.top/tu-cao/" target="_blank" rel="external">吐槽</a>。基本上属于摸着石头过河，各位在选择学习某个框架的时候虽然框架的优点很重要，但是也要考虑下学习环境。</p>
-<p>总得来说框架的效果还是不错的，打包后在手机上使用也没有什么大问题。但是有人说低端手机如果直接使用会有卡顿的情况，需要搭配crosswalk才行。我也不太懂，到时候遇到了再说把。</p>
-<p>具体的示例代码我就不写了，f7的初始化代码比较多而且有些复杂。</p>
-<h4 id="artTemplate"><a href="#artTemplate" class="headerlink" title="artTemplate"></a>artTemplate</h4><p>模版引擎我不是太了解，但是在使用ghost的时候用到过一种：<a href="http://handlebarsjs.com/" target="_blank" rel="external">Handlebars.js</a>，本来打算使用这个，但是考虑到中文资料偏少所以还是选择了国人写的artTemplate，口碑也非常不错。而且兼容多种模版语法，甚至可以自定义模版语法。使用起来也相对简单例如，连我这种从来没学习过的人看了几分钟后就能使用了，以下是我个人理解的示例：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">//在头部引入js文件</div><div class="line">&lt;script src=&quot;../../lib/template-web.js&quot;&gt;&lt;/script&gt;</div><div class="line">...</div><div class="line">//模板化后的html填充的容器</div><div class="line">&lt;div id=&quot;content&quot;&gt;&lt;/div&gt;</div><div class="line">//定义模版区域</div><div class="line">&lt;script id=&quot;test&quot; type=&quot;text/html&quot;&gt;</div><div class="line">&lt;ul&gt;</div><div class="line">//开始循环填入数据，这里list为要循环的json对象，后面的value则为循环中读取出来的值，i则是索引。</div><div class="line">//另外，传入进来的json对象名默认为$data</div><div class="line">    &#123;&#123;each list value i&#125;&#125;</div><div class="line">        &lt;li&gt;索引 &#123;&#123;i + 1&#125;&#125; ：&#123;&#123;value&#125;&#125;&lt;/li&gt;</div><div class="line">    &#123;&#123;/each&#125;&#125;</div><div class="line">&lt;/ul&gt;</div><div class="line">&lt;/script&gt;</div><div class="line"></div><div class="line">&lt;script&gt;</div><div class="line">var data = &#123;</div><div class="line">	title: &apos;基本例子&apos;,</div><div class="line">	isAdmin: true,</div><div class="line">	list: [&apos;文艺&apos;, &apos;博客&apos;, &apos;摄影&apos;, &apos;电影&apos;, &apos;民谣&apos;, &apos;旅行&apos;, &apos;吉他&apos;]</div><div class="line">&#125;;</div><div class="line">//生成模版化后的html</div><div class="line">var html = template(&apos;test&apos;, data);</div><div class="line">document.getElementById(&apos;content&apos;).innerHTML = html;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+&lt;h3 id=&#34;四、框架选择&#34;&gt;&lt;a href=&#34;#四、框架选择&#34; class=&#34;headerlink&#34; title=&#34;四、框架选择&#34;&gt;&lt;/a&gt;四、框架选择&lt;/h3&gt;&lt;p&gt;说道这里，我想起我七年前写代码的时候。那时候啥也不懂，一个刚毕业的小白，只懂学校里教的一些固化的东西，所有的功能都是自己造轮子一个个写出来的。&lt;/p&gt;
+&lt;p&gt;看看现在的开发环境，各种框架、ide，各种方便的快速开发，我就不由得感叹，真是变化得太快了，新技术层出不穷好像永远不会停止似得。不过也庆幸自己以前有一些基础，即便六七年后再来写代码也不会觉得太难受，虽然以前学的技术可能用不上了，但是思维还在，万变不离其宗。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;前端框架：framework7，模版引擎：artTemplate&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Framework7项目地址：&lt;a href=&#34;https://github.com/nolimits4web/Framework7&#34; target=&#34;_blank&#34; rel=&#34;external&#34;&gt;github&lt;/a&gt; | &lt;a href=&#34;http://www.framework7.cn/&#34; target=&#34;_blank&#34; rel=&#34;external&#34;&gt;中文站&lt;/a&gt; | &lt;a href=&#34;http://docs.framework7.cn/&#34; target=&#34;_blank&#34; rel=&#34;external&#34;&gt;中文文档&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;artTemplate项目地址：&lt;a href=&#34;https://github.com/aui/art-template&#34; target=&#34;_blank&#34; rel=&#34;external&#34;&gt;github&lt;/a&gt;(没有官方网站，github上有详细介绍)&lt;/p&gt;
+&lt;h4 id=&#34;framework7&#34;&gt;&lt;a href=&#34;#framework7&#34; class=&#34;headerlink&#34; title=&#34;framework7&#34;&gt;&lt;/a&gt;framework7&lt;/h4&gt;&lt;p&gt;为什么用f7？只是因为知乎上有一个人说它有几乎完美的使用体验，而且国内淘宝在负责维护。使用过后感觉还可以，但是虽然是淘宝在维护，但是中文资料偏少、而且学习环境真的是很差(这一点请看这篇文章：&lt;a href=&#34;http://www.4zen.top/tu-cao/&#34; target=&#34;_blank&#34; rel=&#34;external&#34;&gt;吐槽&lt;/a&gt;。基本上属于摸着石头过河，各位在选择学习某个框架的时候虽然框架的优点很重要，但是也要考虑下学习环境。&lt;/p&gt;
+&lt;p&gt;总得来说框架的效果还是不错的，打包后在手机上使用也没有什么大问题。但是有人说低端手机如果直接使用会有卡顿的情况，需要搭配crosswalk才行。我也不太懂，到时候遇到了再说把。&lt;/p&gt;
+&lt;p&gt;具体的示例代码我就不写了，f7的初始化代码比较多而且有些复杂。&lt;/p&gt;
+&lt;h4 id=&#34;artTemplate&#34;&gt;&lt;a href=&#34;#artTemplate&#34; class=&#34;headerlink&#34; title=&#34;artTemplate&#34;&gt;&lt;/a&gt;artTemplate&lt;/h4&gt;&lt;p&gt;模版引擎我不是太了解，但是在使用ghost的时候用到过一种：&lt;a href=&#34;http://handlebarsjs.com/&#34; target=&#34;_blank&#34; rel=&#34;external&#34;&gt;Handlebars.js&lt;/a&gt;，本来打算使用这个，但是考虑到中文资料偏少所以还是选择了国人写的artTemplate，口碑也非常不错。而且兼容多种模版语法，甚至可以自定义模版语法。使用起来也相对简单例如，连我这种从来没学习过的人看了几分钟后就能使用了，以下是我个人理解的示例：&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;div class=&#34;line&#34;&gt;1&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;2&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;3&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;4&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;5&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;6&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;7&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;8&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;9&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;10&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;11&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;12&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;13&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;14&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;15&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;16&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;17&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;18&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;19&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;20&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;21&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;22&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;23&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;24&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;25&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;26&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;div class=&#34;line&#34;&gt;//在头部引入js文件&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;&amp;lt;script src=&amp;quot;../../lib/template-web.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;...&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;//模板化后的html填充的容器&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;&amp;lt;div id=&amp;quot;content&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;//定义模版区域&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;&amp;lt;script id=&amp;quot;test&amp;quot; type=&amp;quot;text/html&amp;quot;&amp;gt;&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;&amp;lt;ul&amp;gt;&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;//开始循环填入数据，这里list为要循环的json对象，后面的value则为循环中读取出来的值，i则是索引。&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;//另外，传入进来的json对象名默认为$data&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;    &amp;#123;&amp;#123;each list value i&amp;#125;&amp;#125;&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;        &amp;lt;li&amp;gt;索引 &amp;#123;&amp;#123;i + 1&amp;#125;&amp;#125; ：&amp;#123;&amp;#123;value&amp;#125;&amp;#125;&amp;lt;/li&amp;gt;&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;    &amp;#123;&amp;#123;/each&amp;#125;&amp;#125;&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;&amp;lt;/ul&amp;gt;&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;&amp;lt;/script&amp;gt;&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;&amp;lt;script&amp;gt;&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;var data = &amp;#123;&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;	title: &amp;apos;基本例子&amp;apos;,&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;	isAdmin: true,&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;	list: [&amp;apos;文艺&amp;apos;, &amp;apos;博客&amp;apos;, &amp;apos;摄影&amp;apos;, &amp;apos;电影&amp;apos;, &amp;apos;民谣&amp;apos;, &amp;apos;旅行&amp;apos;, &amp;apos;吉他&amp;apos;]&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;&amp;#125;;&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;//生成模版化后的html&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;var html = template(&amp;apos;test&amp;apos;, data);&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;document.getElementById(&amp;apos;content&amp;apos;).innerHTML = html;&lt;/div&gt;&lt;div class=&#34;line&#34;&gt;&amp;lt;/script&amp;gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
         </section>
 
