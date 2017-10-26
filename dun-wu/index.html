@@ -60,17 +60,17 @@
         </header>
 
         <section class="post-content">
-            &lt;p&gt;昨天睡觉做梦的时候忽然好像顿悟了framework7搭配codeigniter的用法。&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;用户发起请求&lt;/li&gt;
-&lt;li&gt;控制器响应&lt;/li&gt;
-&lt;li&gt;获取数据库数据，&lt;del&gt;分配对应页面&lt;/del&gt;，直接将数据json化反给前端。&lt;/li&gt;
-&lt;li&gt;前段框架根据需求展示数据&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;之前对前端框架朦朦胧胧，前端这边很多框架都是用的类似vue这种数据绑定的方式。我当时就在想了，前端这边页面怎么加载数据？难不成用php语句直接打印json？现在懂了，&lt;del&gt;使用ci框架时，用户访问页面都是先经过控制器再访问的view页面，我们在ctrl页面先行读取对应数据在通过&lt;code&gt;loadview(&amp;#39;listWare&amp;#39;,$date)&lt;/code&gt;把数据传给view页面&lt;/del&gt;，经过一些前辈指点更正为：前段通过ajax请求ci框架，控制得到请求后直接读取数据已json方式反馈给前端。&lt;/p&gt;
-&lt;p&gt;前端&lt;del&gt;这边framework7利用&lt;code&gt;page.query&lt;/code&gt;&lt;/del&gt;将ajax请求过来的数据根据需求利用vue或者模版语言填充到页面中。&lt;/p&gt;
-&lt;p&gt;不过这只是我模糊的想法，以为是这样的，但是到底是不是这样操作的我也不是很清楚，有朋友懂这方面的可以教我一下，各自摸索有点痛苦，你看我做梦都在想问题…&lt;/p&gt;
-&lt;p&gt;具体代码晚上试过之后再来贴。&lt;/p&gt;
+            <p>昨天睡觉做梦的时候忽然好像顿悟了framework7搭配codeigniter的用法。</p>
+<ol>
+<li>用户发起请求</li>
+<li>控制器响应</li>
+<li>获取数据库数据，<del>分配对应页面</del>，直接将数据json化反给前端。</li>
+<li>前段框架根据需求展示数据</li>
+</ol>
+<p>之前对前端框架朦朦胧胧，前端这边很多框架都是用的类似vue这种数据绑定的方式。我当时就在想了，前端这边页面怎么加载数据？难不成用php语句直接打印json？现在懂了，<del>使用ci框架时，用户访问页面都是先经过控制器再访问的view页面，我们在ctrl页面先行读取对应数据在通过<code>loadview(&#39;listWare&#39;,$date)</code>把数据传给view页面</del>，经过一些前辈指点更正为：前段通过ajax请求ci框架，控制得到请求后直接读取数据已json方式反馈给前端。</p>
+<p>前端<del>这边framework7利用<code>page.query</code></del>将ajax请求过来的数据根据需求利用vue或者模版语言填充到页面中。</p>
+<p>不过这只是我模糊的想法，以为是这样的，但是到底是不是这样操作的我也不是很清楚，有朋友懂这方面的可以教我一下，各自摸索有点痛苦，你看我做梦都在想问题…</p>
+<p>具体代码晚上试过之后再来贴。</p>
 
         </section>
 

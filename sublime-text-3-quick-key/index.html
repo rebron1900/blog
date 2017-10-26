@@ -60,64 +60,64 @@
         </header>
 
         <section class="post-content">
-            &lt;p&gt;下面是我通过网上视频教程或文本资料学习sublime Text3时收集的一些实用功能和常用快捷键，现在分享出来，如果还有其它的好用的功能可以在下面留言，以便互相学习。&lt;br&gt;PS：ST3在Mac OX与Windows不同平台下的快捷键差别很大。下面是针对windows平台的解说。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;1.可以直接打开图片&lt;/strong&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;版本3有个很好的特性（对于前端来说）：可以直接在ST3中打开图片。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;em&gt;2.Goto Anything功能 — 快速查找（&lt;code&gt;ctrl + P&lt;/code&gt;）*&lt;/em&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;输入@+函数名可以快速找到函数。&lt;br&gt;输入#+文本可以快速进行文件内文本匹配。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;strong&gt;3. 多行游标功能（&lt;code&gt;ctrl + D&lt;/code&gt;，非常实用）如何将文件中的某个单词更改为另一个？&lt;/strong&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;方法一：利用查找替换功能：&lt;code&gt;ctrl + H&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;方法二（推荐）：多行游标功能，选中一个后，按&lt;code&gt;ctrl+D&lt;/code&gt;可以同时选中另一个，同时多了另一个光标。但多行游标能完成查找替换功能不能完成的工作。&lt;br&gt;比如在某些符合条件的语句后面添加新行，同时加入一些新的文本，如何快速的达到这一目的？&lt;br&gt;可以选中某一个模式，然后&lt;code&gt;ctrl+D&lt;/code&gt;选中另一个，如果有某些不想添加新行的模式则按&lt;code&gt;ctrl+K&lt;/code&gt;，&lt;code&gt;ctrl+D&lt;/code&gt;跳过这个进入下一个符合条件的模式行。&lt;br&gt;还可以按&lt;code&gt;Alt + F3&lt;/code&gt;快捷键全选所有符合条件的单词，产生多个光标，而不用一个个&lt;code&gt;ctrl+D&lt;/code&gt;选中。&lt;br&gt;如果要在每行都加入光标，可以先&lt;code&gt;ctrl+A&lt;/code&gt;然后&lt;code&gt;ctrl+shift+L&lt;/code&gt;即可。&lt;br&gt;如果想在某个字符的多行后面加上光标，可以将光标放在这个字符后面，按住&lt;code&gt;shift&lt;/code&gt;键，然后右键可以向下拖动产生多个光标。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;strong&gt;4.命令模式（应尽可能使用，而不用浪费脑细胞记忆大量命令的快捷键）&lt;/strong&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;比如用ctrl+N新建一个文件后，默认是plain text，没有语法高亮功能，如何设置语法模式？&lt;br&gt;可以通过右下角的语法选择区选择希望设置的语法模式。&lt;br&gt;还有另一种更好的办法，即使用&lt;code&gt;ctrl + shift + P&lt;/code&gt;打开命令模式，然后输入&lt;code&gt;set syntax [language]&lt;/code&gt;设置为某种语言的语法模式，比如&lt;code&gt;set syntax java&lt;/code&gt;则设置为java语法高亮。&lt;br&gt;st3支持模糊匹配，你也可以直接输入&lt;code&gt;syntax java&lt;/code&gt;或&lt;code&gt;ssjava&lt;/code&gt;。&lt;br&gt;若当前已经是某种语言的语法模式，则可以直接输入其它语言进行切换（而不用输入set syntax或syntax了），比如当然为java语法模式，那么直接输入js就可以马上切换为javascript语法模式。&lt;br&gt;还可以输入minimap隐藏或显示右边的minimap缩影&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;strong&gt;5. 快速跳转到某一行&lt;/strong&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;按下&lt;code&gt;Ctrl + G&lt;/code&gt;，输入行号，可以快速跳转到该行。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;strong&gt;6. 快速添加新行&lt;/strong&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;code&gt;Ctrl + Enter&lt;/code&gt;可以在当前行下新建一行。&lt;br&gt;&lt;code&gt;Ctrl + Shift + Enter&lt;/code&gt;可以在当前行上面添加一行。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;strong&gt;7. 多行缩进&lt;/strong&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;选中多行后按&lt;code&gt;Ctrl + ]&lt;/code&gt;可以增加缩进，&lt;code&gt;按Ctrl + [&lt;/code&gt;可以减少缩进。&lt;br&gt;PS：发现用&lt;code&gt;Tab&lt;/code&gt;和&lt;code&gt;Shift + Tab&lt;/code&gt;也是可以的。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;strong&gt;8. 完整拷贝，避免格式错乱&lt;/strong&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;我们发现，在从别的文件中拷贝一段代码过来的时候，多半只是第一行缩进，后面都乱了，这时可以使用&lt;code&gt;Ctrl + Shift + V&lt;/code&gt;进行粘贴，可以在粘贴的过程中保持缩进，这时格式都是正确的。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;strong&gt;9. 重新打开关闭的标签&lt;/strong&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;在Chrome里面，如果你不小心关闭了某个标签页并想恢复它，你可以按下&lt;code&gt;Shift + Ctrl + T&lt;/code&gt;重新打开它。&lt;br&gt;在ST3中也一样，如果你不小心关闭了某个文件，可以按下&lt;code&gt;Shift + Ctrl + T&lt;/code&gt;快速恢复。连续重复该按键，ST将会按照关闭的先后顺序重新打开标签页。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;strong&gt;10. 按住&lt;code&gt;shift + ctrl&lt;/code&gt;然后按&lt;code&gt;←&lt;/code&gt;或&lt;code&gt;→&lt;/code&gt;可快速选中一行中的某一部分，连续按扩大选择范围。&lt;/strong&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;比如你需要将某一部分进行注释(&lt;code&gt;ctrl+/&lt;/code&gt;)或删除，使用这个功能就很方便。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;strong&gt;11. 上下移动行&lt;/strong&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;定位光标或选中某块区域，然后按&lt;code&gt;shift+ctrl+↑↓&lt;/code&gt;可以上下移动该行。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;strong&gt;12. &lt;code&gt;shift + ctrl + d&lt;/code&gt;可快速复制光标所在的一整行，并复制到该行之前。&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;13. &lt;code&gt;Ctrl+Shift+M&lt;/code&gt;：选中花括号里面的全部内容不包括{}。&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;14. &lt;code&gt;Ctrl+Shift+K&lt;/code&gt;：删除整行。&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;15. 快速关闭HTML里的标签&lt;/strong&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;写html文件时利用快捷键&lt;code&gt;Alt + .&lt;/code&gt;可以快速关闭某个标签，如写&lt;html&gt;后按Alt+.可以快速得到&lt;/html&gt;。&lt;br&gt;但这样还是挺繁琐，可以使用前端插件Emmet插件，直接在新建的html文件里（首先得设置语法模式为html）直接输入!（代表html5格式的html文档）然后按下ctrl+E即可。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;strong&gt;附：如何安装package control&lt;/strong&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;通过快捷键&lt;code&gt;ctrl+\&lt;/code&gt;或者&lt;code&gt;View &amp;gt; Show Console&lt;/code&gt;菜单打开控制台，输入下面Python执行代码（适用于Python3.x解释器）：&lt;br&gt;&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;div class=&#34;line&#34;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;div class=&#34;line&#34;&gt;import urllib.request,os; pf=&amp;apos;Package Control.sublime-package&amp;apos;; ipp = sublime.installed_packages_path();&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;作者： IT程序狮&lt;br&gt;链接：&lt;a href=&#34;http://www.imooc.com/article/1338&#34; target=&#34;_blank&#34; rel=&#34;external&#34;&gt;http://www.imooc.com/article/1338&lt;/a&gt;&lt;br&gt;来源：慕课网&lt;/p&gt;
+            <p>下面是我通过网上视频教程或文本资料学习sublime Text3时收集的一些实用功能和常用快捷键，现在分享出来，如果还有其它的好用的功能可以在下面留言，以便互相学习。<br>PS：ST3在Mac OX与Windows不同平台下的快捷键差别很大。下面是针对windows平台的解说。</p>
+<p><strong>1.可以直接打开图片</strong></p>
+<blockquote>
+<p>版本3有个很好的特性（对于前端来说）：可以直接在ST3中打开图片。</p>
+</blockquote>
+<p><em>2.Goto Anything功能 — 快速查找（<code>ctrl + P</code>）*</em></p>
+<blockquote>
+<p>输入@+函数名可以快速找到函数。<br>输入#+文本可以快速进行文件内文本匹配。</p>
+</blockquote>
+<p><strong>3. 多行游标功能（<code>ctrl + D</code>，非常实用）如何将文件中的某个单词更改为另一个？</strong></p>
+<blockquote>
+<p>方法一：利用查找替换功能：<code>ctrl + H</code></p>
+<p>方法二（推荐）：多行游标功能，选中一个后，按<code>ctrl+D</code>可以同时选中另一个，同时多了另一个光标。但多行游标能完成查找替换功能不能完成的工作。<br>比如在某些符合条件的语句后面添加新行，同时加入一些新的文本，如何快速的达到这一目的？<br>可以选中某一个模式，然后<code>ctrl+D</code>选中另一个，如果有某些不想添加新行的模式则按<code>ctrl+K</code>，<code>ctrl+D</code>跳过这个进入下一个符合条件的模式行。<br>还可以按<code>Alt + F3</code>快捷键全选所有符合条件的单词，产生多个光标，而不用一个个<code>ctrl+D</code>选中。<br>如果要在每行都加入光标，可以先<code>ctrl+A</code>然后<code>ctrl+shift+L</code>即可。<br>如果想在某个字符的多行后面加上光标，可以将光标放在这个字符后面，按住<code>shift</code>键，然后右键可以向下拖动产生多个光标。</p>
+</blockquote>
+<p><strong>4.命令模式（应尽可能使用，而不用浪费脑细胞记忆大量命令的快捷键）</strong></p>
+<blockquote>
+<p>比如用ctrl+N新建一个文件后，默认是plain text，没有语法高亮功能，如何设置语法模式？<br>可以通过右下角的语法选择区选择希望设置的语法模式。<br>还有另一种更好的办法，即使用<code>ctrl + shift + P</code>打开命令模式，然后输入<code>set syntax [language]</code>设置为某种语言的语法模式，比如<code>set syntax java</code>则设置为java语法高亮。<br>st3支持模糊匹配，你也可以直接输入<code>syntax java</code>或<code>ssjava</code>。<br>若当前已经是某种语言的语法模式，则可以直接输入其它语言进行切换（而不用输入set syntax或syntax了），比如当然为java语法模式，那么直接输入js就可以马上切换为javascript语法模式。<br>还可以输入minimap隐藏或显示右边的minimap缩影</p>
+</blockquote>
+<p><strong>5. 快速跳转到某一行</strong></p>
+<blockquote>
+<p>按下<code>Ctrl + G</code>，输入行号，可以快速跳转到该行。</p>
+</blockquote>
+<p><strong>6. 快速添加新行</strong></p>
+<blockquote>
+<p><code>Ctrl + Enter</code>可以在当前行下新建一行。<br><code>Ctrl + Shift + Enter</code>可以在当前行上面添加一行。</p>
+</blockquote>
+<p><strong>7. 多行缩进</strong></p>
+<blockquote>
+<p>选中多行后按<code>Ctrl + ]</code>可以增加缩进，<code>按Ctrl + [</code>可以减少缩进。<br>PS：发现用<code>Tab</code>和<code>Shift + Tab</code>也是可以的。</p>
+</blockquote>
+<p><strong>8. 完整拷贝，避免格式错乱</strong></p>
+<blockquote>
+<p>我们发现，在从别的文件中拷贝一段代码过来的时候，多半只是第一行缩进，后面都乱了，这时可以使用<code>Ctrl + Shift + V</code>进行粘贴，可以在粘贴的过程中保持缩进，这时格式都是正确的。</p>
+</blockquote>
+<p><strong>9. 重新打开关闭的标签</strong></p>
+<blockquote>
+<p>在Chrome里面，如果你不小心关闭了某个标签页并想恢复它，你可以按下<code>Shift + Ctrl + T</code>重新打开它。<br>在ST3中也一样，如果你不小心关闭了某个文件，可以按下<code>Shift + Ctrl + T</code>快速恢复。连续重复该按键，ST将会按照关闭的先后顺序重新打开标签页。</p>
+</blockquote>
+<p><strong>10. 按住<code>shift + ctrl</code>然后按<code>←</code>或<code>→</code>可快速选中一行中的某一部分，连续按扩大选择范围。</strong></p>
+<blockquote>
+<p>比如你需要将某一部分进行注释(<code>ctrl+/</code>)或删除，使用这个功能就很方便。</p>
+</blockquote>
+<p><strong>11. 上下移动行</strong></p>
+<blockquote>
+<p>定位光标或选中某块区域，然后按<code>shift+ctrl+↑↓</code>可以上下移动该行。</p>
+</blockquote>
+<p><strong>12. <code>shift + ctrl + d</code>可快速复制光标所在的一整行，并复制到该行之前。</strong></p>
+<p><strong>13. <code>Ctrl+Shift+M</code>：选中花括号里面的全部内容不包括{}。</strong></p>
+<p><strong>14. <code>Ctrl+Shift+K</code>：删除整行。</strong></p>
+<p><strong>15. 快速关闭HTML里的标签</strong></p>
+<blockquote>
+<p>写html文件时利用快捷键<code>Alt + .</code>可以快速关闭某个标签，如写<html>后按Alt+.可以快速得到</html>。<br>但这样还是挺繁琐，可以使用前端插件Emmet插件，直接在新建的html文件里（首先得设置语法模式为html）直接输入!（代表html5格式的html文档）然后按下ctrl+E即可。</p>
+</blockquote>
+<p><strong>附：如何安装package control</strong></p>
+<blockquote>
+<p>通过快捷键<code>ctrl+\</code>或者<code>View &gt; Show Console</code>菜单打开控制台，输入下面Python执行代码（适用于Python3.x解释器）：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">import urllib.request,os; pf=&apos;Package Control.sublime-package&apos;; ipp = sublime.installed_packages_path();</div></pre></td></tr></table></figure></p>
+</blockquote>
+<p>作者： IT程序狮<br>链接：<a href="http://www.imooc.com/article/1338" target="_blank" rel="external">http://www.imooc.com/article/1338</a><br>来源：慕课网</p>
 
         </section>
 
