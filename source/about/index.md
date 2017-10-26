@@ -4,6 +4,7 @@ permalink: 'about'
 id: 4
 updated: '2016-07-24 11:51:02'
 date: 2016-07-24 11:51:02
+image: http://cdn.4zen.top/image/2/d2/9310690a981fe8f3e7e6733ae166a.jpg
 layout: page
 ---
 
@@ -25,7 +26,7 @@ layout: page
 
 ### #2017年8月
 * 2017年8月3日：博客一周年，更换了新主题，用默认主题做的一个MOD主题。
-![](http://cdn.4zen.top/image/f/19/4629cbf70f5c9c91b59c5610c8753.png)
+  ![](http://cdn.4zen.top/image/f/19/4629cbf70f5c9c91b59c5610c8753.png)
 
 ### #2017年4月
 * 2017年4月9日：换掉网易云跟帖，使用[fooleap](http://blog.fooleap.org/)的[disqus api](https://github.com/fooleap/disqus-php-api)的方案，完美解决评论系统问题。
@@ -44,7 +45,7 @@ layout: page
 
 * 2016年11月17日：陆陆续续更换了几个主题，比较满意的是[bleak](https://github.com/zutrinken/bleak)，后来在[匿名者](http://www.timem.cn/)的网站发现了wordpress主题[Diaspora](https://github.com/LoeiFy/Diaspora)，并且发现有[ghost的版本](https://github.com/PeterCxy/ghost-diaspora)并开始使用这款主题，并在原有主题上做了一些更改，移植了文章内页背景音乐、内页头部大图
 * 2016年11月17日：参考b站的[我是设计师系列教程](http://www.bilibili.com/video/av3151708/)设了新的站点毛笔字logo
-![](http://cdn.4zen.top/image/c/3f/70b45d0f1638b273f88ccdcaca1c5.png)
+  ![](http://cdn.4zen.top/image/c/3f/70b45d0f1638b273f88ccdcaca1c5.png)
 
 ###2016年12月
 * 2016年12月05日：增加了全站的多说评论数加载，并适配了主题的ajax无刷新更新：[ajax加载后多说评论数的加载](http://www.4zen.top/ajaxed-load-duoshuo-count/)
