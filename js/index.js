@@ -53,7 +53,6 @@
         repImg(".post-toppic img","conetnt");
         repImg(".post-bg","bg");
         repImg(".read-next-story","read-next");
-        changeBg();
         switch(body){
             case "c-post":
                 addPBOX();
