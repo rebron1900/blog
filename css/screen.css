@@ -116,14 +116,14 @@ table { border-collapse: collapse; border-spacing: 0; }
     font-style: normal;
 }
 @font-face {
-    font-family: "方正颜宋简体";
-    src: url("../fonts/方正颜宋简体.eot"); /* IE9 */
-    src: url("../fonts/方正颜宋简体.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    font-family: "æ–¹æ­£é¢œå®‹ç®€ä½“";
+    src: url("../fonts/æ–¹æ­£é¢œå®‹ç®€ä½“.eot"); /* IE9 */
+    src: url("../fonts/æ–¹æ­£é¢œå®‹ç®€ä½“.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
     
-    url("../fonts/方正颜宋简体.woff") format("woff"), /* chrome、firefox */
-    url("../fonts/方正颜宋简体.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+ */
+    url("../fonts/æ–¹æ­£é¢œå®‹ç®€ä½“.woff") format("woff"), /* chromeã€firefox */
+    url("../fonts/æ–¹æ­£é¢œå®‹ç®€ä½“.ttf") format("truetype"), /* chromeã€firefoxã€operaã€Safari, Android, iOS 4.2+ */
     
-    url("../fonts/方正颜宋简体.svg#方正颜宋简体") format("svg"); /* iOS 4.1- */
+    url("../fonts/æ–¹æ­£é¢œå®‹ç®€ä½“.svg#æ–¹æ­£é¢œå®‹ç®€ä½“") format("svg"); /* iOS 4.1- */
     font-style: normal;
     font-weight: normal;
 }
@@ -532,7 +532,7 @@ margin on the iframe, cause it breaks stuff. */
         max-width: 139px\0;
         margin-left: 30px;
         font-size: 14px;
-        font-family: "方正颜宋简体";
+        font-family: "æ–¹æ­£é¢œå®‹ç®€ä½“";
 }
 
 .b_class .nav-current{
@@ -792,7 +792,7 @@ margin on the iframe, cause it breaks stuff. */
     font-weight: 700;
     color: #fff;
     text-shadow: 1px 1px 0 #111;
-    font-family: "方正颜宋简体";
+    font-family: "æ–¹æ­£é¢œå®‹ç®€ä½“";
 }
 
 .page-description {
@@ -803,7 +803,7 @@ margin on the iframe, cause it breaks stuff. */
     letter-spacing: 0.01rem;
     color: rgb(255,255,255);
     text-shadow: 1px 1px 0 #111;
-    font-family: "方正颜宋简体";
+    font-family: "æ–¹æ­£é¢œå®‹ç®€ä½“";
     text-indent: 30px;
 }
 
@@ -1535,7 +1535,7 @@ body:not(.post-template) .post-title {
 }
 
 .read-next-story .post:before {
-    content: "前一篇";
+    content: "å‰ä¸€ç¯‡";
     padding: 4px 10px 5px;
     text-transform: uppercase;
     font-size: 1.1rem;
@@ -1546,7 +1546,7 @@ body:not(.post-template) .post-title {
     transition: all 0.5s ease;
 }
 .read-next-story.prev .post:before {
-    content: "后一篇";
+    content: "åŽä¸€ç¯‡";
 }
 
 .read-next-story h2 {
@@ -2349,14 +2349,14 @@ table { border-collapse: collapse; border-spacing: 0; }
     font-style: normal;
 }
 @font-face {
-    font-family: "方正颜宋简体";
-    src: url("../fonts/方正颜宋简体.eot"); /* IE9 */
-    src: url("../fonts/方正颜宋简体.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    font-family: "æ–¹æ­£é¢œå®‹ç®€ä½“";
+    src: url("../fonts/æ–¹æ­£é¢œå®‹ç®€ä½“.eot"); /* IE9 */
+    src: url("../fonts/æ–¹æ­£é¢œå®‹ç®€ä½“.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
     
-    url("../fonts/方正颜宋简体.woff") format("woff"), /* chrome、firefox */
-    url("../fonts/方正颜宋简体.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+ */
+    url("../fonts/æ–¹æ­£é¢œå®‹ç®€ä½“.woff") format("woff"), /* chromeã€firefox */
+    url("../fonts/æ–¹æ­£é¢œå®‹ç®€ä½“.ttf") format("truetype"), /* chromeã€firefoxã€operaã€Safari, Android, iOS 4.2+ */
     
-    url("../fonts/方正颜宋简体.svg#方正颜宋简体") format("svg"); /* iOS 4.1- */
+    url("../fonts/æ–¹æ­£é¢œå®‹ç®€ä½“.svg#æ–¹æ­£é¢œå®‹ç®€ä½“") format("svg"); /* iOS 4.1- */
     font-style: normal;
     font-weight: normal;
 }
@@ -2582,7 +2582,7 @@ mark {
 
 code, tt {
     padding: 1px 3px;
-    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "å¾®è½¯é›…é»‘", Arial, sans-serif;
     font-size: 0.85em;
     white-space: pre-wrap;
     border: #E3EDF3 1px solid;
@@ -2766,7 +2766,7 @@ margin on the iframe, cause it breaks stuff. */
         max-width: 139px\0;
         margin-left: 30px;
         font-size: 14px;
-        font-family: "方正颜宋简体";
+        font-family: "æ–¹æ­£é¢œå®‹ç®€ä½“";
 }
 
 .b_class .nav-current{
@@ -3026,7 +3026,7 @@ margin on the iframe, cause it breaks stuff. */
     font-weight: 700;
     color: #fff;
     text-shadow: 1px 1px 0 #111;
-    font-family: "方正颜宋简体";
+    font-family: "æ–¹æ­£é¢œå®‹ç®€ä½“";
 }
 
 .page-description {
@@ -3037,7 +3037,7 @@ margin on the iframe, cause it breaks stuff. */
     letter-spacing: 0.01rem;
     color: rgb(255,255,255);
     text-shadow: 1px 1px 0 #111;
-    font-family: "方正颜宋简体";
+    font-family: "æ–¹æ­£é¢œå®‹ç®€ä½“";
     text-indent: 30px;
 }
 
@@ -3128,6 +3128,13 @@ body:not(.post-template) .post-title {
     font-size: 1.5rem;
     line-height: 2.2rem;
     color: #9EABB3;
+}
+.post-meta .post-words{
+    float: right;
+    margin-left: 8px;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    white-space: nowrap;
 }
 
 .author-thumb {
@@ -3472,7 +3479,7 @@ body:not(.post-template) .post-title {
 
 .comment:after{
     display: block;
-    content: "评论系统由fooleap.org强力提供";
+    content: "è¯„è®ºç³»ç»Ÿç”±fooleap.orgå¼ºåŠ›æä¾›";
     border-radius: 5px;
     text-align: center;
     box-shadow: #FFF 0 0 0 5px;
@@ -3798,7 +3805,7 @@ body:not(.post-template) .post-title {
 }
 
 .read-next-story .post:before {
-    content: "前一篇";
+    content: "å‰ä¸€ç¯‡";
     padding: 4px 10px 5px;
     text-transform: uppercase;
     font-size: 1.1rem;
@@ -3809,7 +3816,7 @@ body:not(.post-template) .post-title {
     transition: all 0.5s ease;
 }
 .read-next-story.prev .post:before {
-    content: "后一篇";
+    content: "åŽä¸€ç¯‡";
 }
 
 .read-next-story h2 {
@@ -4252,7 +4259,7 @@ body:not(.post-template) .post-title {
         line-height: 1.65em;
     }
 
-    .post-date,.post-comment {
+    .post-none {
         display: none;
     }
 

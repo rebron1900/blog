@@ -3,6 +3,8 @@
  */
 
 /* globals jQuery, document */
+var isRpimg = true;
+
 (function ($, undefined) {
     "use strict";
 
@@ -160,7 +162,7 @@ function addArchive(){
 function addPBOX(){
     $(".post-content img").each(function (){
         var url = this.src;
-        if (this.src.indexOf("cdn.4zen.top") != -1){
+        if (this.nodeName == "IMG"){
             var ptype = IsPC() == true ? "!800xa":"!400xa";
             $(this).attr("src",url)
         }
@@ -176,6 +178,7 @@ function addPBOX(){
 }
 
 function repImg(selector,type){
+    if(isRpimg == false){return;}
     var imgStyle = IsPC() == true ? "!800xa":"!400xa";
     switch(type){
         case "conetnt":
