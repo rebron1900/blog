@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>我道</title>
+    <meta name="description" content="我叫1900，普通男青年，学过三年编程。湖南人，现在在四川工作。2015年花了26天骑过一次318。有点伪文艺，喜欢比较玄学的东西。性格多变，疑似有人格分裂。" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="/css/screen.css" />
+    <link rel="stylesheet" href="/css/iDisqus.min.css">
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/monokai-sublime.css">
+
+
+</head>
+<body class="home-template" id="s-top">
+
+    <div class="nav">
+<div class="nav_body">
+  <div class="b_logo"> 
+      <a class="blog-logo" href="/"><img src="/img/logo-mini.png" alt="我道" /></a>
+  </div>
+  <div class="b_class"> 
+    <ul>
+    	
+    	<li class="nav-"><a class="" n_type="" href="/">首页</a></li>
+      
+    	<li class="nav-"><a class="" n_type="" href="/links.html">左邻</a></li>
+      
+    	<li class="nav-"><a class="" n_type="" href="/archive.html">归档</a></li>
+      
+    	<li class="nav-"><a class="" n_type="" href="/about.html">关于</a></li>
+      
+    	<li class="nav-"><a class="" n_type="" href="/rss.xml">订阅</a></li>
+      
+    </ul>
+  </div>
+</div>
+</div>
+    <div class="post-bg" style="background-image: url(http://cdn.4zen.top/image/7/e1/71ab3d9fe111d1d42dd1c05c11334.png);"></div>
+
+<div class="site-wrapper" page-type="c-post">
+<main class="content" role="main">
+	<div class="post-toppic" style="">
+        <div class="picbox">
+          <img node-type="articleHeaderPic" src="http://cdn.4zen.top/image/7/e1/71ab3d9fe111d1d42dd1c05c11334.png">
+        </div>
+     </div>
+    <article class="post">
+
+        <header class="post-header">
+            <h1 class="post-title">网易云跟帖适配ajax主题，动态加载评论框</h1>
+            <section class="post-meta">
+                <img class="author-thumb" src="/img/avatar.png" alt="1900" nopin="nopin" />
+                <a href="/yun-gentie/">1900</a>
+                <time class="post-date post-none" datetime="2017-03-26">2017-03-26</time>
+                <a href="/yun-gentie/#comment" class="post-comment post-none">有<span data-disqus-url="/yun-gentie/"></span>条评论</a>
+                <span class="post-date">总计1,017字</span>
+                <span class="post-date">预计4分钟读完</span>
+
+            </section>
+        </header>
+
+        <section class="post-content">
+            <p>2017年3月29日上午：（经测试发现无法评论）。。<br>2017年3月29日中午：刷新博客发现早上发的评论居然出来了，网易云跟帖的审核速度未免也太“快”了把？。。<br><strong>总结：还是不要使用该款评论组件。。</strong></p>
+<p>~~自从前几天多说宣布停止服务后我一直在寻找另外一个我喜欢的第三方评论组件，最喜欢的应该是disqus了，主要是因为他的游客评论功能，目前国内除多说外的组件似乎都强制用户登录才可以发表评论。我觉得这就像是我去旅游别人强制我买东西一样蛋疼…</p>
+<p>但是我还是妥协了，我发现国内似乎没有第二个多说这样的组件了，我很遗憾…，后来在这些流氓组件中选来选去最后还是考虑换上了<a href="https://gentie.163.com/index.html" target="_blank" rel="external">网易云跟帖</a>（各种不爽，各种无法自定义…），由于官方没有提供一些文档和接口，导致和我的主题各种水土不服…，当时的心情是崩溃的…，后来没辙，还是得想办法治呀。只得去研究网易的js。</p>
+<h3 id="分析一下"><a href="#分析一下" class="headerlink" title="#分析一下"></a>#分析一下</h3><p>网易提供的代码如下</p>
+<pre><code>&lt;div id=&quot;cloud-tie-wrapper&quot; class=&quot;cloud-tie-wrapper&quot;&gt;&lt;/div&gt;
+&lt;script&gt;
+  var cloudTieConfig = {
+    url: document.location.href, 
+    sourceId: &quot;&quot;,
+    productKey: &quot;0a1d8640929c49d3aad1489a8d785e28&quot;,
+    target: &quot;cloud-tie-wrapper&quot;
+  };
+&lt;/script&gt;
+&lt;script src=&quot;https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js&quot;&gt;&lt;/script&gt;
+</code></pre><p>代码和多说的基本上差不多，</p>
+<ol>
+<li>一个div元素用来放加载的元素，</li>
+<li>一个存放用户信息的json，</li>
+<li>一个引用的加载脚本js文件。</li>
+</ol>
+<p>看了下代码，网易的这个loader.js虽然代码做了混淆，但是不难看出里面其实只有一个主函数，作用就是加载评论的数据，</p>
+<pre><code>!
+function(e) {//这是主函数，
+    function t(e, t) {
+        var n = document.createElement(&quot;script&quot;);
+        return n.src = e,
+        n.async = !1,
+        n.charset = &quot;utf-8&quot;,
+        t ? l.appendChild(n) : h.appendChild(n),
+        n
+    }
+//中间代码比较多，就不贴全了
+...
+    var d = /\.js$/,
+    c = /\.css$/,
+    h = document.createDocumentFragment(),
+    u = !1,
+    l = document.head || document.getElementsByTagName(&quot;head&quot;)[0];
+    window.yunManualLoad || window.yunModuleEnv || (o() ? r(&quot;aHR0cHM6Ly9hcGkuZ2VudGllLjE2My5jb20vbW9iaWxlL2xpdmVzY3JpcHQuaHRtbA==&quot;, !0) : r(&quot;aHR0cHM6Ly9hcGkuZ2VudGllLjE2My5jb20vcGMvbGl2ZXNjcmlwdC5odG1s&quot;, !0)),
+    e.Tie = e.Tie || {},
+    e.Tie.loader = r
+} (window);//这里是调用
+</code></pre><h3 id="改改试试看"><a href="#改改试试看" class="headerlink" title="#改改试试看"></a>#改改试试看</h3><p>我抱着试一下的心态，删掉感叹号，并且给主函数加个名字，方便之后调用。</p>
+<pre><code>function yload(e) {//这是主函数，
+    function t(e, t) {
+        var n = document.createElement(&quot;script&quot;);
+        return n.src = e,
+        n.async = !1,
+        n.charset = &quot;utf-8&quot;,
+        t ? l.appendChild(n) : h.appendChild(n),
+        n
+    }
+...
+    var d = /\.js$/,
+    c = /\.css$/,
+    h = document.createDocumentFragment(),
+    u = !1,
+    l = document.head || document.getElementsByTagName(&quot;head&quot;)[0];
+    window.yunManualLoad || window.yunModuleEnv || (o() ? r(&quot;aHR0cHM6Ly9hcGkuZ2VudGllLjE2My5jb20vbW9iaWxlL2xpdmVzY3JpcHQuaHRtbA==&quot;, !0) : r(&quot;aHR0cHM6Ly9hcGkuZ2VudGllLjE2My5jb20vcGMvbGl2ZXNjcmlwdC5odG1s&quot;, !0)),
+    e.Tie = e.Tie || {},
+    e.Tie.loader = r
+};//这里的加载调用也删掉
+</code></pre><p>然后在在网页的主js里面定义一个配置json</p>
+<pre><code>var cloudTieConfig = {
+    url: document.location.href, //网易云的文章不是通过多说那种id形式，而是直接以url的形式来定义。
+    sourceId: &quot;&quot;,
+    productKey: &quot;0a1d8640929c49d3aad1489a8d785e28&quot;,
+    target: &quot;cloud-tie-wrapper&quot;//用来存放评论元素的容器id
+};
+</code></pre><p>然后在需要的地方调用之前更改好的yload(windows)就可以动态加载评论框了。</p>
+<p>我意外的发现居然能行得通…为了让多朋友知道所以写了这片拙劣的文章，希望能帮到大家</p>
+<h3 id="要注意的地方"><a href="#要注意的地方" class="headerlink" title="#要注意的地方"></a>#要注意的地方</h3><p>但是要注意哦，你定义函数的js文件要比网易云的哪个加载文件后引入哦，不然会找不到配置json的。而且，因为是动态调用的加载函数，所以每次调用前还需要更新<code>cloudTieConfig</code>变量中的url字段；最后调用的情况大概就是下面这个样子了（这里因为发现多次调用的话会重复添加评论框，所以我判断了如果容器里有内容就不会重复加载）</p>
+<pre><code>if ($(&quot;#cloud-tie-wrapper&quot;).html() == &quot;&quot;) {
+    cloudTieConfig.url = document.location.href;//设置当前文章的url
+    yload(window)//调用函数
+};
+</code></pre><p>好了大概就是这样了，以上的内容只能当作参考，我也转业很久没写代码了，有什么解释错误的地方大家可以指出来，我好改正，谢谢。</p>
+<p>Enjoy~~~</p>
+
+        </section>
+
+        <footer class="post-footer">
+
+            <figure class="author-image">
+                <a class="img" href="" style="background-image: url(/img/avatar.png)"><span class="hidden">的头像</span></a>
+            </figure>
+
+
+            <section class="author">
+                <h4><a href="#"></a></h4>
+
+                    <p>我叫1900，普通男青年，学过三年编程。湖南人，现在在四川工作。2015年花了26天骑过一次318。有点伪文艺，喜欢比较玄学的东西。性格多变，疑似有人格分裂。</p>
+
+                    <p>继续阅读此作者的<a href="http://www.4zen.top">更多文章</a>。</p>
+
+                <div class="author-meta">
+                    <span class="author-location icon-location">自贡</span>
+                    <span class="author-link icon-link"><a href="http://www.4zen.top">http://www.4zen.top</a></span> 
+                </div>
+            </section>
+
+
+            <section class="share">
+                <h4>分享此博文</h4>
+                <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+            </section>
+
+        </footer>
+	<div id="comment"></div>
+    </article>
+
+</main>
+    <aside class="read-next">
+        
+        <a class="read-next-story" style="background-image: url(http://cdn.4zen.top/image/c/40/c78cb5d808649e80d3e10100fccea.jpg)" href="/qi-yong-xin-zhu-ti-cdc4g/">
+            <section class="post">
+                <h2>启用新主题：CDC4G!</h2>
+                <p>三天打鱼，两天晒网又到了晒网的时候了，不过倒也不是不来写博客，只是最近真的有点忙。3月份有个门店要搬迁，又重新策划了开业活动，另外搬迁之前又是盘点又是做其他活动的，这些日子基本上都扑在店里了，清明节都&hellip;</p>
+            </section>
+
+        </a>
+        
+        
+        <a class="read-next-story prev " style="background-image: url(http://cdn.4zen.top/image/d/a2/a1ff56777f893b0ed90dc80739b00.png)" href="/duoshuo-bye/">
+            <section class="post">
+                <h2>再见</h2>
+                <p>多说是我用的第一个第三方评论组件，也是我一直用到现在的评论组件。
+但是，现在要和多说说再见了，以后都不能多说了….，这个结果官方其实也一直在暗示把：服务器时常抽风、官网从去年开始就没有更新过、官方论坛&hellip;</p>
+            </section>
+        </a>
+        
+    </aside>
+
+    </div>
+
+    <div class="sidebar">  
+        <a href="#s-top" class="s-top" to="#s-top"><i class="fa fa-chevron-up" action-type="goTop"></i></a>
+    </div>
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">我道</a> &copy; </section>
+        <section class="poweredby">Proudly published with <a href="https://hexo.io/"> ❤ Hexo</a> &amp; <a href="https://pages.github.com/">Github Pages</a></section>
+    </footer>
+
+    <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    <script src="/js/plugin.js"></script>
+    <script src="/js/index.js"></script>
+
+</body>
+</html>

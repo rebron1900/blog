@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>我道</title>
+    <meta name="description" content="我叫1900，普通男青年，学过三年编程。湖南人，现在在四川工作。2015年花了26天骑过一次318。有点伪文艺，喜欢比较玄学的东西。性格多变，疑似有人格分裂。" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="/css/screen.css" />
+    <link rel="stylesheet" href="/css/iDisqus.min.css">
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/monokai-sublime.css">
+
+
+</head>
+<body class="home-template" id="s-top">
+
+    <div class="nav">
+<div class="nav_body">
+  <div class="b_logo"> 
+      <a class="blog-logo" href="/"><img src="/img/logo-mini.png" alt="我道" /></a>
+  </div>
+  <div class="b_class"> 
+    <ul>
+    	
+    	<li class="nav-"><a class="" n_type="" href="/">首页</a></li>
+      
+    	<li class="nav-"><a class="" n_type="" href="/links.html">左邻</a></li>
+      
+    	<li class="nav-"><a class="" n_type="" href="/archive.html">归档</a></li>
+      
+    	<li class="nav-"><a class="" n_type="" href="/about.html">关于</a></li>
+      
+    	<li class="nav-"><a class="" n_type="" href="/rss.xml">订阅</a></li>
+      
+    </ul>
+  </div>
+</div>
+</div>
+    <div class="post-bg" style="background-image: url(http://cdn.4zen.top/image/b/3e/aed1edab0e38c3ae2a00a76ef3a0c.jpg);"></div>
+
+<div class="site-wrapper" page-type="c-post">
+<main class="content" role="main">
+	<div class="post-toppic" style="">
+        <div class="picbox">
+          <img node-type="articleHeaderPic" src="http://cdn.4zen.top/image/b/3e/aed1edab0e38c3ae2a00a76ef3a0c.jpg">
+        </div>
+     </div>
+    <article class="post">
+
+        <header class="post-header">
+            <h1 class="post-title">ajax加载后多说评论数的加载</h1>
+            <section class="post-meta">
+                <img class="author-thumb" src="/img/avatar.png" alt="1900" nopin="nopin" />
+                <a href="/ajaxed-load-duoshuo-count/">1900</a>
+                <time class="post-date post-none" datetime="2016-12-05">2016-12-05</time>
+                <a href="/ajaxed-load-duoshuo-count/#comment" class="post-comment post-none">有<span data-disqus-url="/ajaxed-load-duoshuo-count/"></span>条评论</a>
+                <span class="post-date">总计875字</span>
+                <span class="post-date">预计3分钟读完</span>
+
+            </section>
+        </header>
+
+        <section class="post-content">
+            <p><img src="http://cdn.4zen.top/image/e/3e/feb12900610f9c2a057e3cb31eaa0.png" alt=""></p>
+<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>ghost的系统并没有自带评论系统，所以基本大家使用的都是第三方的评论组件。目前提供这种服务的有：</p>
+<ol>
+<li><a href="http://www.disqus.com" target="_blank" rel="external">Disqus</a>：目前在墙外，基本上不会科学上网的话是加载不出来的。</li>
+<li><a href="http://www.duoshuo.com" target="_blank" rel="external">多说</a>：就我感觉应该是国内目前最好用的了把？没有过多的硬性要求，还过的去的api系统，也是我目前在使用的服务。</li>
+<li><a href="http://changyan.kuaizhan.com" target="_blank" rel="external">畅言</a>：我使用过一段时间，感觉功能花哨，而且不能游客评论，不是很喜欢。</li>
+<li><a href="http://uyan.cc" target="_blank" rel="external">友言</a>：我感觉是最差的一个评论组件了，可自定义程度低，基本没有api文档，想自定义实现的功能我基本上不知道该怎么下手…</li>
+</ol>
+<p>目前来说就是上面这几个，除了disqus我都有用过，目前来说多说更复合我的需求，不过多说的服务器之前有些小抽风，时常加在不出评论框，希望官方能做下一改进。</p>
+<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>多说支持动态加载评论框，也有单独的评论数展示。但是有一个问题，单独的评论数展示在ajax页面加载之后并不会加载出来。这个数据应该是多说的js只在页面onload的时候才会加载，由于ajax加载出来的数据并不会去执行里面的js函数，所以我们需要再单独调用多说的相关加载函数。</p>
+<h3 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h3><p>我翻看了多说的官方api文档，只发现了动态加载评论框的相关介绍，并没有提到关于评论数的加载。无果，我只得看了下多说的js文件，发现页面加载的时候会执行一系列的初始化函数，其中就有评论数的相关初始化。</p>
+<p>经过一些测试，我发现DUOSHUO.initView()函数似乎就是初始化页面的主函数，这个函数中创建了一个json数组，是页面当中的各种元素的选择器，其中就有评论数的页面元素的class。</p>
+<pre><code>        O = S.selectors = {
+            &quot;.ds-thread&quot;: {
+                type: &quot;EmbedThread&quot;
+            },
+            &quot;.ds-recent-comments&quot;: {
+                type: &quot;RecentComments&quot;
+            },
+            &quot;.ds-recent-visitors&quot;: {
+                type: &quot;RecentVisitors&quot;
+            },
+            &quot;.ds-top-users&quot;: {
+                type: &quot;TopUsers&quot;
+            },
+            &quot;.ds-top-threads&quot;: {
+                type: &quot;TopThreads&quot;
+            },
+            &quot;.ds-login&quot;: {
+                type: &quot;LoginWidget&quot;
+            },
+            &quot;.ds-thread-count&quot;: {
+                type: &quot;ThreadCount&quot;
+            },
+            &quot;.ds-share&quot;: {
+                type: &quot;ShareWidget&quot;
+            }
+        },
+</code></pre><p>之后我尝试在页面加载后的处理函数中手动调用该函数后发现评论数可以正常加载了。不知道可不可以获取喜欢该文章的统计？下次再做个尝试。</p>
+<p>希望能帮到需要实现此功能的朋友。</p>
+<h3 id="多说炸了"><a href="#多说炸了" class="headerlink" title="多说炸了"></a>多说炸了</h3><p>多说这小霸王服务器真心无语，今天打开博客发现这个方法似乎已经失效了，已经去官网反应了这个问题，不过凭之前的经验，得到答复或者解决方案应该是遥遥无期了。</p>
+<h3 id="2016年12月9日"><a href="#2016年12月9日" class="headerlink" title="2016年12月9日"></a>2016年12月9日</h3><p>得到反馈说是服务器的问题，方法并没有什么问题。</p>
+<h3 id="2016年12月9日-1"><a href="#2016年12月9日-1" class="headerlink" title="2016年12月9日"></a>2016年12月9日</h3><p>该方法已经恢复正常，可以正常加载评论数据。多说这个服务真的需要加强了，很担心到时候直接停止服务或者丢失数据。。。</p>
+<p>另外无意间在<a href="http://www.jisida1994.com" target="_blank" rel="external">吉思达</a>的博客中看到另外一篇文章：<a href="http://www.jisida1994.com/Pages/Index/Index.php#index%3D3%23articlePageIndex%3D1%23selectType%3DselectAll%23articleID%3D67" target="_blank" rel="external">如何动态获取多说插件的评论数</a>，也能实现该功能。</p>
+<p>上面清单中的排除，国内还有其他能用的第三方评论服务吗？</p>
+
+        </section>
+
+        <footer class="post-footer">
+
+            <figure class="author-image">
+                <a class="img" href="" style="background-image: url(/img/avatar.png)"><span class="hidden">的头像</span></a>
+            </figure>
+
+
+            <section class="author">
+                <h4><a href="#"></a></h4>
+
+                    <p>我叫1900，普通男青年，学过三年编程。湖南人，现在在四川工作。2015年花了26天骑过一次318。有点伪文艺，喜欢比较玄学的东西。性格多变，疑似有人格分裂。</p>
+
+                    <p>继续阅读此作者的<a href="http://www.4zen.top">更多文章</a>。</p>
+
+                <div class="author-meta">
+                    <span class="author-location icon-location">自贡</span>
+                    <span class="author-link icon-link"><a href="http://www.4zen.top">http://www.4zen.top</a></span> 
+                </div>
+            </section>
+
+
+            <section class="share">
+                <h4>分享此博文</h4>
+                <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+            </section>
+
+        </footer>
+	<div id="comment"></div>
+    </article>
+
+</main>
+    <aside class="read-next">
+        
+        <a class="read-next-story" style="background-image: url(http://cdn.4zen.top/image/1/a9/4b602043de513241ab9722a614d5d.jpg)" href="/auto-add-link-icon/">
+            <section class="post">
+                <h2>文章内链接自动增加网站icon</h2>
+                <p>为什么做这个之前使用罗磊的一款名为【Yasuko】的主题时发现了一个很有意思的功能：文章内的链接能自动增加来源站的icon。效果大概是下面这样，如果你现在来看这篇文章应该已经实现好这个功能了。我感觉这&hellip;</p>
+            </section>
+
+        </a>
+        
+        
+        <a class="read-next-story prev " style="background-image: url(https://bing.ioliu.cn/v1)" href="/zhe-ji-ri-zuo-liao-xie-shi-yao/">
+            <section class="post">
+                <h2>这几日做了些什么</h2>
+                <p>也有些许星期没有写日志了，但是每天都有去各位好友的博客查看他们的最新情况，总能收获些有意思的东西，比如说友人C上看到的emmet语法的自动标签补全可以用在sublimetext上（很方便），匿名者的网&hellip;</p>
+            </section>
+        </a>
+        
+    </aside>
+
+    </div>
+
+    <div class="sidebar">  
+        <a href="#s-top" class="s-top" to="#s-top"><i class="fa fa-chevron-up" action-type="goTop"></i></a>
+    </div>
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">我道</a> &copy; </section>
+        <section class="poweredby">Proudly published with <a href="https://hexo.io/"> ❤ Hexo</a> &amp; <a href="https://pages.github.com/">Github Pages</a></section>
+    </footer>
+
+    <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    <script src="/js/plugin.js"></script>
+    <script src="/js/index.js"></script>
+
+</body>
+</html>
