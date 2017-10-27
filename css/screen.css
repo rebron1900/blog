@@ -1529,7 +1529,7 @@ body:not(.post-template) .post-title {
 }
 
 .read-next-story .post {
-    padding-top: 10%; 
+    padding-top: 5%;
     padding-bottom: 6rem;
     overflow: hidden;
 }
@@ -1890,7 +1890,7 @@ body:not(.post-template) .post-title {
         display: none;
     }
     .read-next-story .post {
-        padding-top: 0%;
+        padding-top: 5%;
     }
     .read-next-story.no-cover + .read-next-story.no-cover {
         border-top: rgba(0,0,100,0.06) 1px solid;
@@ -2153,7 +2153,7 @@ body:not(.post-template) .post-title {
 
     .read-next {
         margin-top: 2rem;
-        margin-bottom: -37px;
+        /* margin-bottom: -37px; */
     }
 
     .read-next .post {
@@ -3750,7 +3750,6 @@ body:not(.post-template) .post-title {
     -webkit-align-items: stretch;
     -ms-flex-align: stretch;
     align-items: stretch;
-    /* margin-top: 10rem; */
     max-height: 400px;
 }
 
@@ -3795,8 +3794,6 @@ body:not(.post-template) .post-title {
 }
 
 .read-next-story .post {
-    padding-top: 10%; 
-    padding-bottom: 6rem;
     overflow: hidden;
 }
 
@@ -4046,6 +4043,7 @@ body:not(.post-template) .post-title {
 
     .site-wrapper{
         border-radius:0px;
+        width: 100%;
     }
     .nav .nav_body{
         width:700px;
@@ -4153,11 +4151,6 @@ body:not(.post-template) .post-title {
     .read-next p {
         display: none;
     }
-    .read-next-story .post {
-        padding-top: 0%;
-        margin-top: 2rem;
-        margin-bottom: -37px;
-    }
     .read-next-story.no-cover + .read-next-story.no-cover {
         border-top: rgba(0,0,100,0.06) 1px solid;
         border-left: none;
@@ -4217,9 +4210,8 @@ body:not(.post-template) .post-title {
         box-shadow:none;
         border-radius:0px;
     }
-.nav .nav_body{
+    .nav .nav_body{
         width:400px;
-        /* overflow: hidden; */
     }
 
 
@@ -4385,7 +4377,7 @@ body:not(.post-template) .post-title {
     }
 
     .site-footer {
-        margin-top: 3rem;
+        margin-top: 4rem;
     }
 
     .author-profile {
@@ -4419,14 +4411,19 @@ body:not(.post-template) .post-title {
 
     .read-next {
         margin-top: 2rem;
-        margin-bottom: -37px;
     }
 
     .read-next .post {
         width: 100%;
     }
+    .read-next .read-next-story .post{
+        padding: 0px;        
+    }
     .read-next-story .post {
         padding-top: 10%;
+    }
+    .site-footer {
+        background: white;
     }
 
 }
