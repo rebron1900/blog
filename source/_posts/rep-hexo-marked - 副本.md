@@ -3,7 +3,7 @@ title: 主题ONE的移植
 permalink: prot-one-4hexo
 date: 2017-10-27 12:03:06
 tags: 流水账
-image: http://cdn.4zen.top/imgs/171026/ega7GBJLhl.jpg
+image: http://cdn.4zen.top/image/b/70/b696419d965267259b4974ce9c07f.jpg!800xa
 ---
 
 ### 又想喷hexo的文档了
@@ -12,7 +12,7 @@ image: http://cdn.4zen.top/imgs/171026/ega7GBJLhl.jpg
 
 比如说`site.posts`这个变量获取到的文章列表并不会按时间排序，恰好我有一个归档功能需要所有按时间从新到旧的文章列表，翻遍官方的手册没发现有相关排序函数的叙述，之后在github的issue上看到有网友提到想关的用发，最后以如下形式实现这个功能
 
-```ejs
+```
 <% var posts = site.posts.sort('-date');
 posts.each(function(post){ %>
 <li class="" itemscope="" itemtype="http://schema.org/Article">
@@ -36,7 +36,7 @@ posts.each(function(post){ %>
 
 因为没有数据，所以一些博客的设置、主题的设置都需要放进`_config.yml`里面，在ghost上时我基本上都把配置文件写死在主题里。正好这次移植主题所以我增加了很多定制都写进了配置文件里，这里也首次接触了yaml语言。
 
-```yaml
+```
 # Menu
 menu:
     index: /
@@ -65,7 +65,6 @@ img:
     sidebar_header: "/img/sidebar_header.png"
     random_thumbnail: "/img/random/material-"
     footer_image: 
-
 ```
 
 #### 多语言

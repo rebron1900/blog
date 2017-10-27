@@ -42,13 +42,13 @@
   </div>
 </div>
 </div>
-    <div class="post-bg" style="background-image: url(http://cdn.4zen.top/imgs/171026/ega7GBJLhl.jpg);"></div>
+    <div class="post-bg" style="background-image: url(http://cdn.4zen.top/image/b/70/b696419d965267259b4974ce9c07f.jpg!800xa);"></div>
 
 <div class="site-wrapper" page-type="c-post">
 <main class="content" role="main">
 	<div class="post-toppic" style="">
         <div class="picbox">
-          <img node-type="articleHeaderPic" src="http://cdn.4zen.top/imgs/171026/ega7GBJLhl.jpg">
+          <img node-type="articleHeaderPic" src="http://cdn.4zen.top/image/b/70/b696419d965267259b4974ce9c07f.jpg!800xa">
         </div>
      </div>
     <article class="post">
@@ -63,7 +63,7 @@
         <section class="post-content">
             <h3 id="又想喷hexo的文档了"><a href="#又想喷hexo的文档了" class="headerlink" title="又想喷hexo的文档了"></a>又想喷hexo的文档了</h3><p>归功于现在主题的高度模块化，模版引擎简单易用，所以移植的过程其实来说还是比较简单了。不过实在是还想再喷一下hexo的文档，写的是真的烂，不不，应该说那是一坨<code>shi</code>，整个文档写的不明不白。</p>
 <p>比如说<code>site.posts</code>这个变量获取到的文章列表并不会按时间排序，恰好我有一个归档功能需要所有按时间从新到旧的文章列表，翻遍官方的手册没发现有相关排序函数的叙述，之后在github的issue上看到有网友提到想关的用发，最后以如下形式实现这个功能</p>
-<pre><code class="lang-ejs">&lt;% var posts = site.posts.sort(&#39;-date&#39;);
+<pre><code>&lt;% var posts = site.posts.sort(&#39;-date&#39;);
 posts.each(function(post){ %&gt;
 &lt;li class=&quot;&quot; itemscope=&quot;&quot; itemtype=&quot;http://schema.org/Article&quot;&gt;
   &lt;a class=&quot;&quot; href=&quot;&lt;%- post.permalink %&gt;&quot; itemprop=&quot;url&quot;&gt;
@@ -74,11 +74,10 @@ posts.each(function(post){ %&gt;
   &lt;/a&gt;
 &lt;/li&gt;
 &lt;% }); %&gt;
-</code></pre>
-<p>你在把官方的手册翻烂都找不出这个函数的用法。不过不排除这个函数其实是ejs里的，但是点开官方提供的ejs链接后去了官网也没看到有相关的使用文档。希望不是我的姿势不对所引起的</p>
+</code></pre><p>你在把官方的手册翻烂都找不出这个函数的用法。不过不排除这个函数其实是ejs里的，但是点开官方提供的ejs链接后去了官网也没看到有相关的使用文档。希望不是我的姿势不对所引起的</p>
 <p>所以我基本上是属于大部分看其他作者主题的实现，小部分看官方文档解决的。（刚刚在看issue的时候发现<code>page.posts.data[0]</code>这样即可访问第一篇文章。写文档的你多写几个demo会死吗。。。）</p>
 <h3 id="移植时发现的一些要注意的地方"><a href="#移植时发现的一些要注意的地方" class="headerlink" title="移植时发现的一些要注意的地方"></a>移植时发现的一些要注意的地方</h3><h4 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h4><p>因为没有数据，所以一些博客的设置、主题的设置都需要放进<code>_config.yml</code>里面，在ghost上时我基本上都把配置文件写死在主题里。正好这次移植主题所以我增加了很多定制都写进了配置文件里，这里也首次接触了yaml语言。</p>
-<pre><code class="lang-yaml"># Menu
+<pre><code># Menu
 menu:
     index: /
     links: /links.html
@@ -106,8 +105,7 @@ img:
     sidebar_header: &quot;/img/sidebar_header.png&quot;
     random_thumbnail: &quot;/img/random/material-&quot;
     footer_image:
-</code></pre>
-<h4 id="多语言"><a href="#多语言" class="headerlink" title="多语言"></a>多语言</h4><p>在做菜单功能的时候发现写好的菜单配置项输出到页面上时是英文。才想起因为使用了yaml，所以我写配置文件的时候都是英文的字段名。后来查了下手册上的<a href="https://hexo.io/zh-cn/docs/internationalization.html" target="_blank" rel="external">国际化</a>这一项里有说到怎么操作。首先在主题目录下增加一个如下结构的目录</p>
+</code></pre><h4 id="多语言"><a href="#多语言" class="headerlink" title="多语言"></a>多语言</h4><p>在做菜单功能的时候发现写好的菜单配置项输出到页面上时是英文。才想起因为使用了yaml，所以我写配置文件的时候都是英文的字段名。后来查了下手册上的<a href="https://hexo.io/zh-cn/docs/internationalization.html" target="_blank" rel="external">国际化</a>这一项里有说到怎么操作。首先在主题目录下增加一个如下结构的目录</p>
 <pre><code class="lang-yaml">/根目录
     /languages/
     /languages/zh-cn.yml
