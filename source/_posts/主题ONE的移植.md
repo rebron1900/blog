@@ -3,7 +3,7 @@ title: 主题ONE的移植
 permalink: prot-one-4hexo
 date: 2017-10-27 12:03:06
 tags: 流水账
-image: http://cdn.4zen.top/image/b/70/b696419d965267259b4974ce9c07f.jpg!800xa
+image: http://cdn.4zen.top/image/b/70/b696419d965267259b4974ce9c07f.jpg
 ---
 
 ### 又想喷hexo的文档了
