@@ -3,7 +3,7 @@
  */
 
 /* globals jQuery, document */
-var isRpimg = true;
+var repURL = '4zen.top';
 
 (function ($, undefined) {
     "use strict";
@@ -178,25 +178,34 @@ function addPBOX(){
 }
 
 function repImg(selector,type){
-    if(isRpimg == false){return;}
     var imgStyle = IsPC() == true ? "!800xa":"!400xa";
     switch(type){
         case "conetnt":
             $(selector).each(function(){
-                $(this).attr("src",this.src + imgStyle)
+                if(isRpurl(this.src)){
+                    $(this).attr("src",this.src + imgStyle)
+                }
             });
             break;
         case "read-next":
             $(selector).each(function(){
-                $(this).css("background-image","url("+$(this).css("background-image").split("\"")[1]+imgStyle+")");
+                if(isRpurl(this.src)){
+                    $(this).css("background-image","url("+$(this).css("background-image").split("\"")[1]+imgStyle+")");
+                }
             });
             break;
         case "bg":
-            $(selector).css("background-image","url("+$(selector).css("background-image").split("\"")[1]+imgStyle+")");
+            if(isRpurl($(selector).css("background-image").split("\"")[1])){
+                $(selector).css("background-image","url("+$(selector).css("background-image").split("\"")[1]+imgStyle+")");
+            }
             break;
     }
     
     
+}
+
+function isRpurl(url){
+    return url.indexOf(repURL) == -1 ? false:true;
 }
 
 function changeBg(){
