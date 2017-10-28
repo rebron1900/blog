@@ -204,8 +204,8 @@ function repImg(selector,type){
     
 }
 
-function isRpurl(url){
-    return url.indexOf(repURL) == -1 ? false:true;
+function isRpurl(imgurl){
+    return (imgurl+"").indexOf(repURL) == -1 ? false:true;
 }
 
 function changeBg(){
