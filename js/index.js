@@ -36,16 +36,16 @@ var repURL = '4zen.top';
             })
         });
 
-        /*
+       
         var disq = new iDisqus('comment', {
             forum: '4zen',
             api: 'http://api.fooleap.org/4zen',
-            site: 'http://www.4zen.top',
+            site: 'http://www.1900.live',
             mode: 1,
             timeout: 3000,
             init: true
         }); 
-        */
+        /*
 		new Valine({
 		    el: '#comment' ,
 		    notify:true, 
@@ -55,7 +55,7 @@ var repURL = '4zen.top';
 		    placeholder: '来来来，让我知道你的看法。',
 		    path:window.location.pathname, 
 		    avatar:'mm' 
-		});
+		});*/
         //初始化代码高亮
         hljs.initHighlightingOnLoad();
         //初始化相册插件
