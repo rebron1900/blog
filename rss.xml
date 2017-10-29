@@ -6,7 +6,7 @@
   <link href="/rss.xml" rel="self"/>
   
   <link href="http://www.1900.live/"/>
-  <updated>2017-10-28T04:24:28.289Z</updated>
+  <updated>2017-10-29T13:13:31.491Z</updated>
   <id>http://www.1900.live/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>再见青春</title>
+    <link href="http://www.1900.live/by-youth/"/>
+    <id>http://www.1900.live/by-youth/</id>
+    <published>2017-10-29T12:59:39.000Z</published>
+    <updated>2017-10-29T13:13:31.491Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;昨天RNG2：3不敌skt，今天we1：3不敌SSG。每年这个时候的剧本似乎都是一模一样，从s3开始到现在，五年了，每一年都是满怀期待到最后的失望而归，我真的怕我到了三十岁还不能亲眼见一次LPL拿一次世界冠军…&lt;/p&gt;
+&lt;p&gt;现在还记得洲际战看到LPL胜利时我胜利的像个小孩
+        
+      
+    
+    </summary>
+    
+    
+      <category term="流水账" scheme="http://www.1900.live/tags/%E6%B5%81%E6%B0%B4%E8%B4%A6/"/>
+    
+  </entry>
   
   <entry>
     <title>hexo发布文章的批处理</title>
@@ -482,31 +507,6 @@
     
     
       <category term=" - 设计 - 分享" scheme="http://www.1900.live/tags/%E8%AE%BE%E8%AE%A1-%E5%88%86%E4%BA%AB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>黑鬼练成记</title>
-    <link href="http://www.1900.live/hei-gui-lian-cheng-ji/"/>
-    <id>http://www.1900.live/hei-gui-lian-cheng-ji/</id>
-    <published>2017-08-06T01:26:59.000Z</published>
-    <updated>2017-08-06T02:10:51.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;夏天最喜欢做的三件事情就是玩水、吃西瓜、吹空调了把？&lt;/p&gt;
-&lt;p&gt;本来上周就约了几个朋友准备自驾去附近城市的水上乐园玩的，但是因为自己有事就鸽了。朋友们无奈把时间后推了一周。选择的地方起初我是打算半个小时之内车程可以去的一个新开的水上乐园，但是后来朋友说哪个地方在美团上被
-        
-      
-    
-    </summary>
-    
-    
-      <category term=" - 流水账" scheme="http://www.1900.live/tags/%E6%B5%81%E6%B0%B4%E8%B4%A6/"/>
     
   </entry>
   
