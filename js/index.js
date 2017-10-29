@@ -36,6 +36,7 @@ var repURL = '4zen.top';
             })
         });
 
+        /*
         var disq = new iDisqus('comment', {
             forum: '4zen',
             api: 'http://api.fooleap.org/4zen',
@@ -44,7 +45,17 @@ var repURL = '4zen.top';
             timeout: 3000,
             init: true
         }); 
-
+        */
+		new Valine({
+		    el: '#comment' ,
+		    notify:false, 
+		    verify:false, 
+		    app_id: 'qWj2fl6yIXkbVw4ThlSrJsyK-gzGzoHsz',
+		    app_key: 'S4z0RDFQp1JhT5jp6jSYznFc',
+		    placeholder: 'just go go',
+		    path:window.location.pathname, 
+		    avatar:'mm' 
+		});
         //初始化代码高亮
         hljs.initHighlightingOnLoad();
         //初始化相册插件

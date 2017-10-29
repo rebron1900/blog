@@ -116,14 +116,14 @@ table { border-collapse: collapse; border-spacing: 0; }
     font-style: normal;
 }
 @font-face {
-    font-family: "æ–¹æ­£é¢œå®‹ç®€ä½“";
-    src: url("../fonts/æ–¹æ­£é¢œå®‹ç®€ä½“.eot"); /* IE9 */
-    src: url("../fonts/æ–¹æ­£é¢œå®‹ç®€ä½“.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    font-family: "方正颜宋简体";
+    src: url("../fonts/方正颜宋简体.eot"); /* IE9 */
+    src: url("../fonts/方正颜宋简体.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
     
-    url("../fonts/æ–¹æ­£é¢œå®‹ç®€ä½“.woff") format("woff"), /* chromeã€firefox */
-    url("../fonts/æ–¹æ­£é¢œå®‹ç®€ä½“.ttf") format("truetype"), /* chromeã€firefoxã€operaã€Safari, Android, iOS 4.2+ */
+    url("../fonts/方正颜宋简体.woff") format("woff"), /* chromeã€firefox */
+    url("../fonts/方正颜宋简体.ttf") format("truetype"), /* chromeã€firefoxã€operaã€Safari, Android, iOS 4.2+ */
     
-    url("../fonts/æ–¹æ­£é¢œå®‹ç®€ä½“.svg#æ–¹æ­£é¢œå®‹ç®€ä½“") format("svg"); /* iOS 4.1- */
+    url("../fonts/方正颜宋简体.svg#方正颜宋简体") format("svg"); /* iOS 4.1- */
     font-style: normal;
     font-weight: normal;
 }
@@ -532,7 +532,7 @@ margin on the iframe, cause it breaks stuff. */
         max-width: 139px\0;
         margin-left: 30px;
         font-size: 14px;
-        font-family: "æ–¹æ­£é¢œå®‹ç®€ä½“";
+        font-family: "方正颜宋简体";
 }
 
 .b_class .nav-current{
@@ -792,7 +792,7 @@ margin on the iframe, cause it breaks stuff. */
     font-weight: 700;
     color: #fff;
     text-shadow: 1px 1px 0 #111;
-    font-family: "æ–¹æ­£é¢œå®‹ç®€ä½“";
+    font-family: "方正颜宋简体";
 }
 
 .page-description {
@@ -803,7 +803,7 @@ margin on the iframe, cause it breaks stuff. */
     letter-spacing: 0.01rem;
     color: rgb(255,255,255);
     text-shadow: 1px 1px 0 #111;
-    font-family: "æ–¹æ­£é¢œå®‹ç®€ä½“";
+    font-family: "方正颜宋简体";
     text-indent: 30px;
 }
 
@@ -2349,14 +2349,14 @@ table { border-collapse: collapse; border-spacing: 0; }
     font-style: normal;
 }
 @font-face {
-    font-family: "æ–¹æ­£é¢œå®‹ç®€ä½“";
-    src: url("../fonts/æ–¹æ­£é¢œå®‹ç®€ä½“.eot"); /* IE9 */
-    src: url("../fonts/æ–¹æ­£é¢œå®‹ç®€ä½“.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    font-family: "方正颜宋简体";
+    src: url("../fonts/方正颜宋简体.eot"); /* IE9 */
+    src: url("../fonts/方正颜宋简体.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
     
-    url("../fonts/æ–¹æ­£é¢œå®‹ç®€ä½“.woff") format("woff"), /* chromeã€firefox */
-    url("../fonts/æ–¹æ­£é¢œå®‹ç®€ä½“.ttf") format("truetype"), /* chromeã€firefoxã€operaã€Safari, Android, iOS 4.2+ */
+    url("../fonts/方正颜宋简体.woff") format("woff"), /* chromeã€firefox */
+    url("../fonts/方正颜宋简体.ttf") format("truetype"), /* chromeã€firefoxã€operaã€Safari, Android, iOS 4.2+ */
     
-    url("../fonts/æ–¹æ­£é¢œå®‹ç®€ä½“.svg#æ–¹æ­£é¢œå®‹ç®€ä½“") format("svg"); /* iOS 4.1- */
+    url("../fonts/方正颜宋简体.svg#方正颜宋简体") format("svg"); /* iOS 4.1- */
     font-style: normal;
     font-weight: normal;
 }
@@ -2766,7 +2766,7 @@ margin on the iframe, cause it breaks stuff. */
         max-width: 139px\0;
         margin-left: 30px;
         font-size: 14px;
-        font-family: "æ–¹æ­£é¢œå®‹ç®€ä½“";
+        font-family: "方正颜宋简体";
 }
 
 .b_class .nav-current{
@@ -3026,7 +3026,7 @@ margin on the iframe, cause it breaks stuff. */
     font-weight: 700;
     color: #fff;
     text-shadow: 1px 1px 0 #111;
-    font-family: "æ–¹æ­£é¢œå®‹ç®€ä½“";
+    font-family: "方正颜宋简体";
 }
 
 .page-description {
@@ -3037,7 +3037,7 @@ margin on the iframe, cause it breaks stuff. */
     letter-spacing: 0.01rem;
     color: rgb(255,255,255);
     text-shadow: 1px 1px 0 #111;
-    font-family: "æ–¹æ­£é¢œå®‹ç®€ä½“";
+    font-family: "方正颜宋简体";
     text-indent: 30px;
 }
 
