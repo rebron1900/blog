@@ -116,14 +116,14 @@ table { border-collapse: collapse; border-spacing: 0; }
     font-style: normal;
 }
 @font-face {
-    font-family: "方正颜宋简体";
-    src: url("../fonts/方正颜宋简体.eot"); /* IE9 */
-    src: url("../fonts/方正颜宋简体.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    font-family: "ysjt";
+    src: url("../fonts/ysjt.eot"); /* IE9 */
+    src: url("../fonts/ysjt.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
     
-    url("../fonts/方正颜宋简体.woff") format("woff"), /* chromeã€firefox */
-    url("../fonts/方正颜宋简体.ttf") format("truetype"), /* chromeã€firefoxã€operaã€Safari, Android, iOS 4.2+ */
+    url("../fonts/ysjt.woff") format("woff"), /* chromeÃ£â‚¬Âfirefox */
+    url("../fonts/ysjt.ttf") format("truetype"), /* chromeÃ£â‚¬ÂfirefoxÃ£â‚¬ÂoperaÃ£â‚¬ÂSafari, Android, iOS 4.2+ */
     
-    url("../fonts/方正颜宋简体.svg#方正颜宋简体") format("svg"); /* iOS 4.1- */
+    url("../fonts/ysjt.svg#ysjt") format("svg"); /* iOS 4.1- */
     font-style: normal;
     font-weight: normal;
 }
@@ -532,7 +532,7 @@ margin on the iframe, cause it breaks stuff. */
         max-width: 139px\0;
         margin-left: 30px;
         font-size: 14px;
-        font-family: "方正颜宋简体";
+        font-family: "ysjt";
 }
 
 .b_class .nav-current{
@@ -792,7 +792,7 @@ margin on the iframe, cause it breaks stuff. */
     font-weight: 700;
     color: #fff;
     text-shadow: 1px 1px 0 #111;
-    font-family: "方正颜宋简体";
+    font-family: "ysjt";
 }
 
 .page-description {
@@ -803,7 +803,7 @@ margin on the iframe, cause it breaks stuff. */
     letter-spacing: 0.01rem;
     color: rgb(255,255,255);
     text-shadow: 1px 1px 0 #111;
-    font-family: "方正颜宋简体";
+    font-family: "ysjt";
     text-indent: 30px;
 }
 
@@ -1195,6 +1195,32 @@ body:not(.post-template) .post-title {
 }
 .post-content{
     margin-top: 4rem;
+}
+
+.post-content sup a[id^=ref]{
+    background: #999999;
+    padding: 2px 5px;
+    border-radius: 5px;
+    color: #f5f8fa;
+    margin:0px 5px;
+    text-decoration: none;
+}
+
+.post-content blockquote[id^=fn]{
+    padding: 2px 5px;
+    color: #f5f8fa;
+    margin:0px 5px;
+    text-decoration: none;
+}
+
+.post-content blockquote[id=fn_1]:before{
+    content: "相关资料";
+    font-size:1.15em;
+    font-weight:800;
+    color:black;
+    display:block;
+    margin-left:0.8em;
+    margin-bottom:0.8em
 }
 
 /* Keep images centered, and allow images wider than the main
@@ -2349,14 +2375,14 @@ table { border-collapse: collapse; border-spacing: 0; }
     font-style: normal;
 }
 @font-face {
-    font-family: "方正颜宋简体";
-    src: url("../fonts/方正颜宋简体.eot"); /* IE9 */
-    src: url("../fonts/方正颜宋简体.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    font-family: "ysjt";
+    src: url("../fonts/ysjt.eot"); /* IE9 */
+    src: url("../fonts/ysjt.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
     
-    url("../fonts/方正颜宋简体.woff") format("woff"), /* chromeã€firefox */
-    url("../fonts/方正颜宋简体.ttf") format("truetype"), /* chromeã€firefoxã€operaã€Safari, Android, iOS 4.2+ */
+    url("../fonts/ysjt.woff") format("woff"), /* chromeÃ£â‚¬Âfirefox */
+    url("../fonts/ysjt.ttf") format("truetype"), /* chromeÃ£â‚¬ÂfirefoxÃ£â‚¬ÂoperaÃ£â‚¬ÂSafari, Android, iOS 4.2+ */
     
-    url("../fonts/方正颜宋简体.svg#方正颜宋简体") format("svg"); /* iOS 4.1- */
+    url("../fonts/ysjt.svg#ysjt") format("svg"); /* iOS 4.1- */
     font-style: normal;
     font-weight: normal;
 }
@@ -2581,13 +2607,14 @@ mark {
 }
 
 code, tt {
-    padding: 1px 3px;
-    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "å¾®è½¯é›…é»‘", Arial, sans-serif;
+    padding: 3px 5px;
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Ã¥Â¾Â®Ã¨Â½Â¯Ã©â€ºâ€¦Ã©Â»â€˜", Arial, sans-serif;
     font-size: 0.85em;
     white-space: pre-wrap;
-    border: #E3EDF3 1px solid;
-    background: #F7FAFB;
-    border-radius: 2px;
+    background: #4a4a4a;
+    border-radius: 5px;
+    color: #efefef;
+    margin: 0px 3px;
 }
 
 pre {
@@ -2766,7 +2793,7 @@ margin on the iframe, cause it breaks stuff. */
         max-width: 139px\0;
         margin-left: 30px;
         font-size: 14px;
-        font-family: "方正颜宋简体";
+        font-family: "ysjt";
 }
 
 .b_class .nav-current{
@@ -3026,7 +3053,7 @@ margin on the iframe, cause it breaks stuff. */
     font-weight: 700;
     color: #fff;
     text-shadow: 1px 1px 0 #111;
-    font-family: "方正颜宋简体";
+    font-family: "ysjt";
 }
 
 .page-description {
@@ -3037,7 +3064,7 @@ margin on the iframe, cause it breaks stuff. */
     letter-spacing: 0.01rem;
     color: rgb(255,255,255);
     text-shadow: 1px 1px 0 #111;
-    font-family: "方正颜宋简体";
+    font-family: "ysjt";
     text-indent: 30px;
 }
 
@@ -3479,7 +3506,7 @@ body:not(.post-template) .post-title {
 
 .comment:after{
     display: block;
-    content: ""评论系统由fooleap.org强力提供"";
+    content: "评论系统由fooleap.org强力提供";
     border-radius: 5px;
     text-align: center;
     box-shadow: #FFF 0 0 0 5px;
@@ -3805,7 +3832,7 @@ body:not(.post-template) .post-title {
 }
 
 .read-next-story .post:before {
-    content: "前一篇";
+    content: "å‰ä¸€ç¯‡";
     padding: 4px 10px 5px;
     text-transform: uppercase;
     font-size: 1.1rem;
@@ -3816,7 +3843,7 @@ body:not(.post-template) .post-title {
     transition: all 0.5s ease;
 }
 .read-next-story.prev .post:before {
-    content: "后一篇";
+    content: "åŽä¸€ç¯‡";
 }
 
 .read-next-story h2 {

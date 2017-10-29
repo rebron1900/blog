@@ -69,6 +69,8 @@ var repURL = '4zen.top';
         switch(body){
             case "c-post":
                 addPBOX();
+                linkEV('.post-content blockquote[id^="fn"]  a[href^="#"]',-55);
+                linkEV('.post-content sup a[href^="#"]',-55);
                 break;
             case "c-page":
                 addPBOX();
@@ -226,4 +228,11 @@ function changeBg(){
     }else{
         $(".post-bg").css("background-image","url(/img/default.jpg)");
     }
+}
+
+function linkEV(selector,fixSet = 0){
+	$(selector).click(function(e){
+                    e.preventDefault();
+                    $('html, body').animate({scrollTop: $(this.hash).offset().top+fixSet}, 400);
+                });
 }
