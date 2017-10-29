@@ -50,9 +50,9 @@ var repURL = '4zen.top';
 		    el: '#comment' ,
 		    notify:false, 
 		    verify:false, 
-		    app_id: 'qWj2fl6yIXkbVw4ThlSrJsyK-gzGzoHsz',
-		    app_key: 'S4z0RDFQp1JhT5jp6jSYznFc',
-		    placeholder: 'just go go',
+		    app_id: 'PSS2Lh3g7hfReiHb1qsM5Mff-gzGzoHsz',
+		    app_key: 'MJlOl9g8qg3MbSo9kQTVsStg',
+		    placeholder: '来来来，让我知道你的看法。',
 		    path:window.location.pathname, 
 		    avatar:'mm' 
 		});
