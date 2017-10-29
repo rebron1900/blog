@@ -1535,7 +1535,7 @@ body:not(.post-template) .post-title {
 }
 
 .read-next-story .post:before {
-    content: "å‰ä¸€ç¯‡";
+    content: "前一篇";
     padding: 4px 10px 5px;
     text-transform: uppercase;
     font-size: 1.1rem;
@@ -1546,7 +1546,7 @@ body:not(.post-template) .post-title {
     transition: all 0.5s ease;
 }
 .read-next-story.prev .post:before {
-    content: "åŽä¸€ç¯‡";
+    content: "后一篇";
 }
 
 .read-next-story h2 {
@@ -3479,7 +3479,7 @@ body:not(.post-template) .post-title {
 
 .comment:after{
     display: block;
-    content: "è¯„è®ºç³»ç»Ÿç”±fooleap.orgå¼ºåŠ›æä¾›";
+    content: ""评论系统由fooleap.org强力提供"";
     border-radius: 5px;
     text-align: center;
     box-shadow: #FFF 0 0 0 5px;
@@ -3805,7 +3805,7 @@ body:not(.post-template) .post-title {
 }
 
 .read-next-story .post:before {
-    content: "å‰ä¸€ç¯‡";
+    content: "前一篇";
     padding: 4px 10px 5px;
     text-transform: uppercase;
     font-size: 1.1rem;
@@ -3816,7 +3816,7 @@ body:not(.post-template) .post-title {
     transition: all 0.5s ease;
 }
 .read-next-story.prev .post:before {
-    content: "åŽä¸€ç¯‡";
+    content: "后一篇";
 }
 
 .read-next-story h2 {
