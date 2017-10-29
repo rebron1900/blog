@@ -48,7 +48,7 @@ var repURL = '4zen.top';
         */
 		new Valine({
 		    el: '#comment' ,
-		    notify:false, 
+		    notify:true, 
 		    verify:false, 
 		    app_id: 'PSS2Lh3g7hfReiHb1qsM5Mff-gzGzoHsz',
 		    app_key: 'MJlOl9g8qg3MbSo9kQTVsStg',
