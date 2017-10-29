@@ -5,9 +5,9 @@
   
   <link href="/rss.xml" rel="self"/>
   
-  <link href="/"/>
+  <link href="http://www.1900.live/"/>
   <updated>2017-10-28T04:24:28.289Z</updated>
-  <id>/</id>
+  <id>http://www.1900.live/</id>
   
   <author>
     <name>1900</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>hexo发布文章的批处理</title>
-    <link href="/auto-push-hexo/"/>
-    <id>/auto-push-hexo/</id>
+    <link href="http://www.1900.live/auto-push-hexo/"/>
+    <id>http://www.1900.live/auto-push-hexo/</id>
     <published>2017-10-28T04:01:49.000Z</published>
     <updated>2017-10-28T04:24:28.289Z</updated>
     
@@ -36,14 +36,14 @@
     </summary>
     
     
-      <category term="流水账" scheme="/tags/%E6%B5%81%E6%B0%B4%E8%B4%A6/"/>
+      <category term="流水账" scheme="http://www.1900.live/tags/%E6%B5%81%E6%B0%B4%E8%B4%A6/"/>
     
   </entry>
   
   <entry>
     <title>主题ONE的移植</title>
-    <link href="/prot-one-4hexo/"/>
-    <id>/prot-one-4hexo/</id>
+    <link href="http://www.1900.live/prot-one-4hexo/"/>
+    <id>http://www.1900.live/prot-one-4hexo/</id>
     <published>2017-10-27T04:03:06.000Z</published>
     <updated>2017-10-27T09:20:53.912Z</updated>
     
@@ -60,14 +60,14 @@
     </summary>
     
     
-      <category term="流水账" scheme="/tags/%E6%B5%81%E6%B0%B4%E8%B4%A6/"/>
+      <category term="流水账" scheme="http://www.1900.live/tags/%E6%B5%81%E6%B0%B4%E8%B4%A6/"/>
     
   </entry>
   
   <entry>
     <title>解决hexo渲染的页面中有br的问题</title>
-    <link href="/rep-hexo-marked/"/>
-    <id>/rep-hexo-marked/</id>
+    <link href="http://www.1900.live/rep-hexo-marked/"/>
+    <id>http://www.1900.live/rep-hexo-marked/</id>
     <published>2017-10-26T04:20:48.000Z</published>
     <updated>2017-10-26T04:51:31.100Z</updated>
     
@@ -84,14 +84,14 @@
     </summary>
     
     
-      <category term="流水账" scheme="/tags/%E6%B5%81%E6%B0%B4%E8%B4%A6/"/>
+      <category term="流水账" scheme="http://www.1900.live/tags/%E6%B5%81%E6%B0%B4%E8%B4%A6/"/>
     
   </entry>
   
   <entry>
     <title>博客转用hexo</title>
-    <link href="/bo-ke-zhuan-yong-hexo/"/>
-    <id>/bo-ke-zhuan-yong-hexo/</id>
+    <link href="http://www.1900.live/bo-ke-zhuan-yong-hexo/"/>
+    <id>http://www.1900.live/bo-ke-zhuan-yong-hexo/</id>
     <published>2017-10-23T07:23:09.000Z</published>
     <updated>2017-10-23T07:28:46.000Z</updated>
     
@@ -109,14 +109,14 @@
     </summary>
     
     
-      <category term=" - 流水账" scheme="/tags/%E6%B5%81%E6%B0%B4%E8%B4%A6/"/>
+      <category term=" - 流水账" scheme="http://www.1900.live/tags/%E6%B5%81%E6%B0%B4%E8%B4%A6/"/>
     
   </entry>
   
   <entry>
     <title>追忆</title>
-    <link href="/zhui-yi/"/>
-    <id>/zhui-yi/</id>
+    <link href="http://www.1900.live/zhui-yi/"/>
+    <id>http://www.1900.live/zhui-yi/</id>
     <published>2017-10-09T12:33:41.000Z</published>
     <updated>2017-10-20T10:18:15.000Z</updated>
     
@@ -133,14 +133,14 @@
     </summary>
     
     
-      <category term=" - 流水账" scheme="/tags/%E6%B5%81%E6%B0%B4%E8%B4%A6/"/>
+      <category term=" - 流水账" scheme="http://www.1900.live/tags/%E6%B5%81%E6%B0%B4%E8%B4%A6/"/>
     
   </entry>
   
   <entry>
     <title>近日的流水账</title>
-    <link href="/20170924/"/>
-    <id>/20170924/</id>
+    <link href="http://www.1900.live/20170924/"/>
+    <id>http://www.1900.live/20170924/</id>
     <published>2017-09-24T12:23:40.000Z</published>
     <updated>2017-09-24T12:54:33.000Z</updated>
     
@@ -161,8 +161,8 @@
   
   <entry>
     <title>喊麦和说唱</title>
-    <link href="/rap-hanmai/"/>
-    <id>/rap-hanmai/</id>
+    <link href="http://www.1900.live/rap-hanmai/"/>
+    <id>http://www.1900.live/rap-hanmai/</id>
     <published>2017-09-08T13:36:29.000Z</published>
     <updated>2017-09-08T14:03:12.000Z</updated>
     
@@ -179,14 +179,14 @@
     </summary>
     
     
-      <category term=" - 分享 - 流水账" scheme="/tags/%E5%88%86%E4%BA%AB-%E6%B5%81%E6%B0%B4%E8%B4%A6/"/>
+      <category term=" - 分享 - 流水账" scheme="http://www.1900.live/tags/%E5%88%86%E4%BA%AB-%E6%B5%81%E6%B0%B4%E8%B4%A6/"/>
     
   </entry>
   
   <entry>
     <title>她</title>
-    <link href="/ta/"/>
-    <id>/ta/</id>
+    <link href="http://www.1900.live/ta/"/>
+    <id>http://www.1900.live/ta/</id>
     <published>2017-09-04T06:35:57.000Z</published>
     <updated>2017-09-04T09:08:41.000Z</updated>
     
@@ -204,14 +204,14 @@
     </summary>
     
     
-      <category term=" - 说说" scheme="/tags/%E8%AF%B4%E8%AF%B4/"/>
+      <category term=" - 说说" scheme="http://www.1900.live/tags/%E8%AF%B4%E8%AF%B4/"/>
     
   </entry>
   
   <entry>
     <title>桌面美化</title>
-    <link href="/zhuo-mian-mei-hua/"/>
-    <id>/zhuo-mian-mei-hua/</id>
+    <link href="http://www.1900.live/zhuo-mian-mei-hua/"/>
+    <id>http://www.1900.live/zhuo-mian-mei-hua/</id>
     <published>2017-08-30T09:14:54.000Z</published>
     <updated>2017-08-30T11:17:46.000Z</updated>
     
@@ -228,14 +228,14 @@
     </summary>
     
     
-      <category term=" - 流水账" scheme="/tags/%E6%B5%81%E6%B0%B4%E8%B4%A6/"/>
+      <category term=" - 流水账" scheme="http://www.1900.live/tags/%E6%B5%81%E6%B0%B4%E8%B4%A6/"/>
     
   </entry>
   
   <entry>
     <title>凡人歌-张震岳&amp;热狗战队</title>
-    <link href="/fan-ren-ge-zhang-zhen-yue-re-gou-zhan-dui/"/>
-    <id>/fan-ren-ge-zhang-zhen-yue-re-gou-zhan-dui/</id>
+    <link href="http://www.1900.live/fan-ren-ge-zhang-zhen-yue-re-gou-zhan-dui/"/>
+    <id>http://www.1900.live/fan-ren-ge-zhang-zhen-yue-re-gou-zhan-dui/</id>
     <published>2017-08-24T15:54:43.000Z</published>
     <updated>2017-08-29T06:12:29.000Z</updated>
     
@@ -252,14 +252,14 @@
     </summary>
     
     
-      <category term=" - 分享" scheme="/tags/%E5%88%86%E4%BA%AB/"/>
+      <category term=" - 分享" scheme="http://www.1900.live/tags/%E5%88%86%E4%BA%AB/"/>
     
   </entry>
   
   <entry>
     <title>Life&#39;s A Struggle</title>
-    <link href="/lifes-a-struggle/"/>
-    <id>/lifes-a-struggle/</id>
+    <link href="http://www.1900.live/lifes-a-struggle/"/>
+    <id>http://www.1900.live/lifes-a-struggle/</id>
     <published>2017-08-20T03:29:00.000Z</published>
     <updated>2017-08-21T11:26:18.000Z</updated>
     
@@ -276,14 +276,14 @@
     </summary>
     
     
-      <category term=" - 分享" scheme="/tags/%E5%88%86%E4%BA%AB/"/>
+      <category term=" - 分享" scheme="http://www.1900.live/tags/%E5%88%86%E4%BA%AB/"/>
     
   </entry>
   
   <entry>
     <title>无个性</title>
-    <link href="/wu-ge-xing/"/>
-    <id>/wu-ge-xing/</id>
+    <link href="http://www.1900.live/wu-ge-xing/"/>
+    <id>http://www.1900.live/wu-ge-xing/</id>
     <published>2017-08-19T12:22:36.000Z</published>
     <updated>2017-08-19T12:44:40.000Z</updated>
     
@@ -301,14 +301,14 @@
     </summary>
     
     
-      <category term=" - 流水账" scheme="/tags/%E6%B5%81%E6%B0%B4%E8%B4%A6/"/>
+      <category term=" - 流水账" scheme="http://www.1900.live/tags/%E6%B5%81%E6%B0%B4%E8%B4%A6/"/>
     
   </entry>
   
   <entry>
     <title>鸡汤一碗</title>
-    <link href="/ji-tang-yi-wan/"/>
-    <id>/ji-tang-yi-wan/</id>
+    <link href="http://www.1900.live/ji-tang-yi-wan/"/>
+    <id>http://www.1900.live/ji-tang-yi-wan/</id>
     <published>2017-08-17T09:35:10.000Z</published>
     <updated>2017-08-17T09:43:14.000Z</updated>
     
@@ -328,14 +328,14 @@
     </summary>
     
     
-      <category term=" - 流水账 - 分享" scheme="/tags/%E6%B5%81%E6%B0%B4%E8%B4%A6-%E5%88%86%E4%BA%AB/"/>
+      <category term=" - 流水账 - 分享" scheme="http://www.1900.live/tags/%E6%B5%81%E6%B0%B4%E8%B4%A6-%E5%88%86%E4%BA%AB/"/>
     
   </entry>
   
   <entry>
     <title>梦魇3</title>
-    <link href="/meng-yan-3/"/>
-    <id>/meng-yan-3/</id>
+    <link href="http://www.1900.live/meng-yan-3/"/>
+    <id>http://www.1900.live/meng-yan-3/</id>
     <published>2017-08-17T01:11:21.000Z</published>
     <updated>2017-08-17T01:36:07.000Z</updated>
     
@@ -354,14 +354,14 @@
     </summary>
     
     
-      <category term=" - 流水账" scheme="/tags/%E6%B5%81%E6%B0%B4%E8%B4%A6/"/>
+      <category term=" - 流水账" scheme="http://www.1900.live/tags/%E6%B5%81%E6%B0%B4%E8%B4%A6/"/>
     
   </entry>
   
   <entry>
     <title>显卡支架</title>
-    <link href="/graphics-card-holder/"/>
-    <id>/graphics-card-holder/</id>
+    <link href="http://www.1900.live/graphics-card-holder/"/>
+    <id>http://www.1900.live/graphics-card-holder/</id>
     <published>2017-08-15T16:34:08.000Z</published>
     <updated>2017-08-15T16:52:08.000Z</updated>
     
@@ -379,14 +379,14 @@
     </summary>
     
     
-      <category term=" - 设计 - 流水账" scheme="/tags/%E8%AE%BE%E8%AE%A1-%E6%B5%81%E6%B0%B4%E8%B4%A6/"/>
+      <category term=" - 设计 - 流水账" scheme="http://www.1900.live/tags/%E8%AE%BE%E8%AE%A1-%E6%B5%81%E6%B0%B4%E8%B4%A6/"/>
     
   </entry>
   
   <entry>
     <title>忽然想写一个chrome扩展</title>
-    <link href="/chrome-rss-ext/"/>
-    <id>/chrome-rss-ext/</id>
+    <link href="http://www.1900.live/chrome-rss-ext/"/>
+    <id>http://www.1900.live/chrome-rss-ext/</id>
     <published>2017-08-14T02:12:37.000Z</published>
     <updated>2017-08-14T02:23:43.000Z</updated>
     
@@ -404,14 +404,14 @@
     </summary>
     
     
-      <category term=" - 设计" scheme="/tags/%E8%AE%BE%E8%AE%A1/"/>
+      <category term=" - 设计" scheme="http://www.1900.live/tags/%E8%AE%BE%E8%AE%A1/"/>
     
   </entry>
   
   <entry>
     <title>又做梦了</title>
-    <link href="/you-zuo-meng-liao/"/>
-    <id>/you-zuo-meng-liao/</id>
+    <link href="http://www.1900.live/you-zuo-meng-liao/"/>
+    <id>http://www.1900.live/you-zuo-meng-liao/</id>
     <published>2017-08-13T01:20:14.000Z</published>
     <updated>2017-08-13T01:37:50.000Z</updated>
     
@@ -431,14 +431,14 @@
     </summary>
     
     
-      <category term=" - 流水账" scheme="/tags/%E6%B5%81%E6%B0%B4%E8%B4%A6/"/>
+      <category term=" - 流水账" scheme="http://www.1900.live/tags/%E6%B5%81%E6%B0%B4%E8%B4%A6/"/>
     
   </entry>
   
   <entry>
     <title>梦魇</title>
-    <link href="/meng-yan/"/>
-    <id>/meng-yan/</id>
+    <link href="http://www.1900.live/meng-yan/"/>
+    <id>http://www.1900.live/meng-yan/</id>
     <published>2017-08-10T03:43:09.000Z</published>
     <updated>2017-08-10T04:04:04.000Z</updated>
     
@@ -456,14 +456,14 @@
     </summary>
     
     
-      <category term=" - 流水账" scheme="/tags/%E6%B5%81%E6%B0%B4%E8%B4%A6/"/>
+      <category term=" - 流水账" scheme="http://www.1900.live/tags/%E6%B5%81%E6%B0%B4%E8%B4%A6/"/>
     
   </entry>
   
   <entry>
     <title>ONE·单栏主题（0.4.0）</title>
-    <link href="/one-theme/"/>
-    <id>/one-theme/</id>
+    <link href="http://www.1900.live/one-theme/"/>
+    <id>http://www.1900.live/one-theme/</id>
     <published>2017-08-08T04:26:57.000Z</published>
     <updated>2017-10-28T03:19:05.000Z</updated>
     
@@ -481,14 +481,14 @@
     </summary>
     
     
-      <category term=" - 设计 - 分享" scheme="/tags/%E8%AE%BE%E8%AE%A1-%E5%88%86%E4%BA%AB/"/>
+      <category term=" - 设计 - 分享" scheme="http://www.1900.live/tags/%E8%AE%BE%E8%AE%A1-%E5%88%86%E4%BA%AB/"/>
     
   </entry>
   
   <entry>
     <title>黑鬼练成记</title>
-    <link href="/hei-gui-lian-cheng-ji/"/>
-    <id>/hei-gui-lian-cheng-ji/</id>
+    <link href="http://www.1900.live/hei-gui-lian-cheng-ji/"/>
+    <id>http://www.1900.live/hei-gui-lian-cheng-ji/</id>
     <published>2017-08-06T01:26:59.000Z</published>
     <updated>2017-08-06T02:10:51.000Z</updated>
     
@@ -506,7 +506,7 @@
     </summary>
     
     
-      <category term=" - 流水账" scheme="/tags/%E6%B5%81%E6%B0%B4%E8%B4%A6/"/>
+      <category term=" - 流水账" scheme="http://www.1900.live/tags/%E6%B5%81%E6%B0%B4%E8%B4%A6/"/>
     
   </entry>
   
