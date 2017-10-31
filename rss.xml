@@ -6,7 +6,7 @@
   <link href="/rss.xml" rel="self"/>
   
   <link href="http://www.1900.live/"/>
-  <updated>2017-10-29T13:18:22.181Z</updated>
+  <updated>2017-10-31T03:14:16.600Z</updated>
   <id>http://www.1900.live/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>页内锚点滚动修正及动画效果</title>
+    <link href="http://www.1900.live/page-linsk-fix-animation/"/>
+    <id>http://www.1900.live/page-linsk-fix-animation/</id>
+    <published>2017-10-31T02:49:07.000Z</published>
+    <updated>2017-10-31T03:14:16.600Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;昨天在写引用时发现了一个页面上的BUG，在页面上点击文章内的对应的引用数字会跳转到页脚对应的引用区。但是因为我页面的头部有一条固定高度为&lt;code&gt;50px&lt;/code&gt;的导航条，点击连接后虽然会跳转到引用区域，但是会被导航条遮住50px高度的内容。而且跳转没有过渡动画，很
+        
+      
+    
+    </summary>
+    
+    
+      <category term="流水账" scheme="http://www.1900.live/tags/%E6%B5%81%E6%B0%B4%E8%B4%A6/"/>
+    
+  </entry>
   
   <entry>
     <title>再见青春</title>
@@ -482,31 +506,6 @@
     
     
       <category term=" - 流水账" scheme="http://www.1900.live/tags/%E6%B5%81%E6%B0%B4%E8%B4%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ONE·单栏主题（0.4.0）</title>
-    <link href="http://www.1900.live/one-theme/"/>
-    <id>http://www.1900.live/one-theme/</id>
-    <published>2017-08-08T04:26:57.000Z</published>
-    <updated>2017-10-28T03:19:05.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;ONE&quot;&gt;&lt;a href=&quot;#ONE&quot; class=&quot;headerlink&quot; title=&quot;ONE&quot;&gt;&lt;/a&gt;ONE&lt;/h3&gt;&lt;p&gt;这个主题是基于casper主题国内版修改而来的一款单栏主题。&lt;/p&gt;
-&lt;p&gt;&lt;img
-        
-      
-    
-    </summary>
-    
-    
-      <category term=" - 设计 - 分享" scheme="http://www.1900.live/tags/%E8%AE%BE%E8%AE%A1-%E5%88%86%E4%BA%AB/"/>
     
   </entry>
   
