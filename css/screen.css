@@ -1208,9 +1208,15 @@ body:not(.post-template) .post-title {
 
 .post-content blockquote[id^=fn]{
     padding: 2px 5px;
-    color: #f5f8fa;
+    color: #23241f;
     margin:0px 5px;
     text-decoration: none;
+}
+
+.post-content blockquote[id^=fn] sup{
+    font-size:100%;
+    top:0px;
+    margin-left:15px;
 }
 
 .post-content blockquote[id=fn_1]:before{
@@ -3506,7 +3512,7 @@ body:not(.post-template) .post-title {
 
 .comment:after{
     display: block;
-    content: "\8BC4\8BBA\7CFB\7EDF\7531 fooleap.org \5F3A\529B\63D0\4F9B";
+    content: "\8BC4\8BBA\7CFB\7EDF\7531 fooleap.org\5F3A\529B\63D0\4F9B";
     border-radius: 5px;
     text-align: center;
     box-shadow: #FFF 0 0 0 5px;
