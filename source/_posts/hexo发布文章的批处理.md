@@ -12,7 +12,7 @@ image:
 
 hexo默认安装的时候会自动给你装上github的部署插件hexo-deployer-git[^1]，你可以在`_config.yml`里的`deploy`字段设置，我的设置如下。这里有个小技巧，我设置了`extend_dirs: source`这个配置想，在每次部署的时候插件会额外把source目录下的md文件全部备份一份进github里，避免以后出现电脑损坏文件丢失的情况。
 
-```
+```yaml
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy: 
@@ -23,7 +23,7 @@ deploy:
 
 这里设置好后打开git bash进入hexo的根目录。使用git需要先设置你的全球配置信息，执行如下操作即可完成
 
-```
+```html
 git config --global user.name "你的用户名"
 git config --global user.email 你的邮箱
 ```
@@ -34,7 +34,7 @@ git config --global user.email 你的邮箱
 
 七牛这边为了省事我安装了hexo-qiniu-sync[^2]插件，然后和github的发布插件一样设置需要同步的文件目录即可，我的设置如下。其中local_dir为你要同步的文件路径。
 
-```
+```yaml
 qiniu:
   offline: false
   sync: true
@@ -61,7 +61,7 @@ qiniu:
 
 如果以上的命令每次全部都要手动打开git bash执行也是比较繁琐的，所以我写了个批处理来批量执行这些命令。第一行的盘符和第二行的路径请自行根据你的hexo所在位置进行设置。
 
-```
+```html
 D:
 cd hexo
 call hexo clean
@@ -70,6 +70,6 @@ call hexo d
 call hexo qiniu s
 ```
 
-[^1]: https://github.com/gyk001/hexo-qiniu-sync
-[^2]: https://github.com/hexojs/hexo-deployer-git
+[^1]: 七牛同步插件：https://github.com/gyk001/hexo-qiniu-sync
+[^2]: github同步插件：https://github.com/hexojs/hexo-deployer-git
 

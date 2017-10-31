@@ -60,7 +60,7 @@
                 <a href="http://www.1900.live/auto-push-hexo/">1900</a>
                 <time class="post-date post-none" datetime="2017-10-28">2017-10-28</time>
                 <a href="http://www.1900.live/auto-push-hexo/#comment" class="post-comment post-none">有<span data-disqus-url="http://www.1900.live/auto-push-hexo/"></span>条评论</a>
-                <span class="post-date">总计598字</span>
+                <span class="post-date">总计609字</span>
                 <span class="post-date">预计2分钟读完</span>
 
             </section>
@@ -69,18 +69,20 @@
         <section class="post-content">
             <p>感觉hexo发布文章的流程略微繁琐，而且我这边在github pages上和qiniu均做了部署，尤其是qiniu那边我使用的是图形界面的同步工具。每次发布的时候要先打开git bash执行生成命令后在发布到github上，然后又要打开qiniu sync工具上传文件，太为繁琐。</p>
 <h4 id="部署到github-pages"><a href="#部署到github-pages" class="headerlink" title="部署到github pages"></a>部署到github pages</h4><p>hexo默认安装的时候会自动给你装上github的部署插件hexo-deployer-git<sup><a href="#fn_1" id="reffn_1">1</a></sup>，你可以在<code>_config.yml</code>里的<code>deploy</code>字段设置，我的设置如下。这里有个小技巧，我设置了<code>extend_dirs: source</code>这个配置想，在每次部署的时候插件会额外把source目录下的md文件全部备份一份进github里，避免以后出现电脑损坏文件丢失的情况。</p>
-<pre><code># Deployment
+<pre><code class="lang-yaml"># Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy: 
   type: git
   repo: https://github.com/QingShui23/blog.git
   extend_dirs: source
-</code></pre><p>这里设置好后打开git bash进入hexo的根目录。使用git需要先设置你的全球配置信息，执行如下操作即可完成</p>
-<pre><code>git config --global user.name &quot;你的用户名&quot;
+</code></pre>
+<p>这里设置好后打开git bash进入hexo的根目录。使用git需要先设置你的全球配置信息，执行如下操作即可完成</p>
+<pre><code class="lang-html">git config --global user.name &quot;你的用户名&quot;
 git config --global user.email 你的邮箱
-</code></pre><p>设置好之后输入<code>hexo d</code>即可进行发布。</p>
+</code></pre>
+<p>设置好之后输入<code>hexo d</code>即可进行发布。</p>
 <h4 id="七牛sync"><a href="#七牛sync" class="headerlink" title="七牛sync"></a>七牛sync</h4><p>七牛这边为了省事我安装了hexo-qiniu-sync<sup><a href="#fn_2" id="reffn_2">2</a></sup>插件，然后和github的发布插件一样设置需要同步的文件目录即可，我的设置如下。其中local_dir为你要同步的文件路径。</p>
-<pre><code>qiniu:
+<pre><code class="lang-yaml">qiniu:
   offline: false
   sync: true
   bucket: 空间
@@ -98,19 +100,21 @@ git config --global user.email 你的邮箱
     folder: js
   css:
     folder: css
-</code></pre><p>然后在git bash里面之行hexo qiniu s即可同步文件至七牛的云控件中，这个插件貌似还可使用本地图片，然后上传后自动给你把本地路径替换成上传后的url地址。不过看这挺复杂的，没有使用这个功能。</p>
+</code></pre>
+<p>然后在git bash里面之行hexo qiniu s即可同步文件至七牛的云控件中，这个插件貌似还可使用本地图片，然后上传后自动给你把本地路径替换成上传后的url地址。不过看这挺复杂的，没有使用这个功能。</p>
 <h4 id="批处理"><a href="#批处理" class="headerlink" title="批处理"></a>批处理</h4><p>如果以上的命令每次全部都要手动打开git bash执行也是比较繁琐的，所以我写了个批处理来批量执行这些命令。第一行的盘符和第二行的路径请自行根据你的hexo所在位置进行设置。</p>
-<pre><code>D:
+<pre><code class="lang-html">D:
 cd hexo
 call hexo clean
 call hexo g
 call hexo d
 call hexo qiniu s
-</code></pre><blockquote id="fn_1">
-<sup>1</sup>. <a href="https://github.com/gyk001/hexo-qiniu-sync" target="_blank" rel="external">https://github.com/gyk001/hexo-qiniu-sync</a><a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
+</code></pre>
+<blockquote id="fn_1">
+<sup>1</sup>. 七牛同步插件：<a href="https://github.com/gyk001/hexo-qiniu-sync" target="_blank" rel="external">https://github.com/gyk001/hexo-qiniu-sync</a><a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
 </blockquote>
 <blockquote id="fn_2">
-<sup>2</sup>. <a href="https://github.com/hexojs/hexo-deployer-git" target="_blank" rel="external">https://github.com/hexojs/hexo-deployer-git</a><a href="#reffn_2" title="Jump back to footnote [2] in the text."> &#8617;</a>
+<sup>2</sup>. github同步插件：<a href="https://github.com/hexojs/hexo-deployer-git" target="_blank" rel="external">https://github.com/hexojs/hexo-deployer-git</a><a href="#reffn_2" title="Jump back to footnote [2] in the text."> &#8617;</a>
 </blockquote>
 
         </section>
