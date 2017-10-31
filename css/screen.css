@@ -3506,7 +3506,7 @@ body:not(.post-template) .post-title {
 
 .comment:after{
     display: block;
-    content: "评论系统由fooleap.org强力提供";
+    content: "\u8bc4\u8bba\u7cfb\u7edf\u7531\u0066\u006f\u006f\u006c\u0065\u0061\u0070\u002e\u006f\u0072\u0067\u5f3a\u529b\u63d0\u4f9b";
     border-radius: 5px;
     text-align: center;
     box-shadow: #FFF 0 0 0 5px;
@@ -3832,7 +3832,7 @@ body:not(.post-template) .post-title {
 }
 
 .read-next-story .post:before {
-    content: "å‰ä¸€ç¯‡";
+    content: "\524D\4E00\7BC7";
     padding: 4px 10px 5px;
     text-transform: uppercase;
     font-size: 1.1rem;
@@ -3843,7 +3843,7 @@ body:not(.post-template) .post-title {
     transition: all 0.5s ease;
 }
 .read-next-story.prev .post:before {
-    content: "åŽä¸€ç¯‡";
+    content: "\540E\4E00\7BC7";
 }
 
 .read-next-story h2 {
