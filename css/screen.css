@@ -3506,7 +3506,7 @@ body:not(.post-template) .post-title {
 
 .comment:after{
     display: block;
-    content: "\u8bc4\u8bba\u7cfb\u7edf\u7531\u0066\u006f\u006f\u006c\u0065\u0061\u0070\u002e\u006f\u0072\u0067\u5f3a\u529b\u63d0\u4f9b";
+    content: "\8BC4\8BBA\7CFB\7EDF\7531 fooleap.org \5F3A\529B\63D0\4F9B";
     border-radius: 5px;
     text-align: center;
     box-shadow: #FFF 0 0 0 5px;
