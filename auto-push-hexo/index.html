@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>我道</title>
+    <meta name="description" content="我叫1900，普通男青年，学过三年编程。湖南人，现在在四川工作。2015年花了26天骑过一次318。有点伪文艺，喜欢比较玄学的东西。性格多变，疑似有人格分裂。" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="/css/screen.css" />
+    <link rel="stylesheet" href="/css/iDisqus.min.css">
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/monokai-sublime.css">
+
+
+</head>
+<body class="home-template" id="s-top">
+
+    <div class="nav">
+<div class="nav_body">
+  <div class="b_logo"> 
+      <a class="blog-logo" href="/"><img src="/img/logo-mini.png" alt="我道" /></a>
+  </div>
+  <div class="b_class"> 
+    <ul>
+    	
+    	<li class="nav-"><a class="" n_type="" href="/">首页</a></li>
+      
+    	<li class="nav-"><a class="" n_type="" href="/links.html">左邻</a></li>
+      
+    	<li class="nav-"><a class="" n_type="" href="/archive.html">归档</a></li>
+      
+    	<li class="nav-"><a class="" n_type="" href="/about.html">关于</a></li>
+      
+    	<li class="nav-"><a class="" n_type="" href="/rss.xml">订阅</a></li>
+      
+    </ul>
+  </div>
+</div>
+</div>
+    <div class="post-bg" style="background-image: url(http://cdn.4zen.top/default.jpg);"></div>
+
+<div class="site-wrapper" page-type="c-post">
+<main class="content" role="main">
+	<div class="post-toppic" style="">
+        <div class="picbox">
+          <img node-type="articleHeaderPic" src="http://cdn.4zen.top/default.jpg">
+        </div>
+     </div>
+    <article class="post">
+
+        <header class="post-header">
+            <h1 class="post-title">hexo发布文章的批处理</h1>
+            <section class="post-meta">
+                <img class="author-thumb" src="/img/avatar.png" alt="1900" nopin="nopin" />
+                <a href="http://www.1900.live/auto-push-hexo/">1900</a>
+                <time class="post-date post-none" datetime="2017-10-28">2017-10-28</time>
+                <a href="http://www.1900.live/auto-push-hexo/#comment" class="post-comment post-none">有<span data-disqus-url="http://www.1900.live/auto-push-hexo/"></span>条评论</a>
+                <span class="post-date">总计609字</span>
+                <span class="post-date">预计2分钟读完</span>
+
+            </section>
+        </header>
+
+        <section class="post-content">
+            <p>感觉hexo发布文章的流程略微繁琐，而且我这边在github pages上和qiniu均做了部署，尤其是qiniu那边我使用的是图形界面的同步工具。每次发布的时候要先打开git bash执行生成命令后在发布到github上，然后又要打开qiniu sync工具上传文件，太为繁琐。</p>
+<h4 id="部署到github-pages"><a href="#部署到github-pages" class="headerlink" title="部署到github pages"></a>部署到github pages</h4><p>hexo默认安装的时候会自动给你装上github的部署插件hexo-deployer-git<sup><a href="#fn_1" id="reffn_1">1</a></sup>，你可以在<code>_config.yml</code>里的<code>deploy</code>字段设置，我的设置如下。这里有个小技巧，我设置了<code>extend_dirs: source</code>这个配置想，在每次部署的时候插件会额外把source目录下的md文件全部备份一份进github里，避免以后出现电脑损坏文件丢失的情况。</p>
+<pre><code class="lang-yaml"># Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy: 
+  type: git
+  repo: https://github.com/QingShui23/blog.git
+  extend_dirs: source
+</code></pre>
+<p>这里设置好后打开git bash进入hexo的根目录。使用git需要先设置你的全球配置信息，执行如下操作即可完成</p>
+<pre><code class="lang-html">git config --global user.name &quot;你的用户名&quot;
+git config --global user.email 你的邮箱
+</code></pre>
+<p>设置好之后输入<code>hexo d</code>即可进行发布。</p>
+<h4 id="七牛sync"><a href="#七牛sync" class="headerlink" title="七牛sync"></a>七牛sync</h4><p>七牛这边为了省事我安装了hexo-qiniu-sync<sup><a href="#fn_2" id="reffn_2">2</a></sup>插件，然后和github的发布插件一样设置需要同步的文件目录即可，我的设置如下。其中local_dir为你要同步的文件路径。</p>
+<pre><code class="lang-yaml">qiniu:
+  offline: false
+  sync: true
+  bucket: 空间
+  access_key: 填入你七牛的ak
+  secret_key: 填入你七牛的sk
+  dirPrefix: 
+  urlPrefix: http://h.4zen.top/
+  up_host: http://upload.qiniu.com
+  local_dir: public
+  update_exist: true
+  image: 
+    folder: images
+    extend: 
+  js:
+    folder: js
+  css:
+    folder: css
+</code></pre>
+<p>然后在git bash里面之行hexo qiniu s即可同步文件至七牛的云控件中，这个插件貌似还可使用本地图片，然后上传后自动给你把本地路径替换成上传后的url地址。不过看这挺复杂的，没有使用这个功能。</p>
+<h4 id="批处理"><a href="#批处理" class="headerlink" title="批处理"></a>批处理</h4><p>如果以上的命令每次全部都要手动打开git bash执行也是比较繁琐的，所以我写了个批处理来批量执行这些命令。第一行的盘符和第二行的路径请自行根据你的hexo所在位置进行设置。</p>
+<pre><code class="lang-html">D:
+cd hexo
+call hexo clean
+call hexo g
+call hexo d
+call hexo qiniu s
+</code></pre>
+<blockquote id="fn_1">
+<sup>1</sup>. 七牛同步插件：<a href="https://github.com/gyk001/hexo-qiniu-sync" target="_blank" rel="external">https://github.com/gyk001/hexo-qiniu-sync</a><a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_2">
+<sup>2</sup>. github同步插件：<a href="https://github.com/hexojs/hexo-deployer-git" target="_blank" rel="external">https://github.com/hexojs/hexo-deployer-git</a><a href="#reffn_2" title="Jump back to footnote [2] in the text."> &#8617;</a>
+</blockquote>
+
+        </section>
+
+        <footer class="post-footer">
+
+            <figure class="author-image">
+                <a class="img" href="" style="background-image: url(/img/avatar.png)"><span class="hidden">的头像</span></a>
+            </figure>
+
+
+            <section class="author">
+                <h4><a href="#"></a></h4>
+
+                    <p>我叫1900，普通男青年，学过三年编程。湖南人，现在在四川工作。2015年花了26天骑过一次318。有点伪文艺，喜欢比较玄学的东西。性格多变，疑似有人格分裂。</p>
+
+                    <p>继续阅读此作者的<a href="http://www.4zen.top">更多文章</a>。</p>
+
+                <div class="author-meta">
+                    <span class="author-location icon-location">自贡</span>
+                    <span class="author-link icon-link"><a href="http://www.4zen.top">http://www.4zen.top</a></span> 
+                </div>
+            </section>
+
+
+            <section class="share">
+                <h4>分享此博文</h4>
+                <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+            </section>
+
+        </footer>
+	<div id="comment"></div>
+    </article>
+
+</main>
+    <aside class="read-next">
+        
+        <a class="read-next-story" style="background-image: url(http://cdn.4zen.top/imgs/171029/8HAbGkhJF3.jpg)" href="http://www.1900.live/by-youth/">
+            <section class="post">
+                <h2>再见青春</h2>
+                <p>昨天RNG2：3不敌skt，今天we1：3不敌SSG。每年这个时候的剧本似乎都是一模一样，从s3开始到现在，五年了，每一年都是满怀期待到最后的失望而归，我真的怕我到了三十岁还不能亲眼见一次LPL拿一次&hellip;</p>
+            </section>
+
+        </a>
+        
+        
+        <a class="read-next-story prev " style="background-image: url(http://cdn.4zen.top/image/b/70/b696419d965267259b4974ce9c07f.jpg)" href="http://www.1900.live/prot-one-4hexo/">
+            <section class="post">
+                <h2>主题ONE的移植</h2>
+                <p>又想喷hexo的文档了归功于现在主题的高度模块化，模版引擎简单易用，所以移植的过程其实来说还是比较简单了。不过实在是还想再喷一下hexo的文档，写的是真的烂，不不，应该说那是一坨shi，整个文档写的不&hellip;</p>
+            </section>
+        </a>
+        
+    </aside>
+
+    </div>
+
+    <div class="sidebar">  
+        <a href="#s-top" class="s-top" to="#s-top"><i class="fa fa-chevron-up" action-type="goTop"></i></a>
+    </div>
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="http://www.1900.live">我道</a> &copy; </section>
+        <section class="poweredby">Proudly published with <a href="https://hexo.io/"> ❤ Hexo</a> &amp; <a href="https://pages.github.com/">Github Pages</a></section>
+    </footer>
+
+    <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src='//unpkg.com/valine@1.1.7/dist/Valine.min.js'></script>
+    <script src="/js/plugin.js"></script>
+    <script src="/js/index.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,512 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>我道</title>
+  
+  
+  <link href="/rss.xml" rel="self"/>
+  
+  <link href="http://www.1900.live/"/>
+  <updated>2017-11-05T04:01:59.000Z</updated>
+  <id>http://www.1900.live/</id>
+  
+  <author>
+    <name>1900</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>荣耀</title>
+    <link href="http://www.1900.live/honor/"/>
+    <id>http://www.1900.live/honor/</id>
+    <published>2017-11-05T04:02:02.000Z</published>
+    <updated>2017-11-05T04:01:59.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;暴雪新的故事短片，看哭了…真是个不务正业的游戏公司呀。。。&lt;/p&gt;
+&lt;embed height=&quot;415&quot; width=&quot;544&quot; quality=&quot;high&quot; allowfullscreen=&quot;true&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term=" - 分享" scheme="http://www.1900.live/tags/%E5%88%86%E4%BA%AB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>页内锚点滚动修正及动画效果</title>
+    <link href="http://www.1900.live/page-linsk-fix-animation/"/>
+    <id>http://www.1900.live/page-linsk-fix-animation/</id>
+    <published>2017-10-31T02:49:07.000Z</published>
+    <updated>2017-10-31T03:35:37.463Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;昨天在写引用时发现了一个页面上的BUG，在页面上点击文章内的对应的引用数字会跳转到页脚对应的引用区。但是因为我页面的头部有一条固定高度为&lt;code&gt;50px&lt;/code&gt;的导航条，点击连接后虽然会跳转到引用区域，但是会被导航条遮住50px高度的内容。而且跳转没有过渡动画，很
+        
+      
+    
+    </summary>
+    
+    
+      <category term="流水账" scheme="http://www.1900.live/tags/%E6%B5%81%E6%B0%B4%E8%B4%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>再见青春</title>
+    <link href="http://www.1900.live/by-youth/"/>
+    <id>http://www.1900.live/by-youth/</id>
+    <published>2017-10-29T12:59:39.000Z</published>
+    <updated>2017-10-29T13:18:22.181Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;昨天RNG2：3不敌skt，今天we1：3不敌SSG。每年这个时候的剧本似乎都是一模一样，从s3开始到现在，五年了，每一年都是满怀期待到最后的失望而归，我真的怕我到了三十岁还不能亲眼见一次LPL拿一次世界冠军…&lt;/p&gt;
+&lt;p&gt;现在还记得洲际战看到LPL胜利时我胜利的像个小孩
+        
+      
+    
+    </summary>
+    
+    
+      <category term="流水账" scheme="http://www.1900.live/tags/%E6%B5%81%E6%B0%B4%E8%B4%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hexo发布文章的批处理</title>
+    <link href="http://www.1900.live/auto-push-hexo/"/>
+    <id>http://www.1900.live/auto-push-hexo/</id>
+    <published>2017-10-28T04:01:49.000Z</published>
+    <updated>2017-10-31T03:19:59.286Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;感觉hexo发布文章的流程略微繁琐，而且我这边在github pages上和qiniu均做了部署，尤其是qiniu那边我使用的是图形界面的同步工具。每次发布的时候要先打开git bash执行生成命令后在发布到github上，然后又要打开qiniu
+        
+      
+    
+    </summary>
+    
+    
+      <category term="流水账" scheme="http://www.1900.live/tags/%E6%B5%81%E6%B0%B4%E8%B4%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>主题ONE的移植</title>
+    <link href="http://www.1900.live/prot-one-4hexo/"/>
+    <id>http://www.1900.live/prot-one-4hexo/</id>
+    <published>2017-10-27T04:03:06.000Z</published>
+    <updated>2017-10-27T09:20:53.912Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;又想喷hexo的文档了&quot;&gt;&lt;a href=&quot;#又想喷hexo的文档了&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="流水账" scheme="http://www.1900.live/tags/%E6%B5%81%E6%B0%B4%E8%B4%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>解决hexo渲染的页面中有br的问题</title>
+    <link href="http://www.1900.live/rep-hexo-marked/"/>
+    <id>http://www.1900.live/rep-hexo-marked/</id>
+    <published>2017-10-26T04:20:48.000Z</published>
+    <updated>2017-10-26T04:51:31.100Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;hexo的markdown有毒&quot;&gt;&lt;a href=&quot;#hexo的markdown有毒&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="流水账" scheme="http://www.1900.live/tags/%E6%B5%81%E6%B0%B4%E8%B4%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>博客转用hexo</title>
+    <link href="http://www.1900.live/bo-ke-zhuan-yong-hexo/"/>
+    <id>http://www.1900.live/bo-ke-zhuan-yong-hexo/</id>
+    <published>2017-10-23T07:23:09.000Z</published>
+    <updated>2017-10-23T07:28:46.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;ghost用了很长一段时间了，不可否认ghost是个很棒的系统，真的能让我安下新来写东西。不似以前折腾wordpress那样，基本上所有的时间都花在折腾主题、插件等乱七八糟的东西上了。&lt;/p&gt;
+&lt;p&gt;
+        
+      
+    
+    </summary>
+    
+    
+      <category term=" - 流水账" scheme="http://www.1900.live/tags/%E6%B5%81%E6%B0%B4%E8%B4%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>追忆</title>
+    <link href="http://www.1900.live/zhui-yi/"/>
+    <id>http://www.1900.live/zhui-yi/</id>
+    <published>2017-10-09T12:33:41.000Z</published>
+    <updated>2017-10-20T10:18:15.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;国庆节被家里逼着出去相亲，本来是不打算去的，不过去的地方离柳州不远所以还是改变主意去了。柳州是个好地方，以前在柳州度过了人生中感觉是最充实活的最开心的三年。 
+        
+      
+    
+    </summary>
+    
+    
+      <category term=" - 流水账" scheme="http://www.1900.live/tags/%E6%B5%81%E6%B0%B4%E8%B4%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>近日的流水账</title>
+    <link href="http://www.1900.live/20170924/"/>
+    <id>http://www.1900.live/20170924/</id>
+    <published>2017-09-24T12:23:40.000Z</published>
+    <updated>2017-09-24T12:54:33.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;吃鸡&quot;&gt;&lt;a href=&quot;#吃鸡&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>喊麦和说唱</title>
+    <link href="http://www.1900.live/rap-hanmai/"/>
+    <id>http://www.1900.live/rap-hanmai/</id>
+    <published>2017-09-08T13:36:29.000Z</published>
+    <updated>2017-09-08T14:03:12.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;embed height=&quot;415&quot; width=&quot;544&quot; quality=&quot;high&quot; allowfullscreen=&quot;true&quot; type=&quot;application/x-shockwave-flash&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term=" - 分享 - 流水账" scheme="http://www.1900.live/tags/%E5%88%86%E4%BA%AB-%E6%B5%81%E6%B0%B4%E8%B4%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>她</title>
+    <link href="http://www.1900.live/ta/"/>
+    <id>http://www.1900.live/ta/</id>
+    <published>2017-09-04T06:35:57.000Z</published>
+    <updated>2017-09-04T09:08:41.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;昨天朋友问我说，难道到你到现在还没谈过恋爱？&lt;br&gt;我说有过初恋，他立马又问我那人是谁。&lt;/p&gt;
+&lt;p&gt;不过我没说。&lt;br&gt;因为我也不知道那算不算初恋&lt;br&gt;只是那晚相拥而眠此生怕是都忘不掉了… 
+        
+      
+    
+    </summary>
+    
+    
+      <category term=" - 说说" scheme="http://www.1900.live/tags/%E8%AF%B4%E8%AF%B4/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>桌面美化</title>
+    <link href="http://www.1900.live/zhuo-mian-mei-hua/"/>
+    <id>http://www.1900.live/zhuo-mian-mei-hua/</id>
+    <published>2017-08-30T09:14:54.000Z</published>
+    <updated>2017-08-30T11:17:46.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&amp;emsp;刚刚很偶然的又打开了&lt;a href=&quot;https://www.deviantart.com/popular-all-time/&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term=" - 流水账" scheme="http://www.1900.live/tags/%E6%B5%81%E6%B0%B4%E8%B4%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>凡人歌-张震岳&amp;热狗战队</title>
+    <link href="http://www.1900.live/fan-ren-ge-zhang-zhen-yue-re-gou-zhan-dui/"/>
+    <id>http://www.1900.live/fan-ren-ge-zhang-zhen-yue-re-gou-zhan-dui/</id>
+    <published>2017-08-24T15:54:43.000Z</published>
+    <updated>2017-08-29T06:12:29.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;embed height=&quot;415&quot; width=&quot;544&quot; quality=&quot;high&quot; allowfullscreen=&quot;true&quot; type=&quot;application/x-shockwave-flash&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term=" - 分享" scheme="http://www.1900.live/tags/%E5%88%86%E4%BA%AB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Life&#39;s A Struggle</title>
+    <link href="http://www.1900.live/lifes-a-struggle/"/>
+    <id>http://www.1900.live/lifes-a-struggle/</id>
+    <published>2017-08-20T03:29:00.000Z</published>
+    <updated>2017-08-21T11:26:18.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;embed height=&quot;415&quot; width=&quot;544&quot; quality=&quot;high&quot; allowfullscreen=&quot;true&quot; type=&quot;application/x-shockwave-flash&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term=" - 分享" scheme="http://www.1900.live/tags/%E5%88%86%E4%BA%AB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>无个性</title>
+    <link href="http://www.1900.live/wu-ge-xing/"/>
+    <id>http://www.1900.live/wu-ge-xing/</id>
+    <published>2017-08-19T12:22:36.000Z</published>
+    <updated>2017-08-19T12:44:40.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;这几年无作为的生活感觉消磨掉了我所有的斗志。每天都是应付式的完成手里的工作，自怨自艾的度过一天又一天。&lt;/p&gt;
+&lt;p&gt;家庭给的压力太大了，八年前18岁的我放弃了梦想，放弃了自己的工作来到这个泥潭，无个性的我不断的妥协、妥协再妥协，这一妥协就妥协到了今天。妥协了工作、妥协了爱
+        
+      
+    
+    </summary>
+    
+    
+      <category term=" - 流水账" scheme="http://www.1900.live/tags/%E6%B5%81%E6%B0%B4%E8%B4%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>鸡汤一碗</title>
+    <link href="http://www.1900.live/ji-tang-yi-wan/"/>
+    <id>http://www.1900.live/ji-tang-yi-wan/</id>
+    <published>2017-08-17T09:35:10.000Z</published>
+    <updated>2017-08-17T09:43:14.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;有时候发现自己挺迷茫的…，不太清楚自己的人生目，每次看鸡汤文就会有点拨云见日的感觉，虽然和吸毒一样一会儿就失效了————但是总能爽一会儿不是！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;你有没有筹划一下自己的生活？还是做一天和尚撞一天钟，一切随遇而
+        
+      
+    
+    </summary>
+    
+    
+      <category term=" - 流水账 - 分享" scheme="http://www.1900.live/tags/%E6%B5%81%E6%B0%B4%E8%B4%A6-%E5%88%86%E4%BA%AB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>梦魇3</title>
+    <link href="http://www.1900.live/meng-yan-3/"/>
+    <id>http://www.1900.live/meng-yan-3/</id>
+    <published>2017-08-17T01:11:21.000Z</published>
+    <updated>2017-08-17T01:36:07.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;…是真的又做梦了，这次是变态吃人犯的故事。&lt;/p&gt;
+&lt;p&gt;我醒来后迷糊着拿出手机努力的回想梦里的内容，把能记得起的地方全部先用文字写下，怕自己又忘记梦的内容。感觉自己要是文笔好一些没准还能做个恐怖故事小说大师。&lt;/p&gt;
+&lt;p&gt;梦里我的一个同事是个变态杀人犯，养了几条狗，我两
+        
+      
+    
+    </summary>
+    
+    
+      <category term=" - 流水账" scheme="http://www.1900.live/tags/%E6%B5%81%E6%B0%B4%E8%B4%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>显卡支架</title>
+    <link href="http://www.1900.live/graphics-card-holder/"/>
+    <id>http://www.1900.live/graphics-card-holder/</id>
+    <published>2017-08-15T16:34:08.000Z</published>
+    <updated>2017-08-15T16:52:08.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;之前发现电脑只要轻轻一碰就会出现死机黑屏的现象，自己测试了很多次发现是显卡的锅。百度了下发现蛮多人都有这种情况的。先卡过重一碰就容易松动导致黑屏，解决方案只有加装显卡支架。&lt;/p&gt;
+&lt;p&gt;淘宝了一波发现基本上归为两种：千斤顶和卡式支架。千斤顶外观比较丑，价格不知道为什么也比
+        
+      
+    
+    </summary>
+    
+    
+      <category term=" - 设计 - 流水账" scheme="http://www.1900.live/tags/%E8%AE%BE%E8%AE%A1-%E6%B5%81%E6%B0%B4%E8%B4%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>忽然想写一个chrome扩展</title>
+    <link href="http://www.1900.live/chrome-rss-ext/"/>
+    <id>http://www.1900.live/chrome-rss-ext/</id>
+    <published>2017-08-14T02:12:37.000Z</published>
+    <updated>2017-08-14T02:23:43.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;因为现在RSS的没落，感觉在chrome的在线商店几乎看不到很出色的订阅插件。&lt;/p&gt;
+&lt;p&gt;现在提供订阅服务的插件如果想要同步服务基本上都是要收费的（我目前还没找到免费的，可以同步的插件），&lt;br&gt;之前有使用一款叫feed
+        
+      
+    
+    </summary>
+    
+    
+      <category term=" - 设计" scheme="http://www.1900.live/tags/%E8%AE%BE%E8%AE%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>又做梦了</title>
+    <link href="http://www.1900.live/you-zuo-meng-liao/"/>
+    <id>http://www.1900.live/you-zuo-meng-liao/</id>
+    <published>2017-08-13T01:20:14.000Z</published>
+    <updated>2017-08-13T01:37:50.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;这次是爱情故事…&lt;/p&gt;
+&lt;p&gt;我很想把这个故事写下来，但是很可惜，我越想记住越记不住…每过一秒钟我都忘掉很多…。难道是不同之前的那个噩梦，给我的刺激太小了吗？&lt;/p&gt;
+&lt;p&gt;▼ 喜欢——张悬&lt;/p&gt;
+&lt;embed height=&quot;415&quot; width=&quot;544&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term=" - 流水账" scheme="http://www.1900.live/tags/%E6%B5%81%E6%B0%B4%E8%B4%A6/"/>
+    
+  </entry>
+  
+</feed>
