@@ -1,7 +1,7 @@
 ---
 title: windows1709开任务管理器卡死
 tags: ' - 分享'
-image: 'http://cdn.4zen.top/image/b/12/5f5d4e245d06d4c93030f0c93b023.jpg'
+image: 'http://cdn.4zen.top/imgs/171106/iCgIA3ebk9.jpg?imageslim'
 permalink: windows-1709-bug
 id: 33
 updated: '2017-11-06 16:43:31'
