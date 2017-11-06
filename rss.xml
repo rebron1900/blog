@@ -6,7 +6,7 @@
   <link href="/rss.xml" rel="self"/>
   
   <link href="http://www.1900.live/"/>
-  <updated>2017-11-05T07:59:56.000Z</updated>
+  <updated>2017-11-06T08:43:31.000Z</updated>
   <id>http://www.1900.live/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>windows1709开任务管理器卡死</title>
+    <link href="http://www.1900.live/windows-1709-bug/"/>
+    <id>http://www.1900.live/windows-1709-bug/</id>
+    <published>2017-11-06T08:43:35.000Z</published>
+    <updated>2017-11-06T08:43:31.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;前些windows有了一个大更新，我当时点了几次都没更新成功后来发现没更新也没啥影响，当时就没有再管这个更新了。昨天强迫症发作，看到通知中心说有新的更新，让我重启电脑更新，受不了就点了一下，重启后发现还是没更新成功。后来打开设置面板手动点了一下更新按钮后发现能正常更新了。这
+        
+      
+    
+    </summary>
+    
+    
+      <category term=" - 分享" scheme="http://www.1900.live/tags/%E5%88%86%E4%BA%AB/"/>
+    
+  </entry>
   
   <entry>
     <title>英雄联盟音乐会</title>
@@ -479,31 +503,6 @@
     
     
       <category term=" - 设计 - 流水账" scheme="http://www.1900.live/tags/%E8%AE%BE%E8%AE%A1-%E6%B5%81%E6%B0%B4%E8%B4%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>忽然想写一个chrome扩展</title>
-    <link href="http://www.1900.live/chrome-rss-ext/"/>
-    <id>http://www.1900.live/chrome-rss-ext/</id>
-    <published>2017-08-14T02:12:37.000Z</published>
-    <updated>2017-08-14T02:23:43.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;因为现在RSS的没落，感觉在chrome的在线商店几乎看不到很出色的订阅插件。&lt;/p&gt;
-&lt;p&gt;现在提供订阅服务的插件如果想要同步服务基本上都是要收费的（我目前还没找到免费的，可以同步的插件），&lt;br&gt;之前有使用一款叫feed
-        
-      
-    
-    </summary>
-    
-    
-      <category term=" - 设计" scheme="http://www.1900.live/tags/%E8%AE%BE%E8%AE%A1/"/>
     
   </entry>
   
