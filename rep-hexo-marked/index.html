@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>我道</title>
+    <meta name="description" content="我叫1900，普通男青年，学过三年编程。湖南人，现在在四川工作。2015年花了26天骑过一次318。有点伪文艺，喜欢比较玄学的东西。性格多变，疑似有人格分裂。" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="/css/screen.css" />
+    <link rel="stylesheet" href="/css/iDisqus.min.css">
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/monokai-sublime.css">
+
+
+</head>
+<body class="home-template" id="s-top">
+
+    <div class="nav">
+<div class="nav_body">
+  <div class="b_logo"> 
+      <a class="blog-logo" href="/"><img src="/img/logo-mini.png" alt="我道" /></a>
+  </div>
+  <div class="b_class"> 
+    <ul>
+    	
+    	<li class="nav-"><a class="" n_type="" href="/">首页</a></li>
+      
+    	<li class="nav-"><a class="" n_type="" href="/links.html">左邻</a></li>
+      
+    	<li class="nav-"><a class="" n_type="" href="/archive.html">归档</a></li>
+      
+    	<li class="nav-"><a class="" n_type="" href="/about.html">关于</a></li>
+      
+    	<li class="nav-"><a class="" n_type="" href="/rss.xml">订阅</a></li>
+      
+    </ul>
+  </div>
+</div>
+</div>
+    <div class="post-bg" style="background-image: url(http://cdn.4zen.top/imgs/171026/ega7GBJLhl.jpg);"></div>
+
+<div class="site-wrapper" page-type="c-post">
+<main class="content" role="main">
+	<div class="post-toppic" style="">
+        <div class="picbox">
+          <img node-type="articleHeaderPic" src="http://cdn.4zen.top/imgs/171026/ega7GBJLhl.jpg">
+        </div>
+     </div>
+    <article class="post">
+
+        <header class="post-header">
+            <h1 class="post-title">解决hexo渲染的页面中有br的问题</h1>
+            <section class="post-meta">
+                <img class="author-thumb" src="/img/avatar.png" alt="1900" nopin="nopin" />
+                <a href="http://www.1900.live/rep-hexo-marked/">1900</a>
+                <time class="post-date post-none" datetime="2017-10-26">2017-10-26</time>
+                <a href="http://www.1900.live/rep-hexo-marked/#comment" class="post-comment post-none">有<span data-disqus-url="http://www.1900.live/rep-hexo-marked/"></span>条评论</a>
+                <span class="post-date">总计406字</span>
+                <span class="post-date">预计2分钟读完</span>
+
+            </section>
+        </header>
+
+        <section class="post-content">
+            <h3 id="hexo的markdown有毒"><a href="#hexo的markdown有毒" class="headerlink" title="hexo的markdown有毒"></a>hexo的markdown有毒</h3><p>今天在移植主题和以前的一些页面数据的时候发现hexo生成的页面文件会出现很多奇怪的<code>&lt;br&gt;</code>符号。搞的我之前在ghost上写的很多内嵌有html的代码都出现了这个问题</p>
+<p><img src="http://cdn.4zen.top/imgs/171026/g8D46FFI1I.png?imageslim" alt="排版混乱"></p>
+<p>我自己估摸着是markdown的解析出了问题，之后在知呼的<a href="https://www.zhihu.com/question/22524345" target="_blank" rel="external">markdown回车换行？</a>中发现有网友解答过这个问题。</p>
+<p><img src="http://cdn.4zen.top/imgs/171026/FKC22eA8LG.png?imageslim" alt="mark"></p>
+<p>hexo支持的md语法规格为Github Flavored Markdown的方案，好像不是标准的md解析方案，所以在其他编辑器上写的文章会出现奇怪的问题。<br>后来我尝试按照第二楼朋友的回答解决这个问题，发现我完全不知道代码该怎么放到hexo的markdown里，后来想到一个解决办法就是干掉hexo默认的md解析器，使用一个支持双空格换行的编辑器..</p>
+<p>在github上找到了<a href="https://github.com/sun11/hexo-renderer-kramed" target="_blank" rel="external"><strong>hexo-renderer-kramed</strong></a>这个解析器，先写在原来的解析器，再安装新的(如果命令行删不掉就直接去<code>node_modules</code>里删掉名称为<code>hexo-renderer-marked</code>的文件夹就可以了)</p>
+<pre><code>$ npm uninstall hexo-renderer-marked --save
+$ npm install hexo-renderer-kramed --save
+</code></pre><p>安装好后在hexo根目录下的<code>_config.yml</code>里增加如下配置段后即可解决这个问题。</p>
+<pre><code>kramed:
+  gfm: true
+  pedantic: false
+  sanitize: false
+  tables: true
+  breaks: true
+  smartLists: true
+  smartypants: true
+</code></pre><p>有一件挺崩溃的事情——在我做完这一切后hexo群里的一个朋友跟我原生的编辑器也可以解决这个换行问题，只需要在<code>_config.yml</code>里增加如下配置即可</p>
+<pre><code>marked: 
+  breaks: false
+</code></pre><p><img src="http://cdn.4zen.top/imgs/171026/AKjE57hGf4.png?imageslim" alt="是真的难受呀...."></p>
+
+        </section>
+
+        <footer class="post-footer">
+
+            <figure class="author-image">
+                <a class="img" href="" style="background-image: url(/img/avatar.png)"><span class="hidden">的头像</span></a>
+            </figure>
+
+
+            <section class="author">
+                <h4><a href="#"></a></h4>
+
+                    <p>我叫1900，普通男青年，学过三年编程。湖南人，现在在四川工作。2015年花了26天骑过一次318。有点伪文艺，喜欢比较玄学的东西。性格多变，疑似有人格分裂。</p>
+
+                    <p>继续阅读此作者的<a href="http://www.4zen.top">更多文章</a>。</p>
+
+                <div class="author-meta">
+                    <span class="author-location icon-location">自贡</span>
+                    <span class="author-link icon-link"><a href="http://www.4zen.top">http://www.4zen.top</a></span> 
+                </div>
+            </section>
+
+
+            <section class="share">
+                <h4>分享此博文</h4>
+                <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+            </section>
+
+        </footer>
+	<div id="comment"></div>
+    </article>
+
+</main>
+    <aside class="read-next">
+        
+        <a class="read-next-story" style="background-image: url(http://cdn.4zen.top/image/b/70/b696419d965267259b4974ce9c07f.jpg)" href="http://www.1900.live/prot-one-4hexo/">
+            <section class="post">
+                <h2>主题ONE的移植</h2>
+                <p>又想喷hexo的文档了归功于现在主题的高度模块化，模版引擎简单易用，所以移植的过程其实来说还是比较简单了。不过实在是还想再喷一下hexo的文档，写的是真的烂，不不，应该说那是一坨shi，整个文档写的不&hellip;</p>
+            </section>
+
+        </a>
+        
+        
+        <a class="read-next-story prev " style="background-image: url(http://cdn.4zen.top/image/1/77/01ae934f58944f9b10ad9b8fe21d0.jpg)" href="http://www.1900.live/bo-ke-zhuan-yong-hexo/">
+            <section class="post">
+                <h2>博客转用hexo</h2>
+                <p>ghost用了很长一段时间了，不可否认ghost是个很棒的系统，真的能让我安下新来写东西。不似以前折腾wordpress那样，基本上所有的时间都花在折腾主题、插件等乱七八糟的东西上了。
+ 我之前的gh&hellip;</p>
+            </section>
+        </a>
+        
+    </aside>
+
+    </div>
+
+    <div class="sidebar">  
+        <a href="#s-top" class="s-top" to="#s-top"><i class="fa fa-chevron-up" action-type="goTop"></i></a>
+    </div>
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="http://www.1900.live">我道</a> &copy; </section>
+        <section class="poweredby">Proudly published with <a href="https://hexo.io/"> ❤ Hexo</a> &amp; <a href="https://pages.github.com/">Github Pages</a></section>
+    </footer>
+
+    <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src='//unpkg.com/valine@1.1.7/dist/Valine.min.js'></script>
+    <script src="/js/plugin.js"></script>
+    <script src="/js/index.js"></script>
+
+
+</body>
+</html>

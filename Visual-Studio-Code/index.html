@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>我道</title>
+    <meta name="description" content="我叫1900，普通男青年，学过三年编程。湖南人，现在在四川工作。2015年花了26天骑过一次318。有点伪文艺，喜欢比较玄学的东西。性格多变，疑似有人格分裂。" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="/css/screen.css" />
+    <link rel="stylesheet" href="/css/iDisqus.min.css">
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/monokai-sublime.css">
+
+
+</head>
+<body class="home-template" id="s-top">
+
+    <div class="nav">
+<div class="nav_body">
+  <div class="b_logo"> 
+      <a class="blog-logo" href="/"><img src="/img/logo-mini.png" alt="我道" /></a>
+  </div>
+  <div class="b_class"> 
+    <ul>
+    	
+    	<li class="nav-"><a class="" n_type="" href="/">首页</a></li>
+      
+    	<li class="nav-"><a class="" n_type="" href="/links.html">左邻</a></li>
+      
+    	<li class="nav-"><a class="" n_type="" href="/archive.html">归档</a></li>
+      
+    	<li class="nav-"><a class="" n_type="" href="/about.html">关于</a></li>
+      
+    	<li class="nav-"><a class="" n_type="" href="/rss.xml">订阅</a></li>
+      
+    </ul>
+  </div>
+</div>
+</div>
+    <div class="post-bg" style="background-image: url(http://cdn.4zen.top/imgs/171109/9KD2igAD6I.jpg?imageslim);"></div>
+
+<div class="site-wrapper" page-type="c-post">
+<main class="content" role="main">
+	<div class="post-toppic" style="">
+        <div class="picbox">
+          <img node-type="articleHeaderPic" src="http://cdn.4zen.top/imgs/171109/9KD2igAD6I.jpg?imageslim">
+        </div>
+     </div>
+    <article class="post">
+
+        <header class="post-header">
+            <h1 class="post-title">瑞士军刀般的编辑器——Visual Studio Code</h1>
+            <section class="post-meta">
+                <img class="author-thumb" src="/img/avatar.png" alt="1900" nopin="nopin" />
+                <a href="http://www.1900.live/Visual-Studio-Code/">1900</a>
+                <time class="post-date post-none" datetime="2017-11-09">2017-11-09</time>
+                <a href="http://www.1900.live/Visual-Studio-Code/#comment" class="post-comment post-none">有<span data-disqus-url="http://www.1900.live/Visual-Studio-Code/"></span>条评论</a>
+                <span class="post-date">总计765字</span>
+                <span class="post-date">预计3分钟读完</span>
+
+            </section>
+        </header>
+
+        <section class="post-content">
+            <h4 id="Sublime-text"><a href="#Sublime-text" class="headerlink" title="Sublime text"></a>Sublime text</h4><p>之前一直使用的是<code>sublime text</code><sup><a href="#fn_1" id="reffn_1">1</a></sup>这款编辑器，软件体积小而且速度很快。但是近期在使用时发现侧边的树形导航栏中的md文件过多时会出现拖动滚动条卡动的情况，而且编写markdown时即使安装了预览插件也必须要另外打开浏览器并配合多个组件才能进行预览，着实比较麻烦。而我又是个比较折腾的人，有一点让我觉得不舒服的地方都会想着有没有其他办法解决这个问题，解决不了就想着是不是该换工具了~~😄。</p>
+<h4 id="Atom"><a href="#Atom" class="headerlink" title="Atom"></a>Atom</h4><p>后来无意间发现了Github推出的<code>Atom</code><sup><a href="#fn_2" id="reffn_2">2</a></sup>这款工具，也是类似Sublime text的一款编程人员用的文本编辑器。Atom就解决了这些上段中所说到的一些问题，markdown可以通过插件在程序中直接预览，而且侧边拖动还算顺畅。但是使用过程中发现访问插件库很慢，而且貌似需要梯子才可以，我在使用梯子的情况下都时常出现无法加载在线插件列表的情况…，而且软件体积很大，启动有些缓慢…。不过可能是我使用的时间不够不把，虽然安装了这个但是用起来始终觉得不舒服，即便安装后用了几次后就搁置了，还是使用的sublime text来编写markdown。</p>
+<h4 id="Visual-Studio-Code"><a href="#Visual-Studio-Code" class="headerlink" title="Visual-Studio-Code"></a>Visual-Studio-Code</h4><p>缘，妙不可言…，我很想在这里引用这句话，今天在某个it群众无意间收到了一个群友的安利。所以，我又遇到了微软，又遇到了他们的一款新产品<code>Visual-Studio-Code</code><sup><a href="#fn_3" id="reffn_3">3</a></sup>，一款免费高效的文本编辑器。他的主要竞争对手就是atom、sublime text这些软件。</p>
+<p>我其实对微软的这个系列产品有很深的感情，因为我以前学的是C#，读书的时候使用的一直就是visual studio的产品，从VS2002一直到VS2010，可以说它陪伴我度过了我做为程序员的美好时光。方便的项目管理、调试等功能，我觉得Visual stuido一直是我心中最强大的IDE，但是还学过一段时间java，用过eclipse做开发，一对比之下真的觉得VS简直就是IDE中的白富美级别的美女…。</p>
+<p>果然这次的VSCode也没让我失望，所有现在IT人员心中理想编辑器的功能几乎都有</p>
+<ol>
+<li>强大的目录管理</li>
+<li>支持丰富的语言</li>
+<li>丰富的插件库</li>
+<li>界面可自定义</li>
+<li>集成git</li>
+<li>强大的智能提示</li>
+<li>等等…</li>
+</ol>
+<p>我使用的时间还不长，而且我现在也不是职业的IT人员了，很多强大的功能我也用不上就不一一说了，只能说VS的ied还是在我心目中最牛的那个位置。</p>
+<hr>
+<blockquote id="fn_1">
+<sup>1</sup>. <a href="http://www.sublimetext.com/" target="_blank" rel="external">http://www.sublimetext.com/</a>  “Sublime Text3”<a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_2">
+<sup>2</sup>. www.atom.io  “Atom”<a href="#reffn_2" title="Jump back to footnote [2] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_3">
+<sup>3</sup>. <a href="https://code.visualstudio.com/" target="_blank" rel="external">https://code.visualstudio.com/</a>  “Visual-Studio-Code”<a href="#reffn_3" title="Jump back to footnote [3] in the text."> &#8617;</a>
+</blockquote>
+
+        </section>
+
+        <footer class="post-footer">
+
+            <figure class="author-image">
+                <a class="img" href="" style="background-image: url(/img/avatar.png)"><span class="hidden">的头像</span></a>
+            </figure>
+
+
+            <section class="author">
+                <h4><a href="#"></a></h4>
+
+                    <p>我叫1900，普通男青年，学过三年编程。湖南人，现在在四川工作。2015年花了26天骑过一次318。有点伪文艺，喜欢比较玄学的东西。性格多变，疑似有人格分裂。</p>
+
+                    <p>继续阅读此作者的<a href="http://www.4zen.top">更多文章</a>。</p>
+
+                <div class="author-meta">
+                    <span class="author-location icon-location">自贡</span>
+                    <span class="author-link icon-link"><a href="http://www.4zen.top">http://www.4zen.top</a></span> 
+                </div>
+            </section>
+
+
+            <section class="share">
+                <h4>分享此博文</h4>
+                <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+            </section>
+
+        </footer>
+	<div id="comment"></div>
+    </article>
+
+</main>
+    <aside class="read-next">
+        
+        
+        <a class="read-next-story prev " style="background-image: url(http://cdn.4zen.top/imgs/171106/iCgIA3ebk9.jpg?imageslim)" href="http://www.1900.live/windows-1709-bug/">
+            <section class="post">
+                <h2>windows1709开任务管理器卡死</h2>
+                <p>前些windows有了一个大更新，我当时点了几次都没更新成功后来发现没更新也没啥影响，当时就没有再管这个更新了。昨天强迫症发作，看到通知中心说有新的更新，让我重启电脑更新，受不了就点了一下，重启后发现&hellip;</p>
+            </section>
+        </a>
+        
+    </aside>
+
+    </div>
+
+    <div class="sidebar">  
+        <a href="#s-top" class="s-top" to="#s-top"><i class="fa fa-chevron-up" action-type="goTop"></i></a>
+    </div>
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="http://www.1900.live">我道</a> &copy; </section>
+        <section class="poweredby">Proudly published with <a href="https://hexo.io/"> ❤ Hexo</a> &amp; <a href="https://pages.github.com/">Github Pages</a></section>
+    </footer>
+
+    <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src='//unpkg.com/valine@1.1.7/dist/Valine.min.js'></script>
+    <script src="/js/plugin.js"></script>
+    <script src="/js/index.js"></script>
+
+
+</body>
+</html>

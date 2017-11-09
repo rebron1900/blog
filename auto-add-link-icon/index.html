@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>我道</title>
+    <meta name="description" content="我叫1900，普通男青年，学过三年编程。湖南人，现在在四川工作。2015年花了26天骑过一次318。有点伪文艺，喜欢比较玄学的东西。性格多变，疑似有人格分裂。" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="/css/screen.css" />
+    <link rel="stylesheet" href="/css/iDisqus.min.css">
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/monokai-sublime.css">
+
+
+</head>
+<body class="home-template" id="s-top">
+
+    <div class="nav">
+<div class="nav_body">
+  <div class="b_logo"> 
+      <a class="blog-logo" href="/"><img src="/img/logo-mini.png" alt="我道" /></a>
+  </div>
+  <div class="b_class"> 
+    <ul>
+    	
+    	<li class="nav-"><a class="" n_type="" href="/">首页</a></li>
+      
+    	<li class="nav-"><a class="" n_type="" href="/links.html">左邻</a></li>
+      
+    	<li class="nav-"><a class="" n_type="" href="/archive.html">归档</a></li>
+      
+    	<li class="nav-"><a class="" n_type="" href="/about.html">关于</a></li>
+      
+    	<li class="nav-"><a class="" n_type="" href="/rss.xml">订阅</a></li>
+      
+    </ul>
+  </div>
+</div>
+</div>
+    <div class="post-bg" style="background-image: url(http://cdn.4zen.top/image/1/a9/4b602043de513241ab9722a614d5d.jpg);"></div>
+
+<div class="site-wrapper" page-type="c-post">
+<main class="content" role="main">
+	<div class="post-toppic" style="">
+        <div class="picbox">
+          <img node-type="articleHeaderPic" src="http://cdn.4zen.top/image/1/a9/4b602043de513241ab9722a614d5d.jpg">
+        </div>
+     </div>
+    <article class="post">
+
+        <header class="post-header">
+            <h1 class="post-title">文章内链接自动增加网站icon</h1>
+            <section class="post-meta">
+                <img class="author-thumb" src="/img/avatar.png" alt="1900" nopin="nopin" />
+                <a href="http://www.1900.live/auto-add-link-icon/">1900</a>
+                <time class="post-date post-none" datetime="2016-12-05">2016-12-05</time>
+                <a href="http://www.1900.live/auto-add-link-icon/#comment" class="post-comment post-none">有<span data-disqus-url="http://www.1900.live/auto-add-link-icon/"></span>条评论</a>
+                <span class="post-date">总计445字</span>
+                <span class="post-date">预计2分钟读完</span>
+
+            </section>
+        </header>
+
+        <section class="post-content">
+            <h3 id="为什么做这个"><a href="#为什么做这个" class="headerlink" title="为什么做这个"></a>为什么做这个</h3><p>之前使用<a href="https://luolei.org" target="_blank" rel="external">罗磊</a>的一款名为<a href="https://luolei.org/a-ghost-theme-yasuko-with-story/" target="_blank" rel="external">【Yasuko】</a>的主题时发现了一个很有意思的功能：文章内的链接能自动增加来源站的icon。效果大概是下面这样，如果你现在来看这篇文章应该已经实现好这个功能了。我感觉这个功能能给单调的文章增添一些活力，也能给那些来源站做做宣传=w=，所以便想着在现在的这个主题上增加这个功能。<br><img src="http://cdn.4zen.top/image/c/ef/c0b1b43e675ba9f4c37486223284e.png" alt=""></p>
+<h3 id="实现过程"><a href="#实现过程" class="headerlink" title="实现过程"></a>实现过程</h3><p>我查看了一下罗磊写的相关代码，发现他是单独做了一些判断，并且使用的是预设好的webfont字体做的图标，这样更为稳定，也更快速，但是缺陷就是大部分不在清单内的网站并不会显示网站图标。凑巧我知道一个黑科技，以前在使用wordpress的时候用过<a href="http://c7sky.com/" target="_blank" rel="external">小影</a>的<a href="http://c7sky.com/wordpress-theme-c7v5.html" target="_blank" rel="external">C7V5</a>的时候发现他做的<a href="http://c7sky.com/links" target="_blank" rel="external">友链页面</a>便可以自动获取网站的icon用作展示，发现只是一个第三方的获取网站icon的工具：//api.byi.pw/favicon?url=。你只需要把你想要获取icon的网站的地址放在url后输入浏览器便能轻松获取网站图标了。</p>
+<p>有了这个黑科技实现这个功能就更加简单了，用jquery获取文章内容主体内的所有a链接，并用echo函数遍历每一个链接对象后再单独设置每个链接的css即可。</p>
+<pre><code>$(&quot;.content a&quot;).each(function(){
+        $(this).css({&quot;padding-left&quot;:&quot;20px&quot;,&quot;margin&quot;:&quot;0px 5px&quot;,&quot;background&quot;:&quot;url(//api.byi.pw/favicon?url=&quot;+this.hostname+&quot;)  no-repeat&quot;});
+    })
+</code></pre><p>敲完代码，打开页面刷新后再看看。是不是既简单、效果又酷炫？哈哈，希望能帮到你。</p>
+
+        </section>
+
+        <footer class="post-footer">
+
+            <figure class="author-image">
+                <a class="img" href="" style="background-image: url(/img/avatar.png)"><span class="hidden">的头像</span></a>
+            </figure>
+
+
+            <section class="author">
+                <h4><a href="#"></a></h4>
+
+                    <p>我叫1900，普通男青年，学过三年编程。湖南人，现在在四川工作。2015年花了26天骑过一次318。有点伪文艺，喜欢比较玄学的东西。性格多变，疑似有人格分裂。</p>
+
+                    <p>继续阅读此作者的<a href="http://www.4zen.top">更多文章</a>。</p>
+
+                <div class="author-meta">
+                    <span class="author-location icon-location">自贡</span>
+                    <span class="author-link icon-link"><a href="http://www.4zen.top">http://www.4zen.top</a></span> 
+                </div>
+            </section>
+
+
+            <section class="share">
+                <h4>分享此博文</h4>
+                <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+            </section>
+
+        </footer>
+	<div id="comment"></div>
+    </article>
+
+</main>
+    <aside class="read-next">
+        
+        <a class="read-next-story" style="background-image: url(http://cdn.4zen.top/image/e/9f/249b334a2901085a91a87f9baeb54.jpg)" href="http://www.1900.live/you-name-and-faded-mad/">
+            <section class="post">
+                <h2>你的名字&Faded</h2>
+                <p>
+《你的名字》新海诚的作品我搞的清楚看过的大概就是《秒速五厘米》和《言叶之庭》了把？哦，对了，还有《追逐繁星的孩子》。《秒速》的记忆有点模糊了，依稀记得是五六年看的了把，现在只记得那些漫天飞舞的樱花了&hellip;</p>
+            </section>
+
+        </a>
+        
+        
+        <a class="read-next-story prev " style="background-image: url(http://cdn.4zen.top/image/b/3e/aed1edab0e38c3ae2a00a76ef3a0c.jpg)" href="http://www.1900.live/ajaxed-load-duoshuo-count/">
+            <section class="post">
+                <h2>ajax加载后多说评论数的加载</h2>
+                <p>
+前言ghost的系统并没有自带评论系统，所以基本大家使用的都是第三方的评论组件。目前提供这种服务的有：
+
+Disqus：目前在墙外，基本上不会科学上网的话是加载不出来的。
+多说：就我感觉应该是国内目&hellip;</p>
+            </section>
+        </a>
+        
+    </aside>
+
+    </div>
+
+    <div class="sidebar">  
+        <a href="#s-top" class="s-top" to="#s-top"><i class="fa fa-chevron-up" action-type="goTop"></i></a>
+    </div>
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="http://www.1900.live">我道</a> &copy; </section>
+        <section class="poweredby">Proudly published with <a href="https://hexo.io/"> ❤ Hexo</a> &amp; <a href="https://pages.github.com/">Github Pages</a></section>
+    </footer>
+
+    <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src='//unpkg.com/valine@1.1.7/dist/Valine.min.js'></script>
+    <script src="/js/plugin.js"></script>
+    <script src="/js/index.js"></script>
+
+
+</body>
+</html>
