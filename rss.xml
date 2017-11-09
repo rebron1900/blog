@@ -6,7 +6,7 @@
   <link href="/rss.xml" rel="self"/>
   
   <link href="http://www.1900.live/"/>
-  <updated>2017-11-06T08:43:31.000Z</updated>
+  <updated>2017-11-09T04:55:12.000Z</updated>
   <id>http://www.1900.live/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>瑞士军刀般的编辑器——Visual Studio Code</title>
+    <link href="http://www.1900.live/Visual-Studio-Code/"/>
+    <id>http://www.1900.live/Visual-Studio-Code/</id>
+    <published>2017-11-09T04:55:17.000Z</published>
+    <updated>2017-11-09T04:55:12.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;Sublime-text&quot;&gt;&lt;a href=&quot;#Sublime-text&quot; class=&quot;headerlink&quot; title=&quot;Sublime text&quot;&gt;&lt;/a&gt;Sublime text&lt;/h4&gt;&lt;p&gt;之前一直使用的是&lt;code&gt;sublime
+        
+      
+    
+    </summary>
+    
+    
+      <category term="分享" scheme="http://www.1900.live/tags/%E5%88%86%E4%BA%AB/"/>
+    
+  </entry>
   
   <entry>
     <title>windows1709开任务管理器卡死</title>
@@ -478,31 +502,6 @@
     
     
       <category term=" - 流水账" scheme="http://www.1900.live/tags/%E6%B5%81%E6%B0%B4%E8%B4%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>显卡支架</title>
-    <link href="http://www.1900.live/graphics-card-holder/"/>
-    <id>http://www.1900.live/graphics-card-holder/</id>
-    <published>2017-08-15T16:34:08.000Z</published>
-    <updated>2017-08-15T16:52:08.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;之前发现电脑只要轻轻一碰就会出现死机黑屏的现象，自己测试了很多次发现是显卡的锅。百度了下发现蛮多人都有这种情况的。先卡过重一碰就容易松动导致黑屏，解决方案只有加装显卡支架。&lt;/p&gt;
-&lt;p&gt;淘宝了一波发现基本上归为两种：千斤顶和卡式支架。千斤顶外观比较丑，价格不知道为什么也比
-        
-      
-    
-    </summary>
-    
-    
-      <category term=" - 设计 - 流水账" scheme="http://www.1900.live/tags/%E8%AE%BE%E8%AE%A1-%E6%B5%81%E6%B0%B4%E8%B4%A6/"/>
     
   </entry>
   
