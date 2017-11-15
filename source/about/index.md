@@ -17,10 +17,11 @@ layout: page
 这个博客也许是折腾路上的最后一站了把？如果有缘分我们也许可以交个朋友，具体友链的交换可以去[友链页面](http://www.4zen.top/links)留言。
 
 ##信息
-1. 采用[Ghost0.74](http://www.ghostchina.com/download/)国内优化版搭建
-2. 目前运行在[百度BAE基础版](https://cloud.baidu.com/doc/BAE/ProductDescription.html#.E4.BA.A7.E5.93.81.E7.AE.80.E4.BB.8B)，简单方便，不过偶有502的错误，不知是何原因...
-3. 文件存放于[七牛云](https://www.qiniu.com/)，CDN也是用的他们家的。
-4. 主题是自己写的[ONE](http://www.4zen.top/one-theme)
+1. ~~采用[Ghost0.74](http://www.ghostchina.com/download/)国内优化版搭建~~
+2. 采用[hexo](http://www.hexo.io)搭建
+2. ~~目前运行在[百度BAE基础版](https://cloud.baidu.com/doc/BAE/ProductDescription.html#.E4.BA.A7.E5.93.81.E7.AE.80.E4.BB.8B)，简单方便，不过偶有502的错误，不知是何原因...~~ 
+3. 托管于github和七牛云
+4. 主题是自己写的[ONE](http://www.1900.live/prot-one-4hexo/)，有ghost版本和hexo版本
 
 ##站点成长日记
 
