@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>我道</title>
+    <meta name="description" content="我叫1900，普通男青年，学过三年编程。湖南人，现在在四川工作。2015年花了26天骑过一次318。有点伪文艺，喜欢比较玄学的东西。性格多变，疑似有人格分裂。" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="/css/screen.css" />
+    <link rel="stylesheet" href="/css/iDisqus.min.css">
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/monokai-sublime.css">
+
+
+</head>
+<body class="home-template" id="s-top">
+
+    <div class="nav">
+<div class="nav_body">
+  <div class="b_logo"> 
+      <a class="blog-logo" href="/"><img src="/img/logo-mini.png" alt="我道" /></a>
+  </div>
+  <div class="b_class"> 
+    <ul>
+    	
+    	<li class="nav-"><a class="" n_type="" href="/">首页</a></li>
+      
+    	<li class="nav-"><a class="" n_type="" href="/links.html">左邻</a></li>
+      
+    	<li class="nav-"><a class="" n_type="" href="/archive.html">归档</a></li>
+      
+    	<li class="nav-"><a class="" n_type="" href="/about.html">关于</a></li>
+      
+    	<li class="nav-"><a class="" n_type="" href="/rss.xml">订阅</a></li>
+      
+    </ul>
+  </div>
+</div>
+</div>
+    <div class="post-bg" style="background-image: url(http://cdn.4zen.top/image/0/f3/1b788052c48652e2549011f0bbbcf.jpg);"></div>
+
+<div class="site-wrapper" page-type="c-post">
+<main class="content" role="main">
+	<div class="post-toppic" style="">
+        <div class="picbox">
+          <img node-type="articleHeaderPic" src="http://cdn.4zen.top/image/0/f3/1b788052c48652e2549011f0bbbcf.jpg">
+        </div>
+     </div>
+    <article class="post">
+
+        <header class="post-header">
+            <h1 class="post-title">[开发日志]1：分析需求和原型设计</h1>
+            <section class="post-meta">
+                <img class="author-thumb" src="/img/avatar.png" alt="1900" nopin="nopin" />
+                <a href="http://www.1900.live/1-prototype-desgin/">1900</a>
+                <time class="post-date post-none" datetime="2017-04-16">2017-04-16</time>
+                <a href="http://www.1900.live/1-prototype-desgin/#comment" class="post-comment post-none">有<span data-disqus-url="http://www.1900.live/1-prototype-desgin/"></span>条评论</a>
+                <span class="post-date">总计1,704字</span>
+                <span class="post-date">预计6分钟读完</span>
+
+            </section>
+        </header>
+
+        <section class="post-content">
+            <h3 id="一、行业情况"><a href="#一、行业情况" class="headerlink" title="一、行业情况"></a>一、行业情况</h3><p>行业情况：目前所有的零售行业都存在厂家会给销售进行返利的情况，那么返利通过什么来确定呢？最有力的当然是销售小票了！目前就我了解的情况来说基本上都是使用微信或者QQ拍照发到群内然后由返利人员审核后发放红包。</p>
+<p>但是，这个存在一个问题，就是使用如果参与返利的人员过多的话会存在漏发或者发错的情况。并且如果要统计销售数据的话必须还要另外用表格或者手写的方式统计登记，无形之中增加了办公成本。</p>
+<p><hr></p>
+<h3 id="二、需求分析"><a href="#二、需求分析" class="headerlink" title="二、需求分析"></a>二、需求分析</h3><p>分析了一下业务逻辑，这个里面主要有2个角色：</p>
+<ol>
+<li><strong>营业员：</strong>要做的事情就是销售指定的品种之后拍照并发送到微信群</li>
+<li><strong>管理员：</strong>查看各个人员的销售单据，并核算返利金额。如果单据无误就发放红包。单据有误或者有特殊情况便需要在群里告知相关人员。</li>
+</ol>
+<p>所以实际的软件具备的功能因具备以下功能</p>
+<ol>
+<li><strong>登录系统：</strong>有角色区分。登陆后显示不同的操作页面。</li>
+</ol>
+<p><strong>营业员登陆后的业务流程：</strong></p>
+<ol>
+<li>系统列出所有可以参与返利的品种，</li>
+<li>营业员选择需要晒单的品种，并设置对应的销售数量。</li>
+<li>跳转至信息统计页面，这个页面显示了已选择的晒单品种、数量、单项统计金额、合计金额。并且可以上传销售单据。选择完后点提交即可。</li>
+<li>有一个历史晒单界面可以显示目前所有晒过的单据，并且显示所有已通过审核获得返利的总金额，点击可查看单据详情。</li>
+<li>单据详情页面显示晒单品种、数量、单项统计金额、合计金额、管理员审核信息。</li>
+</ol>
+<p><strong>管理员登陆后的业务流程：</strong></p>
+<ol>
+<li>系统列出所有人员晒出来的单据情况，点击后如果是待审核单据跳转至单据审核页面，已审核或者未通过单据跳转至单据详情页面。</li>
+<li>单据审核页面会显示单据的晒单品种、数量、单项统计金额、合计金额，可填入审核信息，可选择拒绝或者通过。</li>
+<li>单据的查询页面，可根据条件查询指定单据，目前设想的条件为：开始时间、结束时间、晒单人，点击查询后显示对应的数据，查询出来的数据点击后进入对应的单据详情页面。<br><hr><h3 id="三、APP原型设计"><a href="#三、APP原型设计" class="headerlink" title="三、APP原型设计"></a>三、APP原型设计</h3>本来打算用CDR来画的，后来百度了一下发现原型设计可以通过现成的软件来快速制作，然后发现了一个还蛮方便简单的在线设计APP：<a href="https://modao.cc/" target="_blank" rel="external"><strong>墨刀</strong></a>（本来以为是个本地软件，后来才发现也可以在线编辑，另外注意：他们的本地软件用的时候如果拖动大量控件的话容易有很长时间卡顿，在线版还没有测试），使用起来简单好用，界面也很漂亮，最关键的是可以免费使用到处功能，而且可以打包成APK或者IOS软件，而且还可以在线预览！超方便的！像这样↓</li>
+</ol>
+<p>因为是专门的原型设计工具，大概花了半个小时做如下的软件原型。(PS：刚刚在做这张图片的时候发现似乎有三张很重要的页面没有做：晒单品种的增删改查)</p>
+<p><iframe src="https://modao.cc/app/aE7DaIsyTnsycQZtFdSe1IxP8G30vn0/embed" width="478" height="884" allowtransparency="true" frameborder="0"></iframe></p>
+<audio class="wp-audio-shortcode" id="artbgm" loop="1" preload="auto" style="width: 100%;" controls="controls" src="http://cdn.4zen.top/California%20Dreaming%20%28%E9%87%8D%E5%BA%86%E6%A3%AE%E6%9E%97%29.mp3"></audio>
+
+<h3 id="四、框架选择"><a href="#四、框架选择" class="headerlink" title="四、框架选择"></a>四、框架选择</h3><p>说道这里，我想起我七年前写代码的时候。那时候啥也不懂，一个刚毕业的小白，只懂学校里教的一些固化的东西，所有的功能都是自己造轮子一个个写出来的。</p>
+<p>看看现在的开发环境，各种框架、ide，各种方便的快速开发，我就不由得感叹，真是变化得太快了，新技术层出不穷好像永远不会停止似得。不过也庆幸自己以前有一些基础，即便六七年后再来写代码也不会觉得太难受，虽然以前学的技术可能用不上了，但是思维还在，万变不离其宗。</p>
+<p><strong>前端框架：framework7，模版引擎：artTemplate</strong></p>
+<p>Framework7项目地址：<a href="https://github.com/nolimits4web/Framework7" target="_blank" rel="external">github</a> | <a href="http://www.framework7.cn/" target="_blank" rel="external">中文站</a> | <a href="http://docs.framework7.cn/" target="_blank" rel="external">中文文档</a></p>
+<p>artTemplate项目地址：<a href="https://github.com/aui/art-template" target="_blank" rel="external">github</a>(没有官方网站，github上有详细介绍)</p>
+<h4 id="framework7"><a href="#framework7" class="headerlink" title="framework7"></a>framework7</h4><p>为什么用f7？只是因为知乎上有一个人说它有几乎完美的使用体验，而且国内淘宝在负责维护。使用过后感觉还可以，但是虽然是淘宝在维护，但是中文资料偏少、而且学习环境真的是很差(这一点请看这篇文章：<a href="http://www.4zen.top/tu-cao/" target="_blank" rel="external">吐槽</a>。基本上属于摸着石头过河，各位在选择学习某个框架的时候虽然框架的优点很重要，但是也要考虑下学习环境。</p>
+<p>总得来说框架的效果还是不错的，打包后在手机上使用也没有什么大问题。但是有人说低端手机如果直接使用会有卡顿的情况，需要搭配crosswalk才行。我也不太懂，到时候遇到了再说把。</p>
+<p>具体的示例代码我就不写了，f7的初始化代码比较多而且有些复杂。</p>
+<h4 id="artTemplate"><a href="#artTemplate" class="headerlink" title="artTemplate"></a>artTemplate</h4><p>模版引擎我不是太了解，但是在使用ghost的时候用到过一种：<a href="http://handlebarsjs.com/" target="_blank" rel="external">Handlebars.js</a>，本来打算使用这个，但是考虑到中文资料偏少所以还是选择了国人写的artTemplate，口碑也非常不错。而且兼容多种模版语法，甚至可以自定义模版语法。使用起来也相对简单例如，连我这种从来没学习过的人看了几分钟后就能使用了，以下是我个人理解的示例：</p>
+<pre><code>//在头部引入js文件
+&lt;script src=&quot;../../lib/template-web.js&quot;&gt;&lt;/script&gt;
+...
+//模板化后的html填充的容器
+&lt;div id=&quot;content&quot;&gt;&lt;/div&gt;
+//定义模版区域
+&lt;script id=&quot;test&quot; type=&quot;text/html&quot;&gt;
+&lt;ul&gt;
+//开始循环填入数据，这里list为要循环的json对象，后面的value则为循环中读取出来的值，i则是索引。
+//另外，传入进来的json对象名默认为$data
+    {{each list value i}}
+        &lt;li&gt;索引 {{i + 1}} ：{{value}}&lt;/li&gt;
+    {{/each}}
+&lt;/ul&gt;
+&lt;/script&gt;
+
+&lt;script&gt;
+var data = {
+    title: &#39;基本例子&#39;,
+    isAdmin: true,
+    list: [&#39;文艺&#39;, &#39;博客&#39;, &#39;摄影&#39;, &#39;电影&#39;, &#39;民谣&#39;, &#39;旅行&#39;, &#39;吉他&#39;]
+};
+//生成模版化后的html
+var html = template(&#39;test&#39;, data);
+document.getElementById(&#39;content&#39;).innerHTML = html;
+&lt;/script&gt;
+</code></pre>
+        </section>
+
+        <footer class="post-footer">
+
+            <figure class="author-image">
+                <a class="img" href="" style="background-image: url(/img/avatar.png)"><span class="hidden">的头像</span></a>
+            </figure>
+
+
+            <section class="author">
+                <h4><a href="#"></a></h4>
+
+                    <p>我叫1900，普通男青年，学过三年编程。湖南人，现在在四川工作。2015年花了26天骑过一次318。有点伪文艺，喜欢比较玄学的东西。性格多变，疑似有人格分裂。</p>
+
+                    <p>继续阅读此作者的<a href="http://www.4zen.top">更多文章</a>。</p>
+
+                <div class="author-meta">
+                    <span class="author-location icon-location">自贡</span>
+                    <span class="author-link icon-link"><a href="http://www.4zen.top">http://www.4zen.top</a></span> 
+                </div>
+            </section>
+
+
+            <section class="share">
+                <h4>分享此博文</h4>
+                <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+            </section>
+
+        </footer>
+	<div id="comment"></div>
+    </article>
+
+</main>
+    <aside class="read-next">
+        
+        <a class="read-next-story" style="background-image: url(http://cdn.4zen.top/image/f/5f/9ace946af62139b643de8186d020b.jpg)" href="http://www.1900.live/dun-wu/">
+            <section class="post">
+                <h2>顿悟了。</h2>
+                <p>昨天睡觉做梦的时候忽然好像顿悟了framework7搭配codeigniter的用法。
+
+用户发起请求
+控制器响应
+获取数据库数据，分配对应页面，直接将数据json化反给前端。
+前段框架根据需求展示数&hellip;</p>
+            </section>
+
+        </a>
+        
+        
+        <a class="read-next-story prev " style="background-image: url(http://cdn.4zen.top/image/e/1a/43d3317cdc1bc52df6152dd336718.jpg)" href="http://www.1900.live/w-t-f/">
+            <section class="post">
+                <h2>WTF！！！黑人问号脸？？</h2>
+                <p>最近琢磨着换下网站名字和域名。之前注册的4zen.top意思是4：为、for。zen：禅，top：顶点。当时想表达的意思是追求禅的顶点。。后来发现有些太玄乎，而且和我的博客内容有点格格不入。
+我的博客&hellip;</p>
+            </section>
+        </a>
+        
+    </aside>
+
+    </div>
+
+    <div class="sidebar">  
+        <a href="#s-top" class="s-top" to="#s-top"><i class="fa fa-chevron-up" action-type="goTop"></i></a>
+    </div>
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="http://www.1900.live">我道</a> &copy; </section>
+        <section class="poweredby">Proudly published with <a href="https://hexo.io/"> ❤ Hexo</a> &amp; <a href="https://pages.github.com/">Github Pages</a></section>
+    </footer>
+
+    <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src='//unpkg.com/valine@1.1.7/dist/Valine.min.js'></script>
+    <script src="/js/plugin.js"></script>
+    <script src="/js/index.js"></script>
+
+
+</body>
+</html>
