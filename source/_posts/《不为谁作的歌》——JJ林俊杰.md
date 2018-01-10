@@ -1,6 +1,9 @@
 ---
 title: 《不为谁作的歌》——JJ林俊杰
-tags: ' - 分享'
+categories: 
+- 其他
+tags: 
+- 分享
 image: 'http://cdn.4zen.top/image/b/12/5f5d4e245d06d4c93030f0c93b023.jpg'
 permalink: jj-twilight
 id: 33
