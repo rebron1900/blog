@@ -1,1193 +1,373 @@
-<html xmlns:wb="http://open.weibo.com/wb"><head>
-    <meta charset="utf-8">
-    <meta name="renderer" content="webkit">
-    <!-- for 360 指定内核 -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="icon" href="https://static.g-cores.com/favicon.ico" type="image/x-icon">
-    <meta name="csrf-param" content="authenticity_token">
-    <meta name="csrf-token" content="6MMRWtil5TGzp7xM8wy+yPiIHYojfHGEovPodCbXfyTvaL7CgAcrzqfN5YvqhOHKswpGas+NjsbNC4FOTSptNw==">
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>我道</title>
+    <meta name="description" content="我叫1900，普通男青年，学过三年编程。湖南人，现在在四川工作。2015年花了26天骑过一次318。有点伪文艺，喜欢比较玄学的东西。性格多变，疑似有人格分裂。" />
 
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <link rel="stylesheet" media="all" href="https://alioss.g-cores.com/assets/application-8defa0c477744a1c2a0a9b3ed8de0dbc1cd75fc3059436979b6c1fce4a95533a.css">
+    <link rel="shortcut icon" href="favicon.ico">
 
-
-    <link rel="stylesheet" media="screen" href="https://alioss.g-cores.com/assets/specific/pages/home-fa590f63b508083ca19c1bfbfdc6affc76588dca6808deb3a9c09e4cb895da23.css">
-    <style type="text/css">
-        .p_spBanner {
-            margin: 20px 0 40px;
-        }
-
-        .p_spBanner_sm {
-            display: none;
-        }
-
-        @media (max-width: 600px) {
-            .p_spBanner_bg {
-                display: none;
-            }
-            .p_spBanner_sm {
-                display: inline;
-                ;
-            }
-        }
-    </style>
-
-
-    <title>
-
-        机核
-    </title>
-
-    <meta name="keywords" content="游戏,游戏电台,游戏广播,游戏播客,电视游戏,家用机游戏,单机游戏,游戏论坛,游戏新闻,游戏视频.">
-
-    <meta name="description" content="从游戏到生活，我们生产内容，关乎你喜爱的一切。">
-
-    <link href="https://www.g-cores.com/rss" rel="alternate" type="application/rss+xml" title="Gamecores Feed">
-
-    <link rel="apple-touch-icon" href="/touch-icon-iphone.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/touch-icon-ipad.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/touch-icon-iphone-retina.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/touch-icon-ipad-retina.png">
-
+    <link rel="stylesheet" type="text/css" href="/css/screen.css" />
+    <link rel="stylesheet" href="/css/iDisqus.min.css">
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/monokai-sublime.css">
 
 
 </head>
-
-<body class="body-fixedNavbar">
-
-    <nav class="navbar navbar-default navbar-fixed-top" id="j_app_navbar" role="navigation">
-        <div class="container">
-            <div class="navbar_header">
-                <button type="button" class="navbar_toggle" data-toggle="collapse" data-target="#j_navbarCollapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar_brand navbar_brand-affix" target="_blank" href="http://shop124260606.taobao.com">
-                    <img class="navbar_brand-affix_white" src="https://alioss.g-cores.com/assets/store-logo-white-9b591191580455f5508d8c3be70070e541e53e080b02db926927fbd6c5eb9818.png" alt="">
-                    <img class="navbar_brand-affix_red" src="https://alioss.g-cores.com/assets/store-logo-ed751e2646f74761d83d1c404d6f28046f68dd8863b934be16beb8e3201cbbdd.png" alt="">
-                </a>
-                <a class="navbar_brand navbar_brand-logo" id="j_logo" href="https://www.g-cores.com/">
-                    <img src="https://alioss.g-cores.com/assets/logo-new-0b66d0ff8fa364ff567e08b95ec448b14220b9d5612d7563ece5226b7443068b.png" alt="">
-                </a>
-            </div>
-
-
-
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse collapsed navbar_collapse" id="j_navbarCollapse">
-                <ul class="nav navbar_nav navbar_right">
-                    <li>
-                        <a href="https://www.g-cores.com/account/signin">登录</a>
-                    </li>
-                    <li>
-                        <a href="https://www.g-cores.com/account/signup">注册</a>
-                    </li>
-                </ul>
-
-
-                <form class="navbar_search" action="https://www.g-cores.com/search" accept-charset="UTF-8" method="get">
-                    <input name="utf8" type="hidden" value="✓">
-                    <span class="fa fa-search"></span>
-                    <input type="text" name="keyword" placeholder="Search">
-                </form>
-
-                <ul class="nav navbar_nav navbar_right" id="j_nav">
-                    <li>
-                        <a href="#news">新闻</a>
-                    </li>
-                    <li>
-                        <a href="#article">文章</a>
-                    </li>
-                    <li>
-                        <a href="#audio">电台</a>
-                    </li>
-                    <li>
-                        <a href="#video">视频</a>
-                    </li>
-                    <li>
-                        <a href="https://www.g-cores.com/gtalk">GTalk</a>
-                    </li>
-                    <li class="dropdown">
-                        <a href="javascript:;" data-toggle="dropdown">平台</a>
-                        <ul class="dropdown_menu navbar_consolesContainer" role="menu">
-                            <li class="navbar_consoles">
-                                <div class="navbar_console">
-                                    <h3>Microsoft</h3>
-                                    <ul>
-                                        <li>
-                                            <a href="https://www.g-cores.com/labels/4/originals">XBOX 360</a>
-                                        </li>
-                                        <li>
-                                            <a href="https://www.g-cores.com/labels/8/originals">XBOX ONE</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="navbar_console">
-                                    <h3>PlayStation</h3>
-                                    <ul>
-                                        <li>
-                                            <a href="https://www.g-cores.com/labels/9/originals">PlayStation 4</a>
-                                        </li>
-                                        <li>
-                                            <a href="https://www.g-cores.com/labels/1/originals">PlayStation 3</a>
-                                        </li>
-                                        <li>
-                                            <a href="https://www.g-cores.com/labels/6/originals">PlayStation Vita</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="navbar_console">
-                                    <h3>Nintendo</h3>
-                                    <ul>
-                                        <li>
-                                            <a href="https://www.g-cores.com/labels/5/originals">3DS</a>
-                                        </li>
-                                        <li>
-                                            <a href="https://www.g-cores.com/labels/2/originals">WiiU</a>
-                                        </li>
-                                        <li>
-                                            <a href="https://www.g-cores.com/labels/3/originals">Wii</a>
-                                        </li>
-                                        <li>
-                                            <a href="https://www.g-cores.com/labels/15/originals">Switch</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="navbar_console">
-                                    <h3>Others</h3>
-                                    <ul>
-                                        <li>
-                                            <a href="https://www.g-cores.com/labels/7/originals">PC</a>
-                                        </li>
-                                        <li>
-                                            <a href="https://www.g-cores.com/labels/10/originals">Mobile</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li>
-                                <a style="padding: 10px 0;" href="https://www.g-cores.com/labels/11/originals">Retro Console</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="dropdown navbar_features">
-                        <a href="javascript:;" data-toggle="dropdown">专题</a>
-                        <ul class="dropdown_menu text-center" style="right: -50px;" role="menu">
-                            <li>
-                                <a href="/wow">
-                                    <img class="img-responsive" src="https://alioss.g-cores.com/assets/special_topic/wow-0ca673c1f19280cbc31c1623656f87b52eb9dd7785481836597e4d3ea4bd81ac.png" alt="">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/pokemoncard">
-                                    <img class="img-responsive" src="https://alioss.g-cores.com/assets/special_topic/pokemoncard-a1a7fffc665226baee221a1a18f236b70a920155e0480481178703cd8d497376.png" alt="">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/darksouls">
-                                    <img class="img-responsive" style="width: 110px;" src="https://alioss.g-cores.com/assets/special_topic/darksouls-910bd456a3cb41111520f2d63e688c65f97c2a94b17fc7abe48d53c14fdc0bd2.png" alt="">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.g-cores.com/streetfightervs">
-                                    <img class="img-responsive" src="https://alioss.g-cores.com/assets/special_topic/gcc-10fe1872dd3207a549c0c3f8094170b7cad915f5e5551c151373e2419881723e.png" alt="">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/sfv">
-                                    <img class="img-responsive" src="https://alioss.g-cores.com/assets/special_topic/sf-0d5d1bf64caa965d8cc645c0018beffc2e58a7d8be098f86be35ecf2212be3b6.png" alt="">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/mh">
-                                    <img class="img-responsive" src="https://alioss.g-cores.com/assets/special_topic/mh-c4a585bcad21520836f52f7a62d6f8bc3fcc225be0905afd0df043f6bebfcd51.gif" alt="">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/fallout">
-                                    <img class="img-responsive" src="https://alioss.g-cores.com/assets/special_topic/fallout-576f8915091ce9b58baa105c0e1dfca1ca3b12ca0e7b9b699d1434d418569b59.jpg" alt="">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/ryugagotoku">
-                                    <img class="img-responsive" src="https://alioss.g-cores.com/assets/special_topic/rulong-e9c080d61e2507dffda338ef30d783c58af710b31673a4148736b54a13dd06d7.jpg" alt="">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/witcher" target="_blank">
-                                    <img class="img-responsive" src="https://alioss.g-cores.com/assets/witcher/logo-black-e4808bbf61fe9a5f9357c7b14f1d3c168b383cc4c33b6f5f444621670f3c3b3e.png" alt="">
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="https://www.g-cores.com/app">App</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-
-
-        </div>
-    </nav>
-
-    <style type="text/css">
-        .navbar_brand-logo {
-            padding-left: 15px !important;
-            margin-left: 0 !important;
-        }
-
-        .navbar_brand-affix {
-            padding-right: 0 !important;
-        }
-
-        @media (min-width: 992px) {
-            .navbar_brand-affix {
-                margin-left: -50px !important;
-            }
-            .navbar_brand-logo {
-                padding-left: 0 !important;
-                margin-left: 0 !important;
-            }
-        }
-
-        .navbar_brand-affix img {
-            margin: -8px 0 0 0;
-            display: inline-block !important;
-        }
-
-        .navbar_brand-affix .navbar_brand-affix_red {
-            display: none !important;
-        }
-
-        .navbar_brand-affix:hover .navbar_brand-affix_white {
-            display: none !important;
-        }
-
-        .navbar_brand-affix:hover .navbar_brand-affix_red {
-            display: inline !important;
-        }
-    </style>
-
-    <!-- notifications -->
-
-
-
-    <div class="wrapper">
-
-        <!-- topAdd -->
-
-
-
-        <!-- focus images -->
-        <div class="focusImgs">
-            <a class="focusImgs_prev" id="j_homeslide_prev" href="javascript:;">
-                <span class="fa fa-angle-left"></span>
-            </a>
-            <a class="focusImgs_next" id="j_homeslide_next" href="javascript:;">
-                <span class="fa fa-angle-right"></span>
-            </a>
-            <div class="swiper-container" id="j_homeslide">
-                <div class="swiper-wrapper" style="width: 9415px; height: 420px; transform: translate3d(-8070px, 0px, 0px); transition-duration: 0.6s;">
-                    <div class="swiper-slide swiper-slide-duplicate" data-index="4" style="width: 1345px; height: 420px;">
-                        <a href="https://www.g-cores.com/volumes/95336">
-                            <img alt="" class="hidden-xs" data-no-retina="" src="https://alioss.g-cores.com/uploads/focus_image/461d53c1-bea0-49b9-90d8-5cee38a2204d.jpg">
-                            <img alt="" class="visible-xs-inline-block" data-no-retina="" src="https://alioss.g-cores.com/uploads/focus_image/45b684ff-fa4a-4989-b001-b7a6d1ef47f7.jpg">
-                        </a>
-                    </div>
-                    <div class="swiper-slide" data-index="0" style="width: 1345px; height: 420px;">
-                        <a href="https://www.g-cores.com/volumes/95447">
-                            <img alt="" class="hidden-xs" data-no-retina="" src="https://alioss.g-cores.com/uploads/focus_image/5f1c98be-d96b-40ab-b6ea-ee0fd847e0a1.jpg">
-                            <img alt="" class="visible-xs-inline-block" data-no-retina="" src="https://alioss.g-cores.com/uploads/focus_image/ccf0023d-e32b-4ec3-b7bf-fb86379d4007.jpg">
-                        </a>
-                    </div>
-                    <div class="swiper-slide" data-index="1" style="width: 1345px; height: 420px;">
-                        <a href="https://www.g-cores.com/volumes/95467">
-                            <img alt="" class="hidden-xs" data-no-retina="" src="https://alioss.g-cores.com/uploads/focus_image/1e4bd63c-bb1f-4799-9d8b-fc2f080dcad5.jpg">
-                            <img alt="" class="visible-xs-inline-block" data-no-retina="" src="https://alioss.g-cores.com/uploads/focus_image/dafb2eb8-e263-4fe9-8bf1-e98e37ea3669.jpg">
-                        </a>
-                    </div>
-                    <div class="swiper-slide" data-index="2" style="width: 1345px; height: 420px;">
-                        <a href="https://www.g-cores.com/volumes/95432">
-                            <img alt="" class="hidden-xs" data-no-retina="" src="https://alioss.g-cores.com/uploads/focus_image/f3b98c7d-529c-433c-b75d-f108d1d0d284.jpg">
-                            <img alt="" class="visible-xs-inline-block" data-no-retina="" src="https://alioss.g-cores.com/uploads/focus_image/0e383677-5f5b-4d41-a90e-a84329c48810.jpg">
-                        </a>
-                    </div>
-                    <div class="swiper-slide" data-index="3" style="width: 1345px; height: 420px;">
-                        <a href="https://www.g-cores.com/volumes/95410">
-                            <img alt="" class="hidden-xs" data-no-retina="" src="https://alioss.g-cores.com/uploads/focus_image/513d6593-b357-4484-8859-fe32de54b72c.jpg">
-                            <img alt="" class="visible-xs-inline-block" data-no-retina="" src="https://alioss.g-cores.com/uploads/focus_image/a107ed10-bbb0-418a-b1af-55f8cf124efa.jpg">
-                        </a>
-                    </div>
-                    <div class="swiper-slide" data-index="4" style="width: 1345px; height: 420px;">
-                        <a href="https://www.g-cores.com/volumes/95336">
-                            <img alt="" class="hidden-xs" data-no-retina="" src="https://alioss.g-cores.com/uploads/focus_image/461d53c1-bea0-49b9-90d8-5cee38a2204d.jpg">
-                            <img alt="" class="visible-xs-inline-block" data-no-retina="" src="https://alioss.g-cores.com/uploads/focus_image/45b684ff-fa4a-4989-b001-b7a6d1ef47f7.jpg">
-                        </a>
-                    </div>
-                    <div class="swiper-slide swiper-slide-duplicate swiper-slide-visible swiper-slide-active" data-index="0" style="width: 1345px; height: 420px;">
-                        <a href="https://www.g-cores.com/volumes/95447">
-                            <img alt="" class="hidden-xs" data-no-retina="" src="https://alioss.g-cores.com/uploads/focus_image/5f1c98be-d96b-40ab-b6ea-ee0fd847e0a1.jpg">
-                            <img alt="" class="visible-xs-inline-block" data-no-retina="" src="https://alioss.g-cores.com/uploads/focus_image/ccf0023d-e32b-4ec3-b7bf-fb86379d4007.jpg">
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div id="j_homeslideindex" class="focusImgs_index">
-                <span class="swiper-pagination-switch swiper-visible-switch swiper-active-switch"></span>
-                <span class="swiper-pagination-switch"></span>
-                <span class="swiper-pagination-switch"></span>
-                <span class="swiper-pagination-switch"></span>
-                <span class="swiper-pagination-switch"></span>
-            </div>
-        </div>
-
-        <!-- latest articles and medias -->
-        <div class="container">
-
-            <!-- banner for special topics -->
-            <!--   <div class="p_spBanner">
-    <a target="_blank" href="https://www.g-cores.com/wow">
-      <img class="p_spBanner_sm img-responsive" src="https://alioss.g-cores.com/assets/afuxxd/wowfeature-small-46c3eee96726f58d55993c78e5d2cb57a90d533284933a2643339964251dc098.jpg" alt="" />
-      <img class="p_spBanner_bg img-responsive" src="https://alioss.g-cores.com/assets/afuxxd/wowfeature-big-b15ef7b73ca10a5bd6af1b82876dfbf0d5cafad9fc8a745c893fbdb0b8a8d6b5.jpg" alt="" />
-</a>  </div> -->
-
-            <div class="topicEntry topicEntry-withTalk">
-                <div class="row row-sticky">
-                    <div class="col-sm-8">
-                        <a href="https://www.g-cores.com/gtalk" class="topicHeader topicHeader-entry" style="background-image: url(https://image.g-cores.com/7263af0a-002b-4345-9e4f-6e036aa43d53.jpg)">
-                            <div class="topicHeader_info">
-                                讨论发起于 2017-12-29
-                            </div>
-                            <div class="topicHeader-entry_participateBtn">
-                                <span class="btn btn-sm btn-hollow-o btn-flat">参与讨论</span>
-                            </div>
-                            <div class="topicHeader_vol">
-                                <div class="topicHeader_vol_logo">
-                                    <img src="https://alioss.g-cores.com/assets/gtalk-850dfe8ae247c740be137bb42600a951ee30ff63656b9d4d6bc91dfc7e651532.png" alt="">
-                                </div>
-                                <div class="topicHeader_vol_body">
-                                    <div class="topicHeader_vol_issue">
-                                        <strong>I</strong>ssue</div>
-                                    <div class="topicHeader_vol_num">34</div>
-                                </div>
-                            </div>
-                            <div class="topicHeader_heading">
-                                <h1 class="topicHeader_title">
-                                    2018，你最期待玩到哪款游戏？
-                                </h1>
-                                <p class="topicHeader_desc">
-                                    想想就很兴奋
-                                </p>
-                                <div class="topicHeader_actions">
-                                    <div class="topicHeader_participant">
-                                        <strong>239</strong> 人参与
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="topicEntry_talksContainer" id="j_topicTalksContainer">
-                            <a href="https://www.g-cores.com/gtalk/topics/36/talks/7211" class="topicEntry_talk j_topicTalk" style="display: block; opacity: 0.789931;">
-                                <h3>没有怪物猎人世界玩我要死啦</h3>
-                                <p>两个月之前就已经是“我的心中只有怪物猎人世界.jpg”的状态了。...</p>
-                                <div class="topicEntry_talk_user">
-                                    <div class="media">
-                                        <div class="media_left">
-                                            <img class="media_object img-circle" src="https://image.g-cores.com/a1c5cfb8-74d7-45f8-8b48-f0ae5d6cc3f7.jpg?x-oss-process=style/user_normal" alt="">
-                                        </div>
-                                        <div class="media_body">
-                                            <h4> 物理学圣剑k </h4>
-                                            <p>2017-12-29</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                            <a href="https://www.g-cores.com/gtalk/topics/36/talks/7226" class="topicEntry_talk j_topicTalk" style="display: none;">
-                                <h3>2018年度最佳游戏《R10》</h3>
-                                <p>同时也是2018年度最佳RPG游戏，年度最佳“动作”游戏，年度最...</p>
-                                <div class="topicEntry_talk_user">
-                                    <div class="media">
-                                        <div class="media_left">
-                                            <img class="media_object img-circle" src="https://image.g-cores.com/452f0665-1800-4481-ad18-42a799dba9ba.gif?x-oss-process=style/user_normal" alt="">
-                                        </div>
-                                        <div class="media_body">
-                                            <h4> 一个路过的扎古 </h4>
-                                            <p>2017-12-29</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                            <a href="https://www.g-cores.com/gtalk/topics/36/talks/7213" class="topicEntry_talk j_topicTalk" style="display: none;">
-                                <h3>鬼武者（复刻、重制）、战国香蕉5</h3>
-                                <p>或者厂商突然公布一个没想到的作品，给我一个惊喜(•̀ᴗ•́)و ...</p>
-                                <div class="topicEntry_talk_user">
-                                    <div class="media">
-                                        <div class="media_left">
-                                            <img class="media_object img-circle" src="https://image.g-cores.com/e0c81305-d719-4d51-a217-fd6eb5704e3e.jpg?x-oss-process=style/user_normal" alt="">
-                                        </div>
-                                        <div class="media_body">
-                                            <h4> 这只沉默的小羊咩咩当时就疯颠了 </h4>
-                                            <p>2017-12-29</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                            <a href="https://www.g-cores.com/gtalk/topics/36/talks/7363" class="topicEntry_talk j_topicTalk" style="display: none;">
-                                <h3>少女与战车</h3>
-                                <p>好急，要疯了...</p>
-                                <div class="topicEntry_talk_user">
-                                    <div class="media">
-                                        <div class="media_left">
-                                            <img class="media_object img-circle" src="https://image.g-cores.com/542a42df-4d1c-4685-8591-7fc1d800e794.jpg?x-oss-process=style/user_normal" alt="">
-                                        </div>
-                                        <div class="media_body">
-                                            <h4> 四十二 </h4>
-                                            <p>2018-01-02</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                            <a href="https://www.g-cores.com/gtalk/topics/36/talks/7216" class="topicEntry_talk j_topicTalk" style="display: none;">
-                                <h3>银河战士prime4</h3>
-                                <p>please please please please plea...</p>
-                                <div class="topicEntry_talk_user">
-                                    <div class="media">
-                                        <div class="media_left">
-                                            <img class="media_object img-circle" src="https://image.g-cores.com/b0be12f1-cf1c-438a-9a2d-3b5c7423e064.png?x-oss-process=style/user_normal" alt="">
-                                        </div>
-                                        <div class="media_body">
-                                            <h4> monkey_heaven </h4>
-                                            <p>2017-12-29</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-
-            <div class="row">
-                <div id="j_sub_focus_imgs">
-                    <div class="col-xs-6">
-
-                        <div class="showcase showcase-original showcase-audio">
-                            <div class="showcase_time">
-                                <span>
-                                    <a target="_self" href="https://www.g-cores.com/categories/45">
-                                        GADIO News vol.60
-                                    </a>
-                                </span>
-                                2018-01-07
-                            </div>
-                            <div class="showcase_img">
-                                <a target="_self" href="https://www.g-cores.com/volumes/95509">
-                                    <span class="showcase_type">
-                                        <b class="fa fa-volume-up"></b>
-                                    </span>
-
-                                    <img alt="这些游戏曾让我流泪！GadioNews1.1~1.4开播" src="https://image.g-cores.com/a6667138-bd54-4818-929f-a30beab67628.jpg?x-oss-process=style/original_hl">
-
-                                    <div class="showcase_meta">
-                                        <p>gamecores</p>
-                                        <p class="showcase_meta_nums">
-                                            <span>
-                                                <b class="fa fa-thumbs-up"></b> 25
-                                            </span>
-                                            <span>
-                                                78 Comments
-                                            </span>
-                                        </p>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="showcase_text">
-                                <h4>
-                                    <a target="_self" href="https://www.g-cores.com/volumes/95509">
-                                        这些游戏曾让我流泪！GadioNews1.1~1.4开播
-                                    </a>
-                                </h4>
-                                <div class="showcase_info">都是性情中人</div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="col-xs-6">
-
-                        <div class="showcase showcase-original showcase-article">
-                            <div class="showcase_time">
-                                <span>
-                                    <a target="_self" href="https://www.g-cores.com/categories/34">
-                                        一起来Lu二次元
-
-                                    </a>
-                                </span>
-                                2018-01-07
-                            </div>
-                            <div class="showcase_img">
-                                <a target="_self" href="https://www.g-cores.com/articles/95392">
-
-                                    <img alt="DC《末日钟声》#2 发布：罗夏换届，笑匠复活" src="https://image.g-cores.com/a8c8fd10-c119-4d4d-8792-5370b3da51d3.jpg?x-oss-process=style/original_hl">
-
-                                    <div class="showcase_meta">
-                                        <p>
-                                            <img class="img-circle" src="https://alioss.g-cores.com/uploads/user/47cbda88-9308-411f-b8d7-55039873ed88_normal.jpg" alt="">
-                                        </p>
-                                        <p class="showcase_meta_nums">
-                                            <span>
-                                                <b class="fa fa-thumbs-up"></b> 22
-                                            </span>
-                                            <span>
-                                                28 Comments
-                                            </span>
-                                        </p>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="showcase_text">
-                                <h4>
-                                    <a target="_self" href="https://www.g-cores.com/articles/95392">
-                                        DC《末日钟声》#2 发布：罗夏换届，笑匠复活
-                                    </a>
-                                </h4>
-                                <div class="showcase_info">（伪）罗夏吃了蝙蝠侠的早餐，小丑表示很嫉妒。</div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="col-md-4 col-xs-6">
-
-                    <div class="showcase showcase-original showcase-news">
-                        <div class="showcase_time">
-                            <span>
-                                <a target="_self" href="https://www.g-cores.com/categories/2">
-                                    NEWS
-
-                                </a>
-                            </span>
-                            2018-01-07
-                        </div>
-                        <div class="showcase_img">
-                            <a target="_self" href="https://www.g-cores.com/articles/95524">
-
-                                <img alt="动作片还是喜剧片？《Splatoon2》新年第一次祭典主题公开啦" src="https://image.g-cores.com/371a5aba-491f-495e-b577-3b0a26982f60.jpg?x-oss-process=style/original_hs">
-
-                                <div class="showcase_meta">
-                                    <p>
-                                        <img class="img-circle" src="https://alioss.g-cores.com/uploads/user/55cc8aa9-86bd-4d16-91fc-30c0e8d0e41b_normal.jpg" alt="">
-                                    </p>
-                                    <p class="showcase_meta_nums">
-                                        <span>
-                                            <b class="fa fa-thumbs-up"></b> 2
-                                        </span>
-                                        <span>
-                                            12 Comments
-                                        </span>
-                                    </p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="showcase_text">
-                            <h4>
-                                <a target="_self" href="https://www.g-cores.com/articles/95524">
-                                    动作片还是喜剧片？《Splatoon2》新年第一次祭典主题公开啦
-                                </a>
-                            </h4>
-                            <div class="showcase_info">各位下周开打～</div>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col-md-4 col-xs-6">
-
-                    <div class="showcase showcase-original showcase-article">
-                        <div class="showcase_time">
-                            <span>
-                                <a target="_self" href="https://www.g-cores.com/categories/18">
-                                    安利大帝
-
-                                </a>
-                            </span>
-                            2018-01-07
-                        </div>
-                        <div class="showcase_img">
-                            <a target="_self" href="https://www.g-cores.com/articles/95520">
-
-                                <img alt="如果你喜欢玩《911 Operator》，那么一定不要错过这部新剧" src="https://image.g-cores.com/89a178b7-d87f-4015-a57e-8c36a258c70c.jpg?x-oss-process=style/original_hs">
-
-                                <div class="showcase_meta">
-                                    <p>
-                                        <img class="img-circle" src="https://alioss.g-cores.com/uploads/user/16ce1aba-7330-4f6a-a5bd-e35ed1e45914_normal.jpg" alt="">
-                                    </p>
-                                    <p class="showcase_meta_nums">
-                                        <span>
-                                            <b class="fa fa-thumbs-up"></b> 13
-                                        </span>
-                                        <span>
-                                            2 Comments
-                                        </span>
-                                    </p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="showcase_text">
-                            <h4>
-                                <a target="_self" href="https://www.g-cores.com/articles/95520">
-                                    如果你喜欢玩《911 Operator》，那么一定不要错过这部新剧
-                                </a>
-                            </h4>
-                            <div class="showcase_info">感谢这些平凡而伟大的人们。</div>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col-md-4 col-xs-6">
-
-                    <div class="showcase showcase-original showcase-news">
-                        <div class="showcase_time">
-                            <span>
-                                <a target="_self" href="https://www.g-cores.com/categories/2">
-                                    NEWS
-
-                                </a>
-                            </span>
-                            2018-01-05
-                        </div>
-                        <div class="showcase_img">
-                            <a target="_self" href="https://www.g-cores.com/articles/95505">
-
-                                <img alt="《怪物猎人 世界》3测1月19日开始，滅尽龙登场" src="https://image.g-cores.com/c8fb5132-1d50-4a3a-92cc-c762f8e0cb9f.jpg?x-oss-process=style/original_hs">
-
-                                <div class="showcase_meta">
-                                    <p>
-                                        <img class="img-circle" src="https://alioss.g-cores.com/uploads/user/bb04fa92-7b70-4ad2-8048-4b02e729dac4_normal.png" alt="">
-                                    </p>
-                                    <p class="showcase_meta_nums">
-                                        <span>
-                                            <b class="fa fa-thumbs-up"></b> 27
-                                        </span>
-                                        <span>
-                                            105 Comments
-                                        </span>
-                                    </p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="showcase_text">
-                            <h4>
-                                <a target="_self" href="https://www.g-cores.com/articles/95505">
-                                    《怪物猎人 世界》3测1月19日开始，滅尽龙登场
-                                </a>
-                            </h4>
-                            <div class="showcase_info">炎王龙、钢龙、恐暴龙确定登场</div>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col-md-4 col-xs-6">
-
-                    <div class="showcase showcase-original showcase-article">
-                        <div class="showcase_time">
-                            <span>
-                                <a target="_self" href="https://www.g-cores.com/categories/20">
-                                    知识挖掘机
-
-                                </a>
-                            </span>
-                            2018-01-07
-                        </div>
-                        <div class="showcase_img">
-                            <a target="_self" href="https://www.g-cores.com/articles/95523">
-
-                                <img alt="多人地图关卡设计：一份视觉化指南" src="https://image.g-cores.com/709c09de-3d86-43cb-9e4d-90d5645f99c7.jpg?x-oss-process=style/original_hs">
-
-                                <div class="showcase_meta">
-                                    <p>
-                                        <img class="img-circle" src="https://alioss.g-cores.com/uploads/user/9f8da5c4-e968-4787-97d9-e0aa1d5f51f1_normal.jpg" alt="">
-                                    </p>
-                                    <p class="showcase_meta_nums">
-                                        <span>
-                                            <b class="fa fa-thumbs-up"></b> 86
-                                        </span>
-                                        <span>
-                                            10 Comments
-                                        </span>
-                                    </p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="showcase_text">
-                            <h4>
-                                <a target="_self" href="https://www.g-cores.com/articles/95523">
-                                    多人地图关卡设计：一份视觉化指南
-                                </a>
-                            </h4>
-                            <div class="showcase_info">看完这份视觉化指南，相信能够帮助大家对关卡设计有一点了解。</div>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col-md-4 col-xs-6">
-
-                    <div class="showcase showcase-original showcase-news">
-                        <div class="showcase_time">
-                            <span>
-                                <a target="_self" href="https://www.g-cores.com/categories/2">
-                                    NEWS
-
-                                </a>
-                            </span>
-                            2018-01-05
-                        </div>
-                        <div class="showcase_img">
-                            <a target="_self" href="https://www.g-cores.com/articles/95482">
-
-                                <img alt="下周节目预告1.08~1.14" src="https://image.g-cores.com/1f23abed-6424-45dc-a6a5-8fe1e3fe6c57.jpg?x-oss-process=style/original_hs">
-
-                                <div class="showcase_meta">
-                                    <p>
-                                        <img class="img-circle" src="https://alioss.g-cores.com/uploads/user/ee2a192c-983d-4985-9939-7c1cdcaa779e_normal.jpg" alt="">
-                                    </p>
-                                    <p class="showcase_meta_nums">
-                                        <span>
-                                            <b class="fa fa-thumbs-up"></b> 37
-                                        </span>
-                                        <span>
-                                            151 Comments
-                                        </span>
-                                    </p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="showcase_text">
-                            <h4>
-                                <a target="_self" href="https://www.g-cores.com/articles/95482">
-                                    下周节目预告1.08~1.14
-                                </a>
-                            </h4>
-                            <div class="showcase_info">别催了，战锤节目来了！</div>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col-md-4 col-xs-6">
-
-                    <div class="showcase showcase-original showcase-article">
-                        <div class="showcase_time">
-                            <span>
-                                <a target="_self" href="https://www.g-cores.com/categories/34">
-                                    一起来Lu二次元
-
-                                </a>
-                            </span>
-                            2018-01-06
-                        </div>
-                        <div class="showcase_img">
-                            <a target="_self" href="https://www.g-cores.com/articles/95227">
-
-                                <img alt="《宝石之国》完结点评：绚丽多彩的奇妙世界" src="https://image.g-cores.com/8e5a5ef4-af47-4ae6-a324-89b1423d85e4.jpg?x-oss-process=style/original_hs">
-
-                                <div class="showcase_meta">
-                                    <p>
-                                        <img class="img-circle" src="https://alioss.g-cores.com/uploads/user/e4b6b6ad-1770-4082-8b25-bf58c7023e51_normal.jpg" alt="">
-                                    </p>
-                                    <p class="showcase_meta_nums">
-                                        <span>
-                                            <b class="fa fa-thumbs-up"></b> 63
-                                        </span>
-                                        <span>
-                                            36 Comments
-                                        </span>
-                                    </p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="showcase_text">
-                            <h4>
-                                <a target="_self" href="https://www.g-cores.com/articles/95227">
-                                    《宝石之国》完结点评：绚丽多彩的奇妙世界
-                                </a>
-                            </h4>
-                            <div class="showcase_info">佛与禅的宝石国度</div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-        <!-- banner -->
-        <div class="banner banner-first" id="news">
-            <img alt="机核新闻" data-stellar-ratio="1.3" src="https://alioss.g-cores.com/assets/banner/news-4d4b4769020533addc82722ef905e27573570f11cece52dd2715afb545e6cb39.jpg" style="transform: translate3d(0px, 331.284px, 0px);">
-            <span>NEWS</span>
-        </div>
-
-        <h1 class="heading">新闻</h1>
-        <!-- latest articles and medias -->
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 col-xs-6">
-
-                    <div class="showcase showcase-original showcase-news">
-                        <div class="showcase_time">
-                            <span>
-                                <a target="_self" href="https://www.g-cores.com/categories/2">
-                                    NEWS
-
-                                </a>
-                            </span>
-                            2018-01-05
-                        </div>
-                        <div class="showcase_img">
-                            <a target="_self" href="https://www.g-cores.com/articles/95500">
-
-                                <img alt="生化危机官方推特壁纸更新，或暗示新作即将公布" src="https://image.g-cores.com/6558157b-4fc6-4e48-b305-f6c46d743ca0.png?x-oss-process=style/original_hs">
-
-                                <div class="showcase_meta">
-                                    <p>
-                                        <img class="img-circle" src="https://alioss.g-cores.com/uploads/user/5eb7beeb-a4f7-4789-9229-330af0b67d23_normal.jpg" alt="">
-                                    </p>
-                                    <p class="showcase_meta_nums">
-                                        <span>
-                                            <b class="fa fa-thumbs-up"></b> 20
-                                        </span>
-                                        <span>
-                                            35 Comments
-                                        </span>
-                                    </p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="showcase_text">
-                            <h4>
-                                <a target="_self" href="https://www.g-cores.com/articles/95500">
-                                    生化危机官方推特壁纸更新，或暗示新作即将公布
-                                </a>
-                            </h4>
-                            <div class="showcase_info">生化危机系列的两大冷饭之争，里昂或成为最大赢家。</div>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col-md-4 col-xs-6">
-
-                    <div class="showcase showcase-original showcase-news">
-                        <div class="showcase_time">
-                            <span>
-                                <a target="_self" href="https://www.g-cores.com/categories/2">
-                                    NEWS
-
-                                </a>
-                            </span>
-                            2018-01-05
-                        </div>
-                        <div class="showcase_img">
-                            <a target="_self" href="https://www.g-cores.com/articles/95497">
-
-                                <img alt="韩国某地方政府出资打造的仿《宝可梦GO》手游遭遇惨败" src="https://image.g-cores.com/d5415fb2-51c1-436d-9938-a858353cd789.png?x-oss-process=style/original_hs">
-
-                                <div class="showcase_meta">
-                                    <p>
-                                        <img class="img-circle" src="https://alioss.g-cores.com/uploads/user/2e47345e-c84a-4d58-aabc-f58ad1d76a3c_normal.JPG" alt="">
-                                    </p>
-                                    <p class="showcase_meta_nums">
-                                        <span>
-                                            <b class="fa fa-thumbs-up"></b> 9
-                                        </span>
-                                        <span>
-                                            32 Comments
-                                        </span>
-                                    </p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="showcase_text">
-                            <h4>
-                                <a target="_self" href="https://www.g-cores.com/articles/95497">
-                                    韩国某地方政府出资打造的仿《宝可梦GO》手游遭遇惨败
-                                </a>
-                            </h4>
-                            <div class="showcase_info">动用大笔公款，下载不过数千，当局仍不死心，媒体冷眼相看</div>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col-md-4 col-xs-6">
-
-                    <div class="showcase showcase-original showcase-news">
-                        <div class="showcase_time">
-                            <span>
-                                <a target="_self" href="https://www.g-cores.com/categories/2">
-                                    NEWS
-
-                                </a>
-                            </span>
-                            2018-01-05
-                        </div>
-                        <div class="showcase_img">
-                            <a target="_self" href="https://www.g-cores.com/articles/95492">
-
-                                <img alt="《枪火游侠》将更新“大逃杀”模式，100名自带技能的角色互相杀" src="https://image.g-cores.com/374d14e5-7338-4296-8d04-84626462487c.jpg?x-oss-process=style/original_hs">
-
-                                <div class="showcase_meta">
-                                    <p>
-                                        <img class="img-circle" src="https://alioss.g-cores.com/uploads/user/837f1b12-ae6c-45c6-8fce-cda7adb6ced0_normal.jpg" alt="">
-                                    </p>
-                                    <p class="showcase_meta_nums">
-                                        <span>
-                                            <b class="fa fa-thumbs-up"></b> 6
-                                        </span>
-                                        <span>
-                                            52 Comments
-                                        </span>
-                                    </p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="showcase_text">
-                            <h4>
-                                <a target="_self" href="https://www.g-cores.com/articles/95492">
-                                    《枪火游侠》将更新“大逃杀”模式，100名自带技能的角色互相杀
-                                </a>
-                            </h4>
-                            <div class="showcase_info">估计战斗场面会比较混乱</div>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col-md-4 col-xs-6">
-
-                    <div class="showcase showcase-original showcase-news">
-                        <div class="showcase_time">
-                            <span>
-                                <a target="_self" href="https://www.g-cores.com/categories/2">
-                                    NEWS
-
-                                </a>
-                            </span>
-                            2018-01-05
-                        </div>
-                        <div class="showcase_img">
-                            <a target="_self" href="https://www.g-cores.com/articles/95489">
-
-                                <img alt="想在游戏中打街球？《NBA游乐场》强化版今日上线" src="https://image.g-cores.com/07eb9ed5-e447-4bca-a03d-45967f92ccbf.gif?x-oss-process=style/original_hs">
-
-                                <div class="showcase_meta">
-                                    <p>
-                                        <img class="img-circle" src="https://alioss.g-cores.com/uploads/user/55cc8aa9-86bd-4d16-91fc-30c0e8d0e41b_normal.jpg" alt="">
-                                    </p>
-                                    <p class="showcase_meta_nums">
-                                        <span>
-                                            <b class="fa fa-thumbs-up"></b> 10
-                                        </span>
-                                        <span>
-                                            30 Comments
-                                        </span>
-                                    </p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="showcase_text">
-                            <h4>
-                                <a target="_self" href="https://www.g-cores.com/articles/95489">
-                                    想在游戏中打街球？《NBA游乐场》强化版今日上线
-                                </a>
-                            </h4>
-                            <div class="showcase_info">规则就是没有规则</div>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col-md-4 col-xs-6">
-
-                    <div class="showcase showcase-original showcase-news">
-                        <div class="showcase_time">
-                            <span>
-                                <a target="_self" href="https://www.g-cores.com/categories/2">
-                                    NEWS
-
-                                </a>
-                            </span>
-                            2018-01-04
-                        </div>
-                        <div class="showcase_img">
-                            <a target="_self" href="https://www.g-cores.com/articles/95485">
-
-                                <img alt="《核众食堂》Vol.10先导预告" src="https://image.g-cores.com/88db1531-99a9-4f7b-adbe-abc49d85b87c.png?x-oss-process=style/original_hs">
-
-                                <div class="showcase_meta">
-                                    <p>
-                                        <img class="img-circle" src="https://alioss.g-cores.com/uploads/user/aa080c8b-0b93-4370-96af-1e06afef697d_normal.png" alt="">
-                                    </p>
-                                    <p class="showcase_meta_nums">
-                                        <span>
-                                            <b class="fa fa-thumbs-up"></b> 22
-                                        </span>
-                                        <span>
-                                            76 Comments
-                                        </span>
-                                    </p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="showcase_text">
-                            <h4>
-                                <a target="_self" href="https://www.g-cores.com/articles/95485">
-                                    《核众食堂》Vol.10先导预告
-                                </a>
-                            </h4>
-                            <div class="showcase_info">你，问谁呢？</div>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col-md-4 col-xs-6">
-
-                    <div class="showcase showcase-original showcase-news">
-                        <div class="showcase_time">
-                            <span>
-                                <a target="_self" href="https://www.g-cores.com/categories/2">
-                                    NEWS
-
-                                </a>
-                            </span>
-                            2018-01-04
-                        </div>
-                        <div class="showcase_img">
-                            <a target="_self" href="https://www.g-cores.com/articles/95478">
-
-                                <img alt="看见赶紧跑！索尼影业发布电影《Slender Man》正式预告" src="https://image.g-cores.com/ebf8c373-e478-400b-8309-bc7a82f378ce.jpg?x-oss-process=style/original_hs">
-
-                                <div class="showcase_meta">
-                                    <p>
-                                        <img class="img-circle" src="https://alioss.g-cores.com/uploads/user/e336a4fc-e8b5-4c12-afe6-c04434d9f1e2_normal.jpg" alt="">
-                                    </p>
-                                    <p class="showcase_meta_nums">
-                                        <span>
-                                            <b class="fa fa-thumbs-up"></b> 31
-                                        </span>
-                                        <span>
-                                            80 Comments
-                                        </span>
-                                    </p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="showcase_text">
-                            <h4>
-                                <a target="_self" href="https://www.g-cores.com/articles/95478">
-                                    看见赶紧跑！索尼影业发布电影《Slender Man》正式预告
-                                </a>
-                            </h4>
-                            <div class="showcase_info">富强、民主、文明、和谐、自由、平等、公正、法治、爱国、敬业、诚信、友善</div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-        <p class="tc">
-            <a class="btn btn-hollow" href="https://www.g-cores.com/categories/2">更多</a>
-        </p>
-
-        <!-- banner -->
+<body class="home-template" id="s-top">
+
+    <div class="nav">
+<div class="nav_body">
+  <div class="b_logo"> 
+      <a class="blog-logo" href="/"><img src="/img/logo-mini.png" alt="我道" /></a>
+  </div>
+  <div class="b_class"> 
+    <ul>
+    	
+    	<li class="nav-"><a class="" n_type="" href="/">首页</a></li>
+      
+    	<li class="nav-"><a class="" n_type="" href="/links.html">左邻</a></li>
+      
+    	<li class="nav-"><a class="" n_type="" href="/archive.html">归档</a></li>
+      
+    	<li class="nav-"><a class="" n_type="" href="/about.html">关于</a></li>
+      
+    	<li class="nav-"><a class="" n_type="" href="/rss.xml">订阅</a></li>
+      
+    </ul>
+  </div>
+</div>
+</div>
+    
+
+    
+
+<div class="post-bg" style="background-image: url(http://cdn.4zen.top/image/f/5f/9ace946af62139b643de8186d020b.jpg);"></div>
+
+
+<div class="site-wrapper" page-type="c-index">
+
+<main id="content" class="content" role="main">
+
+
+<article class="post">
+<div class="post-toppic" style="">
+                    <div class="picbox"><a class="read-more" href="http://www.1900.live/dun-wu/">
+                      <img node-type="articleHeaderPic" src="http://cdn.4zen.top/image/f/5f/9ace946af62139b643de8186d020b.jpg">
+                                          </a></div>
+                  </div>
+    <header class="post-header">
+        <h2 class="post-title"><a href="http://www.1900.live/dun-wu/">顿悟了。</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>昨天睡觉做梦的时候忽然好像顿悟了framework7搭配codeigniter的用法。
+
+用户发起请求
+控制器响应
+获取数据库数据，分配对应页面，直接将数据json化反给前端。
+前段框架根据需求展示数据
+
+之前对前端框架朦朦胧胧，前端这边很多框架都是用的类似vue这种数据绑定的方式。我当时就在想了，前端这边页面怎么加载数据？难不成用php语句直接打印json？现在懂了，使用ci框架时，用户访问页面都是先经过控制器再访问的view页面，我<a class="read-more" href="http://www.1900.live/dun-wu/">&raquo;</p>
+    </section>
+    <footer class="post-meta">
+        <img class="author-thumb" src="/img/avatar.png" alt="1900" nopin="nopin" />
+        <a href="http://www.1900.live/dun-wu/">1900</a>
+        <time class="post-date" datetime="2017-04-18">2017-04-18</time>
+        <a href="http://www.1900.live/dun-wu/#comment" class="post-comment post-none">有<span data-disqus-url="http://www.1900.live/dun-wu/"></span>条评论</a>
+        <span class="post-date">总计353字</span>
+        <span class="post-date">预计1分钟读完</span>
+        <span class="post-date post-none">[object Object]</span>
         
+    </footer>
+</article>
 
-        
-        
-        
-        
 
-        
-        
+<article class="post">
+<div class="post-toppic" style="">
+                    <div class="picbox"><a class="read-more" href="http://www.1900.live/1-prototype-desgin/">
+                      <img node-type="articleHeaderPic" src="http://cdn.4zen.top/image/0/f3/1b788052c48652e2549011f0bbbcf.jpg">
+                                          </a></div>
+                  </div>
+    <header class="post-header">
+        <h2 class="post-title"><a href="http://www.1900.live/1-prototype-desgin/">[开发日志]1：分析需求和原型设计</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>一、行业情况行业情况：目前所有的零售行业都存在厂家会给销售进行返利的情况，那么返利通过什么来确定呢？最有力的当然是销售小票了！目前就我了解的情况来说基本上都是使用微信或者QQ拍照发到群内然后由返利人员审核后发放红包。
+但是，这个存在一个问题，就是使用如果参与返利的人员过多的话会存在漏发或者发错的情况。并且如果要统计销售数据的话必须还要另外用表格或者手写的方式统计登记，无形之中增加了办公成本。
 
+二、需求分析分析了一下业务逻辑，这个里面主<a class="read-more" href="http://www.1900.live/1-prototype-desgin/">&raquo;</p>
+    </section>
+    <footer class="post-meta">
+        <img class="author-thumb" src="/img/avatar.png" alt="1900" nopin="nopin" />
+        <a href="http://www.1900.live/1-prototype-desgin/">1900</a>
+        <time class="post-date" datetime="2017-04-16">2017-04-16</time>
+        <a href="http://www.1900.live/1-prototype-desgin/#comment" class="post-comment post-none">有<span data-disqus-url="http://www.1900.live/1-prototype-desgin/"></span>条评论</a>
+        <span class="post-date">总计1,704字</span>
+        <span class="post-date">预计6分钟读完</span>
+        <span class="post-date post-none">[object Object]</span>
         
-        
-        
-        
+    </footer>
+</article>
 
-        
-        
 
+<article class="post">
+<div class="post-toppic" style="">
+                    <div class="picbox"><a class="read-more" href="http://www.1900.live/w-t-f/">
+                      <img node-type="articleHeaderPic" src="http://cdn.4zen.top/image/e/1a/43d3317cdc1bc52df6152dd336718.jpg">
+                                          </a></div>
+                  </div>
+    <header class="post-header">
+        <h2 class="post-title"><a href="http://www.1900.live/w-t-f/">WTF！！！黑人问号脸？？</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>最近琢磨着换下网站名字和域名。之前注册的4zen.top意思是4：为、for。zen：禅，top：顶点。当时想表达的意思是追求禅的顶点。。后来发现有些太玄乎，而且和我的博客内容有点格格不入。
+我的博客主要就是个人博客，自己的生活琐事、一些分享、一些感悟而已，所以想注册一个live后缀的域名，就叫1900.live。
+我现在用的网名是1900，为什么起这个网名？1900是海上刚琴师的名字，海上钢琴师看了有三次，每次看都有不一样的感觉，我想<a class="read-more" href="http://www.1900.live/w-t-f/">&raquo;</p>
+    </section>
+    <footer class="post-meta">
+        <img class="author-thumb" src="/img/avatar.png" alt="1900" nopin="nopin" />
+        <a href="http://www.1900.live/w-t-f/">1900</a>
+        <time class="post-date" datetime="2017-04-16">2017-04-16</time>
+        <a href="http://www.1900.live/w-t-f/#comment" class="post-comment post-none">有<span data-disqus-url="http://www.1900.live/w-t-f/"></span>条评论</a>
+        <span class="post-date">总计304字</span>
+        <span class="post-date">预计1分钟读完</span>
+        <span class="post-date post-none">[object Object]</span>
         
-        
-        
-        
-        
-        
-        
+    </footer>
+</article>
 
+
+<article class="post">
+<div class="post-toppic" style="">
+                    <div class="picbox"><a class="read-more" href="http://www.1900.live/coding/">
+                      <img node-type="articleHeaderPic" src="http://cdn.4zen.top/image/0/f3/1b788052c48652e2549011f0bbbcf.jpg">
+                                          </a></div>
+                  </div>
+    <header class="post-header">
+        <h2 class="post-title"><a href="http://www.1900.live/coding/">手痒写代码</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>手痒和正好自打从学校毕业后在番禺上了三个月班后我就再也没正式的写过什么代码了，写也是博客这种零零碎碎的改动。我只感觉我身体里那颗躁动不安的心痒的难受…。
+正好，这几天老姐一直和我抱怨公司最近上的一部分品种因为存在厂家促销活动，需要员工每天晚上发销售小票照片，然后她去审核照片并发放相应金额的红包，说每天搞这个东西搞的很烦。我想了想，难到我就不能写个小程序吗？直接让员工自己把促销品种选好后拍好照片上传上来，而我姐就可以直接审阅员工上传的数据<a class="read-more" href="http://www.1900.live/coding/">&raquo;</p>
+    </section>
+    <footer class="post-meta">
+        <img class="author-thumb" src="/img/avatar.png" alt="1900" nopin="nopin" />
+        <a href="http://www.1900.live/coding/">1900</a>
+        <time class="post-date" datetime="2017-04-16">2017-04-16</time>
+        <a href="http://www.1900.live/coding/#comment" class="post-comment post-none">有<span data-disqus-url="http://www.1900.live/coding/"></span>条评论</a>
+        <span class="post-date">总计739字</span>
+        <span class="post-date">预计3分钟读完</span>
+        <span class="post-date post-none">[object Object]</span>
+        
+    </footer>
+</article>
+
+
+<article class="post">
+<div class="post-toppic" style="">
+                    <div class="picbox"><a class="read-more" href="http://www.1900.live/qi-yong-xin-zhu-ti-cdc4g/">
+                      <img node-type="articleHeaderPic" src="http://cdn.4zen.top/image/c/40/c78cb5d808649e80d3e10100fccea.jpg">
+                                          </a></div>
+                  </div>
+    <header class="post-header">
+        <h2 class="post-title"><a href="http://www.1900.live/qi-yong-xin-zhu-ti-cdc4g/">启用新主题：CDC4G!</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>三天打鱼，两天晒网又到了晒网的时候了，不过倒也不是不来写博客，只是最近真的有点忙。3月份有个门店要搬迁，又重新策划了开业活动，另外搬迁之前又是盘点又是做其他活动的，这些日子基本上都扑在店里了，清明节都没休息…
+说说这几天干的事这几天忽然想换主题了，又想起之前自己计划的做一个主题，遂趁着这两天稍微空闲了一下捣鼓起了主题。
+不过我自己底子差加上很久没接触代码了，很多js、css方面的问题都不太回处理，遂选择了最简单的方式：扒皮。不用自己架构<a class="read-more" href="http://www.1900.live/qi-yong-xin-zhu-ti-cdc4g/">&raquo;</p>
+    </section>
+    <footer class="post-meta">
+        <img class="author-thumb" src="/img/avatar.png" alt="1900" nopin="nopin" />
+        <a href="http://www.1900.live/qi-yong-xin-zhu-ti-cdc4g/">1900</a>
+        <time class="post-date" datetime="2017-04-05">2017-04-05</time>
+        <a href="http://www.1900.live/qi-yong-xin-zhu-ti-cdc4g/#comment" class="post-comment post-none">有<span data-disqus-url="http://www.1900.live/qi-yong-xin-zhu-ti-cdc4g/"></span>条评论</a>
+        <span class="post-date">总计495字</span>
+        <span class="post-date">预计2分钟读完</span>
+        <span class="post-date post-none">[object Object]</span>
+        
+    </footer>
+</article>
+
+
+<article class="post">
+<div class="post-toppic" style="">
+                    <div class="picbox"><a class="read-more" href="http://www.1900.live/yun-gentie/">
+                      <img node-type="articleHeaderPic" src="http://cdn.4zen.top/image/7/e1/71ab3d9fe111d1d42dd1c05c11334.png">
+                                          </a></div>
+                  </div>
+    <header class="post-header">
+        <h2 class="post-title"><a href="http://www.1900.live/yun-gentie/">网易云跟帖适配ajax主题，动态加载评论框</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>2017年3月29日上午：（经测试发现无法评论）。。2017年3月29日中午：刷新博客发现早上发的评论居然出来了，网易云跟帖的审核速度未免也太“快”了把？。。总结：还是不要使用该款评论组件。。
+~~自从前几天多说宣布停止服务后我一直在寻找另外一个我喜欢的第三方评论组件，最喜欢的应该是disqus了，主要是因为他的游客评论功能，目前国内除多说外的组件似乎都强制用户登录才可以发表评论。我觉得这就像是我去旅游别人强制我买东西一样蛋疼…
+但是我<a class="read-more" href="http://www.1900.live/yun-gentie/">&raquo;</p>
+    </section>
+    <footer class="post-meta">
+        <img class="author-thumb" src="/img/avatar.png" alt="1900" nopin="nopin" />
+        <a href="http://www.1900.live/yun-gentie/">1900</a>
+        <time class="post-date" datetime="2017-03-26">2017-03-26</time>
+        <a href="http://www.1900.live/yun-gentie/#comment" class="post-comment post-none">有<span data-disqus-url="http://www.1900.live/yun-gentie/"></span>条评论</a>
+        <span class="post-date">总计1,017字</span>
+        <span class="post-date">预计4分钟读完</span>
+        <span class="post-date post-none">[object Object]</span>
+        
+    </footer>
+</article>
+
+
+<article class="post">
+<div class="post-toppic" style="">
+                    <div class="picbox"><a class="read-more" href="http://www.1900.live/duoshuo-bye/">
+                      <img node-type="articleHeaderPic" src="http://cdn.4zen.top/image/d/a2/a1ff56777f893b0ed90dc80739b00.png">
+                                          </a></div>
+                  </div>
+    <header class="post-header">
+        <h2 class="post-title"><a href="http://www.1900.live/duoshuo-bye/">再见</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>多说是我用的第一个第三方评论组件，也是我一直用到现在的评论组件。
+但是，现在要和多说说再见了，以后都不能多说了….，这个结果官方其实也一直在暗示把：服务器时常抽风、官网从去年开始就没有更新过、官方论坛也没有工作人员解惑，从这些地方不难看出多说真的是到了一个很难的地步了。
+目前把数据已经转移到了网易云更贴，暂时先用着，我也没有做ajax的适配，也不知道网易云跟帖该怎么做ajax的适配…，这也是我不想换评论组件的原因，现在国内的评论组件都太<a class="read-more" href="http://www.1900.live/duoshuo-bye/">&raquo;</p>
+    </section>
+    <footer class="post-meta">
+        <img class="author-thumb" src="/img/avatar.png" alt="1900" nopin="nopin" />
+        <a href="http://www.1900.live/duoshuo-bye/">1900</a>
+        <time class="post-date" datetime="2017-03-23">2017-03-23</time>
+        <a href="http://www.1900.live/duoshuo-bye/#comment" class="post-comment post-none">有<span data-disqus-url="http://www.1900.live/duoshuo-bye/"></span>条评论</a>
+        <span class="post-date">总计344字</span>
+        <span class="post-date">预计1分钟读完</span>
+        <span class="post-date post-none">[object Object]</span>
+        
+    </footer>
+</article>
+
+
+<article class="post">
+<div class="post-toppic" style="">
+                    <div class="picbox"><a class="read-more" href="http://www.1900.live/neurasthenia/">
+                      <img node-type="articleHeaderPic" src="http://cdn.4zen.top/image/7/74/e0a7381f69702e66f0c1100cee011.png">
+                                          </a></div>
+                  </div>
+    <header class="post-header">
+        <h2 class="post-title"><a href="http://www.1900.live/neurasthenia/">神经衰弱...</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>这两天晚上都失眠睡不着，脑壳疼。
+感觉身边的世界似乎变了个世界，每个人都是事儿逼，嘴里叽里咕噜说个没完，手上的事情怎么做怎么觉得不对，脑子感觉都快要炸掉了！感觉这一世轮回到人这个复杂的物种上面真是一种折磨…
+感觉自己已经神经衰弱了….
+BGM：DMX - Where The Hood At
+
+
+<a class="read-more" href="http://www.1900.live/neurasthenia/">&raquo;</p>
+    </section>
+    <footer class="post-meta">
+        <img class="author-thumb" src="/img/avatar.png" alt="1900" nopin="nopin" />
+        <a href="http://www.1900.live/neurasthenia/">1900</a>
+        <time class="post-date" datetime="2017-03-14">2017-03-14</time>
+        <a href="http://www.1900.live/neurasthenia/#comment" class="post-comment post-none">有<span data-disqus-url="http://www.1900.live/neurasthenia/"></span>条评论</a>
+        <span class="post-date">总计111字</span>
+        <span class="post-date">预计1分钟读完</span>
+        <span class="post-date post-none">[object Object]</span>
+        
+    </footer>
+</article>
+
+
+<article class="post">
+<div class="post-toppic" style="">
+                    <div class="picbox"><a class="read-more" href="http://www.1900.live/be-busy-days/">
+                      <img node-type="articleHeaderPic" src="http://cdn.4zen.top/image/c/c8/f649504db64b565cb314ffb1d8429.jpg">
+                                          </a></div>
+                  </div>
+    <header class="post-header">
+        <h2 class="post-title"><a href="http://www.1900.live/be-busy-days/">忙碌的三天</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>#开业大吉！新店10号正式开业，这一周都是忙忙碌碌的，每天7点就需要去活动门店做准备工作。而且光是前期的宣传就搞了5天，活动又搞了三天，今天又要花一天收尾，总是就是很累呀…
+但是这次活动前期的公关工作我爸没做好，一个是城管：出去游街、发宣传单的时候经常被城管撵来撵去..，开业最后一天还不允许我们把礼品摆在街道上。二个是工商：说我们没备案，活动当天来我们店里拍了照说是看看我们有没有虚假宣传，不过到今天都没放什么屁，估计也没什么事把。但是心<a class="read-more" href="http://www.1900.live/be-busy-days/">&raquo;</p>
+    </section>
+    <footer class="post-meta">
+        <img class="author-thumb" src="/img/avatar.png" alt="1900" nopin="nopin" />
+        <a href="http://www.1900.live/be-busy-days/">1900</a>
+        <time class="post-date" datetime="2017-03-13">2017-03-13</time>
+        <a href="http://www.1900.live/be-busy-days/#comment" class="post-comment post-none">有<span data-disqus-url="http://www.1900.live/be-busy-days/"></span>条评论</a>
+        <span class="post-date">总计549字</span>
+        <span class="post-date">预计2分钟读完</span>
+        <span class="post-date post-none">[object Object]</span>
+        
+    </footer>
+</article>
+
+
+<article class="post">
+<div class="post-toppic" style="">
+                    <div class="picbox"><a class="read-more" href="http://www.1900.live/share-wallpaper-egine/">
+                      <img node-type="articleHeaderPic" src="http://cdn.4zen.top/image/7/9c/c300192da5c517208fd7b0acf8f4f.jpg">
+                                          </a></div>
+                  </div>
+    <header class="post-header">
+        <h2 class="post-title"><a href="http://www.1900.live/share-wallpaper-egine/">安利一个很火的东西</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>steam上的一款热门壁纸软件：wallpaper egine。
+这个软件的主要功能就是实现pc上的动态桌面壁纸功能，而且steam上价格也不贵，不到20就能入手。购买了软件后里面的壁纸都是免费的，可以随意下载使用。总得来说效果拔群。
+当然你不舍得花钱的话也可以使用破解版的，但是壁纸数据需要额外单独下载。这里我就不提供下载链接了，因为这个软件的确不算太贵。
+
+关于数据占用我也看下自软占用情况，正常情况下占用内存30-40M左右，就目前大<a class="read-more" href="http://www.1900.live/share-wallpaper-egine/">&raquo;</p>
+    </section>
+    <footer class="post-meta">
+        <img class="author-thumb" src="/img/avatar.png" alt="1900" nopin="nopin" />
+        <a href="http://www.1900.live/share-wallpaper-egine/">1900</a>
+        <time class="post-date" datetime="2017-03-09">2017-03-09</time>
+        <a href="http://www.1900.live/share-wallpaper-egine/#comment" class="post-comment post-none">有<span data-disqus-url="http://www.1900.live/share-wallpaper-egine/"></span>条评论</a>
+        <span class="post-date">总计231字</span>
+        <span class="post-date">预计1分钟读完</span>
+        <span class="post-date post-none">[object Object]</span>
+        
+    </footer>
+</article>
+
+
+
+
+<nav class="pagination" role="navigation">
+    
+        <a class="newer-posts" href="/page/5/">&larr; 上一页</a>
+    
+    <span class="page-number">第 6 页 &frasl; 共 13 页</span>
+    
+        <a class="older-posts" href="/page/7/">下一页 &rarr;</a>
+    
+</nav>
+</main>
 
 
     </div>
 
-    <a class="a_appBtmTip" id="j_g_appBtmTip" href="https://www.g-cores.com/app">
-        <img src="https://alioss.g-cores.com/assets/app-bottom-tip-46d283b5378314022a1658dea5b24701d466062a83e15fd55148e02328033ab7.jpg" alt="">
-        <span>
-            <i class="fa fa-times" aria-hidden="true"></i>
-        </span>
-    </a>
+    <div class="sidebar">  
+        <a href="#s-top" class="s-top" to="#s-top"><i class="fa fa-chevron-up" action-type="goTop"></i></a>
+    </div>
 
-    <!-- <div class="footer_placeholder"></div> -->
-    <footer class="footer">
-        <div class="footer_contact">
-            <a href="mailto:haolun@g-cores.com" target="_blank">CONTACT US | 联系我们</a>
-        </div>
-        <div class="footer_info">
-            <img class="footer_top" data-no-retina="" src="https://alioss.g-cores.com/assets/footer_top-4c293a683d2aece39281f2cf7e9bb022c2e55dfbd963d2862d20e3690eea91ae.jpg" alt="">
-
-            <div class="footer_logos">
-                <a href="https://www.g-cores.com/categories/13">
-                    <img data-no-retina="" src="https://alioss.g-cores.com/assets/footer/gadio-01-e8679bfc838ae676eead7fa354c6ab7e26f3ec7bbf093c58ccaa647ae7701de4.png" alt="">
-                </a>
-                <a href="https://www.g-cores.com/categories/12">
-                    <img data-no-retina="" src="https://alioss.g-cores.com/assets/footer/gadiopro-01-3bbe85deb999275b31c7658a0e09299751850497bbee7e10cedb6a83ab29de75.png" alt="">
-                </a>
-                <a href="https://www.g-cores.com/categories/14">
-                    <img data-no-retina="" src="https://alioss.g-cores.com/assets/footer/music-01-a744efa6c6fbba4474e9f2a4b4de64347065eddc7e9ebccc375a7de2e9829f74.png" alt="">
-                </a>
-                <a href="https://www.g-cores.com/categories/15">
-                    <img data-no-retina="" src="https://alioss.g-cores.com/assets/footer/docu-01-8640c29ee16770157814443d1dbd01ccd5b3cf007b249db6fc6523b295662d2a.png" alt="">
-                </a>
-                <a href="https://www.g-cores.com/categories/16">
-                    <img data-no-retina="" src="https://alioss.g-cores.com/assets/footer/special-01-69dcd46be43114fa958e1d969bc14297e12b193dd753fb924e07e0beff25dd37.png" alt="">
-                </a>
-            </div>
-
-            <div class="footer_follow">
-                <h4>Follow us</h4>
-                <p>
-                    <a href="http://weibo.com/gamecore" target="_blank" class="footer_weibo"></a>
-                    <a href="javascript:;" class="footer_weixin" data-toggle="tooltip" data-placement="top" title="" data-original-title="微信号：gamecores，欢迎订阅"></a>
-                    <a href="http://shop124260606.taobao.com" target="_blank" class="footer_taobao"></a>
-                    <a href="http://itunes.apple.com/cn/podcast/id420660752" target="_blank" class="footer_podcast"></a>
-                    <a href="https://www.g-cores.com/rss" target="_blank" class="footer_rss"></a>
-                </p>
-            </div>
-
-            <p>
-                All Rights Reserved 2009-2015 GAMECORES - Terms &amp; Conditions 闽ICP备11023385号-1
-            </p>
-        </div>
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="http://www.1900.live">我道</a> &copy; </section>
+        <section class="poweredby">Proudly published with <a href="https://hexo.io/"> ❤ Hexo</a> &amp; 
+        <a href="https://pages.github.com/">Github Pages</a> &amp; 
+        <p>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p>
+</section>
     </footer>
 
-
-    <a href="javascript:;" class="toTop" id="j_toTop" style="display: none;">
-        <img src="https://alioss.g-cores.com/assets/totop-4489de3bdf698735aae759e5da990bc8ecb48fd5852e674fc5ba4fcdddfd3471.png" alt="">
-    </a>
-
-
-    
+    <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src='//unpkg.com/valine@1.1.7/dist/Valine.min.js'></script>
+    <script src="/js/plugin.js"></script>
+    <script src="/js/index.js"></script>
 
 
-</body></html>
+</body>
+</html>
