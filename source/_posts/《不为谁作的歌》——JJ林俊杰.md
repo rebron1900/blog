@@ -1,14 +1,13 @@
 ---
 title: 《不为谁作的歌》——JJ林俊杰
-categories: 
-- 其他
+permalink: jj-song
+date: 2016-09-22 21:04:29
+updated: 2016-09-18 21:31:16
+image: http://cdn.4zen.top/image/b/12/5f5d4e245d06d4c93030f0c93b023.jpg
 tags: 
 - 分享
-image: 'http://cdn.4zen.top/image/b/12/5f5d4e245d06d4c93030f0c93b023.jpg'
-permalink: jj-twilight
-id: 33
-updated: '2016-09-22 21:04:29'
-date: 2016-09-18 21:31:16
+categories:
+- 其他
 ---
 
 最开始听的JJ的歌应该就是江南把？后来有一段时间MP3里都是他的歌，美人鱼、小酒窝、一千年以后、编号89757，哪个时候还有一本歌词本，上面还抄了美人鱼和编号89757的歌词，现在想来满满的都是回忆呀。

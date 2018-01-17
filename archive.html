@@ -1,47 +1,179 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
+<html xmlns:wb="http://open.weibo.com/wb">
+
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>我道</title>
-    <meta name="description" content="我叫1900，普通男青年，学过三年编程。湖南人，现在在四川工作。2015年花了26天骑过一次318。有点伪文艺，喜欢比较玄学的东西。性格多变，疑似有人格分裂。" />
+    <!-- meta信息 -->
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit">
+    <!-- for 360 指定内核 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="csrf-param" content="authenticity_token">
+    <meta name="csrf-token" content="Ye1jEU+Jp2rM7U9W18w9f90L1uyFRscRzNhiJxi1nAB0IUfqi2aCk4ccfPMIHMsFaNujKu7s9dGA44uMo33NPw==">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 
-    <meta name="HandheldFriendly" content="True" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 样式表 -->
+    <link rel="stylesheet" media="all" href="/css/style.css">
+    <link rel="stylesheet" media="screen" href="/css/screen.css">
 
-    <link rel="shortcut icon" href="favicon.ico">
+    <!-- 不知道是什么 -->
+    <style type="text/css">
+        .p_spBanner {
+            margin: 20px 0 40px;
+        }
 
-    <link rel="stylesheet" type="text/css" href="/css/screen.css" />
-    <link rel="stylesheet" href="/css/iDisqus.min.css">
-    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
-    <link rel="stylesheet" href="/css/monokai-sublime.css">
+        .p_spBanner_sm {
+            display: none;
+        }
 
+        @media (max-width: 600px) {
+            .p_spBanner_bg {
+                display: none;
+            }
+            .p_spBanner_sm {
+                display: inline;
+                ;
+            }
+        }
+    </style>
+
+    <!--[if lt IE 9]>
+    <script src="https://alioss.g-cores.com/assets/html5shiv-99cb6d655922cd55cf310aa415c20655b29fc141d48778feb15f0ca3c732cf0a.js"></script><script src="https://alioss.g-cores.com/assets/respond/1.4.2/respond.min-5098b6c38985756e424a7c59535a58c3e6c616881478ab726f0837c5c7ef8ff0.js"></script>
+
+      <link href="https://alioss.g-cores.com/respond-proxy.html" id="respond-proxy" rel="respond-proxy" />
+      <link href="/respond.proxy.gif" id="respond-redirect" rel="respond-redirect" />
+      <script src="/respond.proxy.js"></script>
+  <![endif]-->
+
+    <!-- 标题 -->
+    <title>机核</title>
+
+    <!-- seo信息 -->
+    <meta name="keywords" content="游戏,游戏电台,游戏广播,游戏播客,电视游戏,家用机游戏,单机游戏,游戏论坛,游戏新闻,游戏视频.">
+    <meta name="description" content="从游戏到生活，我们生产内容，关乎你喜爱的一切。">
+
+    <!-- rss地址 -->
+    <link href="https://www.g-cores.com/rss" rel="alternate" type="application/rss+xml" title="Gamecores Feed">
+
+    <!-- 安卓app图标 -->
+    <link rel="apple-touch-icon" href="/touch-icon-iphone.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/touch-icon-ipad.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/touch-icon-iphone-retina.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/touch-icon-ipad-retina.png">
+
+    <!-- <script src="https://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script> -->
 
 </head>
-<body class="home-template" id="s-top">
 
-    <div class="nav">
-<div class="nav_body">
-  <div class="b_logo"> 
-      <a class="blog-logo" href="/"><img src="/img/logo-mini.png" alt="我道" /></a>
-  </div>
-  <div class="b_class"> 
-    <ul>
-    	
-    	<li class="nav-"><a class="" n_type="" href="/">首页</a></li>
-      
-    	<li class="nav-"><a class="" n_type="" href="/links.html">左邻</a></li>
-      
-    	<li class="nav-"><a class="" n_type="" href="/archive.html">归档</a></li>
-      
-    	<li class="nav-"><a class="" n_type="" href="/about.html">关于</a></li>
-      
-    	<li class="nav-"><a class="" n_type="" href="/rss.xml">订阅</a></li>
-      
-    </ul>
-  </div>
-</div>
-</div>
+<body class="body-fixedNavbar">
+    <!-- 顶部菜单栏 -->
+        <nav class="navbar navbar-default navbar-fixed-top" id="j_app_navbar" role="navigation">
+      <div class="container">
+        <div class="navbar_header">
+          <!-- 小屏幕切换按钮 -->
+          <button type="button" class="navbar_toggle" data-toggle="collapse" data-target="#j_navbarCollapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+
+          <a class="navbar_brand navbar_brand-logo" id="j_logo" href="/">
+            <img src="/img/logo-mini.png"
+              alt="我道">
+          </a>
+        </div>
+    
+        <!-- 功能区 -->
+        <div class="collapse collapsed navbar_collapse" id="j_navbarCollapse">
+          <ul class="nav navbar_nav navbar_right">
+            <li>
+              <a href="https://www.g-cores.com/account/signup">RSS</a>
+            </li>
+          </ul>
+          <form class="navbar_search" action="https://www.g-cores.com/search" accept-charset="UTF-8" method="get">
+            <input name="utf8" type="hidden" value="✓">
+            <span class="fa fa-search"></span>
+            <input type="text" name="keyword" placeholder="Search">
+          </form>
+    
+          <!-- 菜单项 -->
+          <ul class="nav navbar_nav navbar_right" id="j_nav">
+            
+            <li>
+              <a class="" n_type="" href="/">
+                首页
+              </a>
+            </li>
+            
+            <li>
+              <a class="" n_type="" href="/links.html">
+                左邻
+              </a>
+            </li>
+            
+            <li>
+              <a class="" n_type="" href="/archive.html">
+                归档
+              </a>
+            </li>
+            
+            <li>
+              <a class="" n_type="" href="/about.html">
+                关于
+              </a>
+            </li>
+            
+            <li>
+              <a class="" n_type="" href="/rss.xml">
+                订阅
+              </a>
+            </li>
+            
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+      </div>
+    </nav>
+
+    <!-- 不知道是什么 -->
+    <style type="text/css">
+        .navbar_brand-logo {
+            padding-left: 15px !important;
+            margin-left: 0 !important;
+        }
+
+        .navbar_brand-affix {
+            padding-right: 0 !important;
+        }
+
+        @media (min-width: 992px) {
+            .navbar_brand-affix {
+                margin-left: -50px !important;
+            }
+            .navbar_brand-logo {
+                padding-left: 0 !important;
+                margin-left: 0 !important;
+            }
+        }
+
+        .navbar_brand-affix img {
+            margin: -8px 0 0 0;
+            display: inline-block !important;
+        }
+
+        .navbar_brand-affix .navbar_brand-affix_red {
+            display: none !important;
+        }
+
+        .navbar_brand-affix:hover .navbar_brand-affix_white {
+            display: none !important;
+        }
+
+        .navbar_brand-affix:hover .navbar_brand-affix_red {
+            display: inline !important;
+        }
+    </style>
+
+    <!-- 引入网页主体 -->
     <div class="post-bg" style="background-image: url(http://cdn.4zen.top/image/d/48/554143774b60e336056293d6a66a9.jpg);"></div>
 
 <div class="site-wrapper " page-type="c-page-archive">
@@ -59,19 +191,10 @@
 
         <section class="post-content">
 			<span class="archive-move-on"></span>
-			<span class="archive-page-counter">好! 目前共计&nbsp;130&nbsp;篇日志。 继续努力。</span>
+			<span class="archive-page-counter">好! 目前共计&nbsp;129&nbsp;篇日志。 继续努力。</span>
 			<div id="hidden-temp-container" style="">
 			  <ul>
                 
-		            <li class="" itemscope="" itemtype="http://schema.org/Article">
-		              <a class="" href="http://www.1900.live/A-failed-crowd/" itemprop="url">
-		                  <em year="2017">
-		                  	12-22
-		                  </em>
-		                  <span itemprop="name">一次失败的众筹体验</span>
-		              </a>
-		            </li>
-			  	
 		            <li class="" itemscope="" itemtype="http://schema.org/Article">
 		              <a class="" href="http://www.1900.live/A-failed-crowd/" itemprop="url">
 		                  <em year="2017">
@@ -352,7 +475,7 @@
 		            </li>
 			  	
 		            <li class="" itemscope="" itemtype="http://schema.org/Article">
-		              <a class="" href="http://www.1900.live/mei-guo-da-ren-xiu-guang-ying-wu-dao/" itemprop="url">
+		              <a class="" href="http://www.1900.live/dance-show/" itemprop="url">
 		                  <em year="2017">
 		                  	07-05
 		                  </em>
@@ -361,7 +484,7 @@
 		            </li>
 			  	
 		            <li class="" itemscope="" itemtype="http://schema.org/Article">
-		              <a class="" href="http://www.1900.live/ng/" itemprop="url">
+		              <a class="" href="http://www.1900.live/apple-club/" itemprop="url">
 		                  <em year="2017">
 		                  	07-04
 		                  </em>
@@ -982,20 +1105,20 @@
 		            </li>
 			  	
 		            <li class="" itemscope="" itemtype="http://schema.org/Article">
+		              <a class="" href="http://www.1900.live/jj-song/" itemprop="url">
+		                  <em year="2016">
+		                  	09-22
+		                  </em>
+		                  <span itemprop="name">《不为谁作的歌》——JJ林俊杰</span>
+		              </a>
+		            </li>
+			  	
+		            <li class="" itemscope="" itemtype="http://schema.org/Article">
 		              <a class="" href="http://www.1900.live/biochronometry/" itemprop="url">
 		                  <em year="2016">
 		                  	09-19
 		                  </em>
 		                  <span itemprop="name">如何调整紊乱的生物钟</span>
-		              </a>
-		            </li>
-			  	
-		            <li class="" itemscope="" itemtype="http://schema.org/Article">
-		              <a class="" href="http://www.1900.live/jj-twilight/" itemprop="url">
-		                  <em year="2016">
-		                  	09-18
-		                  </em>
-		                  <span itemprop="name">《不为谁作的歌》——JJ林俊杰</span>
 		              </a>
 		            </li>
 			  	
@@ -1271,26 +1394,64 @@
 </main>
 
 
-    </div>
 
-    <div class="sidebar">  
-        <a href="#s-top" class="s-top" to="#s-top"><i class="fa fa-chevron-up" action-type="goTop"></i></a>
-    </div>
-
-    <footer class="site-footer clearfix">
-        <section class="copyright"><a href="http://www.1900.live">我道</a> &copy; </section>
-        <section class="poweredby">Proudly published with <a href="https://hexo.io/"> ❤ Hexo</a> &amp; 
-        <a href="https://pages.github.com/">Github Pages</a> &amp; 
-        <p>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p>
-</section>
+    <!-- 引入页脚文件 -->
+        <!-- 页脚 -->
+    <footer class="footer">
+        <div class="footer_contact">
+            <a href="mailto:haolun@g-cores.com" target="_blank">CONTACT US | 联系我们</a>
+        </div>
+        <div class="footer_info">
+            <img class="footer_top" data-no-retina="" src="https://alioss.g-cores.com/assets/footer_top-4c293a683d2aece39281f2cf7e9bb022c2e55dfbd963d2862d20e3690eea91ae.jpg"
+                alt="">
+    
+            <div class="footer_logos">
+                <a href="https://www.g-cores.com/categories/13">
+                    <img data-no-retina="" src="https://alioss.g-cores.com/assets/footer/gadio-01-e8679bfc838ae676eead7fa354c6ab7e26f3ec7bbf093c58ccaa647ae7701de4.png"
+                        alt="">
+                </a>
+                <a href="https://www.g-cores.com/categories/12">
+                    <img data-no-retina="" src="https://alioss.g-cores.com/assets/footer/gadiopro-01-3bbe85deb999275b31c7658a0e09299751850497bbee7e10cedb6a83ab29de75.png"
+                        alt="">
+                </a>
+                <a href="https://www.g-cores.com/categories/14">
+                    <img data-no-retina="" src="https://alioss.g-cores.com/assets/footer/music-01-a744efa6c6fbba4474e9f2a4b4de64347065eddc7e9ebccc375a7de2e9829f74.png"
+                        alt="">
+                </a>
+                <a href="https://www.g-cores.com/categories/15">
+                    <img data-no-retina="" src="https://alioss.g-cores.com/assets/footer/docu-01-8640c29ee16770157814443d1dbd01ccd5b3cf007b249db6fc6523b295662d2a.png"
+                        alt="">
+                </a>
+                <a href="https://www.g-cores.com/categories/16">
+                    <img data-no-retina="" src="https://alioss.g-cores.com/assets/footer/special-01-69dcd46be43114fa958e1d969bc14297e12b193dd753fb924e07e0beff25dd37.png"
+                        alt="">
+                </a>
+            </div>
+    
+            <div class="footer_follow">
+                <h4>Follow us</h4>
+                <p>
+                    <a href="http://weibo.com/gamecore" target="_blank" class="footer_weibo"></a>
+                    <a href="javascript:;" class="footer_weixin" data-toggle="tooltip" data-placement="top" title="" data-original-title="微信号：gamecores，欢迎订阅"></a>
+                    <a href="http://shop124260606.taobao.com" target="_blank" class="footer_taobao"></a>
+                    <a href="http://itunes.apple.com/cn/podcast/id420660752" target="_blank" class="footer_podcast"></a>
+                    <a href="https://www.g-cores.com/rss" target="_blank" class="footer_rss"></a>
+                </p>
+            </div>
+    
+            <p>
+                All Rights Reserved 2009-2015 GAMECORES - Terms &amp; Conditions 闽ICP备11023385号-1
+            </p>
+        </div>
     </footer>
 
-    <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
-    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-    <script src='//unpkg.com/valine@1.1.7/dist/Valine.min.js'></script>
-    <script src="/js/plugin.js"></script>
+    <!-- 回到顶部按钮 -->
+    <a href="javascript:;" class="toTop" id="j_toTop" style="display:none;">
+        <img src="https://alioss.g-cores.com/assets/totop-4489de3bdf698735aae759e5da990bc8ecb48fd5852e674fc5ba4fcdddfd3471.png" alt="">
+    </a>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
     <script src="/js/index.js"></script>
 
-
 </body>
+
 </html>
