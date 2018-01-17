@@ -4552,3 +4552,8 @@ height:6px;
 ::-webkit-scrollbar-track-piece{
 -webkit-border-radius:0;
 }
+
+.comment-list .comment-item-images .comment-item-image {
+    height:100% !important;
+    width: auto !important;
+}
