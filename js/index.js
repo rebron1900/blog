@@ -41,7 +41,7 @@ var repURL = '4zen.top';
             forum: '4zen',
             api: 'http://api.fooleap.org/4zen',
             site: 'http://www.1900.live',
-            mode: 0,
+            mode: 2,
             timeout: 3000,
             init: true
         }); 
