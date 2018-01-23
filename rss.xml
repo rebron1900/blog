@@ -6,7 +6,7 @@
   <link href="/rss.xml" rel="self"/>
   
   <link href="http://www.1900.live/"/>
-  <updated>2017-12-22T06:57:28.000Z</updated>
+  <updated>2018-01-23T03:41:34.987Z</updated>
   <id>http://www.1900.live/</id>
   
   <author>
@@ -15,6 +15,51 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>20180123103042</title>
+    <link href="http://www.1900.live/20180123103042/"/>
+    <id>http://www.1900.live/20180123103042/</id>
+    <published>2018-01-23T02:30:42.000Z</published>
+    <updated>2018-01-23T03:41:34.987Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="其他" scheme="http://www.1900.live/categories/%E5%85%B6%E4%BB%96/"/>
+    
+    
+      <category term="其他" scheme="http://www.1900.live/tags/%E5%85%B6%E4%BB%96/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>光顾着玩了</title>
+    <link href="http://www.1900.live/%E5%85%89%E9%A1%BE%E7%9D%80%E7%8E%A9%E4%BA%86/"/>
+    <id>http://www.1900.live/光顾着玩了/</id>
+    <published>2018-01-17T08:50:10.000Z</published>
+    <updated>2018-01-17T08:50:10.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;好久没更博客了。最近成谜吃鸡无法自拔，而且&lt;/p&gt;
+
+        
+      
+    
+    </summary>
+    
+      <category term="其他" scheme="http://www.1900.live/categories/%E5%85%B6%E4%BB%96/"/>
+    
+    
+      <category term="其他" scheme="http://www.1900.live/tags/%E5%85%B6%E4%BB%96/"/>
+    
+  </entry>
   
   <entry>
     <title>一次失败的众筹体验</title>
@@ -454,54 +499,6 @@
     
     
       <category term=" - 流水账" scheme="http://www.1900.live/tags/%E6%B5%81%E6%B0%B4%E8%B4%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>凡人歌-张震岳&amp;热狗战队</title>
-    <link href="http://www.1900.live/fan-ren-ge-zhang-zhen-yue-re-gou-zhan-dui/"/>
-    <id>http://www.1900.live/fan-ren-ge-zhang-zhen-yue-re-gou-zhan-dui/</id>
-    <published>2017-08-24T15:54:43.000Z</published>
-    <updated>2017-08-29T06:12:29.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;embed height=&quot;415&quot; width=&quot;544&quot; quality=&quot;high&quot; allowfullscreen=&quot;true&quot; type=&quot;application/x-shockwave-flash&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term=" - 分享" scheme="http://www.1900.live/tags/%E5%88%86%E4%BA%AB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Life&#39;s A Struggle</title>
-    <link href="http://www.1900.live/lifes-a-struggle/"/>
-    <id>http://www.1900.live/lifes-a-struggle/</id>
-    <published>2017-08-20T03:29:00.000Z</published>
-    <updated>2017-08-21T11:26:18.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;embed height=&quot;415&quot; width=&quot;544&quot; quality=&quot;high&quot; allowfullscreen=&quot;true&quot; type=&quot;application/x-shockwave-flash&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term=" - 分享" scheme="http://www.1900.live/tags/%E5%88%86%E4%BA%AB/"/>
     
   </entry>
   
