@@ -257,7 +257,7 @@ function addLinkico()
         {
             "padding-left" : "20px",
             "margin" : "0px 5px",
-            "background" : "url(//api.byi.pw/favicon?url=" + this.hostname + ")  no-repeat"
+            "background" : "url(//f.ydr.me/?url=" + this.hostname + ")  no-repeat"
         }
         );
         $(this).attr("target", "_blank");
