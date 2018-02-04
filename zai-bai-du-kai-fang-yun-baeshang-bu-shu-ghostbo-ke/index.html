@@ -13,7 +13,6 @@
 
     <link rel="shortcut icon" href="/favicon.ico">
 
-    <link rel="stylesheet" type="text/css" href="/css/main.css" />
     <link rel="stylesheet" type="text/css" href="/css/screen.css" />
     <link rel="stylesheet" href="/css/iDisqus.min.css">
     <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
@@ -69,7 +68,7 @@
             </section>
         </header>
 
-        <section class="post-content">
+        <section class="post-content entry">
             <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>wordpress断断续续用了可能也有七八年了，从最早期的橡树博客（wpoak）到后来找的一些免费的服务器商，再到后来的搬瓦工，东西写了很多，不过几乎已经找不回来了。总而言之这些年用wordpress的经历就是折腾折腾再折腾，步骤都很简单：<code>找服务器</code>，<code>装博客</code>，<code>找主题</code>，<code>折腾主题</code>，感觉wordpress已经更趋向与CMS或者其他什么东西，有点本末倒置了。前几天我看到ghost的宣传语——更加纯粹的内容写作与发布平台。是呀，博客难道不是为了写文字而生的吗？其他的功能可有可无，内容和文字才是博客的灵魂。<br>而后了解了一下搭建GHOST平台的一些知识，也看到有网友在BAE上成功搭建起了GHOST，遂也想在BAE上尝试，不过碰到了各种问题，折腾了有些时间后整合了搜索到的几篇文章终于搭建成功，这里写一篇流程短文介绍一下如何实现的，希望能帮到其他想在BAE上搭建GHOST博客的朋友。</p>
 <h2 id="创建BAE服务、MYSQL服务、七牛服务"><a href="#创建BAE服务、MYSQL服务、七牛服务" class="headerlink" title="创建BAE服务、MYSQL服务、七牛服务"></a>创建BAE服务、MYSQL服务、七牛服务</h2><p><img src="http://ocxfindy0.bkt.clouddn.com/image/2/5f/7e1542cd65c47b98fab44d10f1b13.png" alt="BAE创建"><br>先在bae上创建一个自定义应用，node.js版本我是使用<code>4.2.6</code>。应用<code>内存选择256M</code>（之前搜索到有网友说应用内存必须要256m才可以运行，这里也建议使用256M）</p>
 <p>在BAE控制面板中的左侧拓展服务中添加一个免费版的mysql服务，<code>有些资料说bae的免费mysql服务有长链接问题不可以使用</code>，经我测试没有这个问题。</p>

@@ -14,7 +14,6 @@
 
     <link rel="shortcut icon" href="/favicon.ico">
 
-    <link rel="stylesheet" type="text/css" href="/css/main.css" />
     <link rel="stylesheet" type="text/css" href="/css/screen.css" />
     <link rel="stylesheet" href="/css/iDisqus.min.css">
     <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
@@ -70,7 +69,7 @@
             </section>
         </header>
 
-        <section class="post-content">
+        <section class="post-content entry">
             <p>感觉hexo发布文章的流程略微繁琐，而且我这边在github pages上和qiniu均做了部署，尤其是qiniu那边我使用的是图形界面的同步工具。每次发布的时候要先打开git bash执行生成命令后在发布到github上，然后又要打开qiniu sync工具上传文件，太为繁琐。</p>
 <h4 id="部署到github-pages"><a href="#部署到github-pages" class="headerlink" title="部署到github pages"></a>部署到github pages</h4><p>hexo默认安装的时候会自动给你装上github的部署插件hexo-deployer-git<sup><a href="#fn_1" id="reffn_1">1</a></sup>，你可以在<code>_config.yml</code>里的<code>deploy</code>字段设置，我的设置如下。这里有个小技巧，我设置了<code>extend_dirs: source</code>这个配置想，在每次部署的时候插件会额外把source目录下的md文件全部备份一份进github里，避免以后出现电脑损坏文件丢失的情况。</p>
 <pre><code class="lang-yaml"># Deployment

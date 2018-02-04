@@ -15,7 +15,6 @@
 
     <link rel="shortcut icon" href="/favicon.ico">
 
-    <link rel="stylesheet" type="text/css" href="/css/main.css" />
     <link rel="stylesheet" type="text/css" href="/css/screen.css" />
     <link rel="stylesheet" href="/css/iDisqus.min.css">
     <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
@@ -71,7 +70,7 @@
             </section>
         </header>
 
-        <section class="post-content">
+        <section class="post-content entry">
             <p>昨天在写引用时发现了一个页面上的BUG，在页面上点击文章内的对应的引用数字会跳转到页脚对应的引用区。但是因为我页面的头部有一条固定高度为<code>50px</code>的导航条，点击连接后虽然会跳转到引用区域，但是会被导航条遮住50px高度的内容。而且跳转没有过渡动画，很僵硬…</p>
 <p>感觉这个可以用回到顶部中用到的修改元素的<code>data-offset</code>来解决这个问题，起初是想直接用js上的一个滚动框架来实现这个功能，后来发现改不来。干脆照着自己写了个函数。</p>
 <p>先是查找下页面上所有锚点链接并用jquery绑定一个新的点击事件，选择器可以用css的属性选择器写法如<code>a[href^=&quot;#&quot;]</code>过滤所有以#符号开头的a链接。绑定一个点击函数，用<code>preventDefault</code>阻值默认的点击事件，然后用jquery的<code>animate</code>来实现动画效果的滚动，并滚动滚动条到目标元素的位置，并加上我导航条的高度修正<code>scrollTop: $(this.hash).offset()-55</code>，最终代码如下。</p>

@@ -238,3 +238,30 @@ function linkEV(selector,fixSet = 0){
                 });
 }
 
+function addLinkico()
+{
+
+    if ($("#links").length != 0 || $(".archive-page-counter").length != 0)
+    {
+        return;
+    }
+
+    $(".post-content a[class!=headerlink]").each(function ()
+    {
+        if ($(this).find("img").length != 0)
+        {
+            return;
+        }
+
+        $(this).css(
+        {
+            "padding-left" : "20px",
+            "margin" : "0px 5px",
+            "background" : "url(//f.ydr.me/?url=" + this.hostname + ")  no-repeat"
+        }
+        );
+        $(this).attr("target", "_blank");
+    }
+    )
+
+}
