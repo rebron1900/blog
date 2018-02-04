@@ -72,6 +72,7 @@ var repURL = '4zen.top';
                 linkEV('.post-content blockquote[id^="fn"]  a[href^="#"]',-55);
                 linkEV('.post-content sup a[href^="#"]',-55);
                 addLinkico();
+                disq.count();
                 break;
             case "c-page":
                 addPBOX();
