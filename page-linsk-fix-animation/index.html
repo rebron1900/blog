@@ -3,13 +3,19 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>我道</title>
-    <meta name="description" content="我叫1900，普通男青年，学过三年编程。湖南人，现在在四川工作。2015年花了26天骑过一次318。有点伪文艺，喜欢比较玄学的东西。性格多变，疑似有人格分裂。" />
+    
+    <title>页内锚点滚动修正及动画效果 | 我道 - 我叫1900，普通男青年，学过三年编程。湖南人，现在在四川工作。2015年花了26天骑过一次318。有点伪文艺，喜欢比较玄学的东西。性格多变，疑似有人格分裂。 </title>
+    <meta name="description" content="昨天在写引用时发现了一个页面上的BUG，在页面上点击文章内的对应的引用数字会跳转到页脚对应的引用区。但是因为我页面的头部有一条固定高度为50px的导航条，点击连接后虽然会跳转到引用区域，但是会被导航条遮住50px高度的内容。而且跳转没有过渡动画，很僵硬…
+感觉这个可以用回到顶部中用到的修改元素的data-offset来解决这个问题，起初是想直接用js上的一个滚动框架来实现这个功能，后来发现改不来。干脆照着自己写了个函数。
+先是查找下页面" />
+    
 
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="icon"  sizes="16x16" href="/favicon.ico">
+    <link rel="icon" sizes="32x32" href="/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="/css/screen.css" />
     <link rel="stylesheet" href="/css/iDisqus.min.css">
@@ -62,11 +68,10 @@
                 <a href="http://www.1900.live/page-linsk-fix-animation/#comment" class="post-comment post-none">有<span data-disqus-url="http://www.1900.live/page-linsk-fix-animation/"></span>条评论</a>
                 <span class="post-date">总计454字</span>
                 <span class="post-date">预计2分钟读完</span>
-
             </section>
         </header>
 
-        <section class="post-content">
+        <section class="post-content entry">
             <p>昨天在写引用时发现了一个页面上的BUG，在页面上点击文章内的对应的引用数字会跳转到页脚对应的引用区。但是因为我页面的头部有一条固定高度为<code>50px</code>的导航条，点击连接后虽然会跳转到引用区域，但是会被导航条遮住50px高度的内容。而且跳转没有过渡动画，很僵硬…</p>
 <p>感觉这个可以用回到顶部中用到的修改元素的<code>data-offset</code>来解决这个问题，起初是想直接用js上的一个滚动框架来实现这个功能，后来发现改不来。干脆照着自己写了个函数。</p>
 <p>先是查找下页面上所有锚点链接并用jquery绑定一个新的点击事件，选择器可以用css的属性选择器写法如<code>a[href^=&quot;#&quot;]</code>过滤所有以#符号开头的a链接。绑定一个点击函数，用<code>preventDefault</code>阻值默认的点击事件，然后用jquery的<code>animate</code>来实现动画效果的滚动，并滚动滚动条到目标元素的位置，并加上我导航条的高度修正<code>scrollTop: $(this.hash).offset()-55</code>，最终代码如下。</p>
@@ -154,7 +159,12 @@ linkEV(&#39;.post-content sup a[href^=&quot;#&quot;]&#39;,-55);
 
     <footer class="site-footer clearfix">
         <section class="copyright"><a href="http://www.1900.live">我道</a> &copy; </section>
-        <section class="poweredby">Proudly published with <a href="https://hexo.io/"> ❤ Hexo</a> &amp; <a href="https://pages.github.com/">Github Pages</a></section>
+        <section class="poweredby">Proudly published with <a href="https://hexo.io/"> ❤ Hexo</a> &amp; 
+        <p>  Hosted by 
+        	<a href="https://pages.github.com/"> ❤ Github Pages</a> &amp; 
+       		<a href="https://pages.coding.me" style="font-weight: bold"> ❤ Coding Pages</a>
+    	</p>
+</section>
     </footer>
 
     <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>

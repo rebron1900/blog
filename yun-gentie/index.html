@@ -3,13 +3,19 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>我道</title>
-    <meta name="description" content="我叫1900，普通男青年，学过三年编程。湖南人，现在在四川工作。2015年花了26天骑过一次318。有点伪文艺，喜欢比较玄学的东西。性格多变，疑似有人格分裂。" />
+    
+    <title>网易云跟帖适配ajax主题，动态加载评论框 | 我道 - 我叫1900，普通男青年，学过三年编程。湖南人，现在在四川工作。2015年花了26天骑过一次318。有点伪文艺，喜欢比较玄学的东西。性格多变，疑似有人格分裂。 </title>
+    <meta name="description" content="2017年3月29日上午：（经测试发现无法评论）。。2017年3月29日中午：刷新博客发现早上发的评论居然出来了，网易云跟帖的审核速度未免也太“快”了把？。。总结：还是不要使用该款评论组件。。
+~~自从前几天多说宣布停止服务后我一直在寻找另外一个我喜欢的第三方评论组件，最喜欢的应该是disqus了，主要是因为他的游客评论功能，目前国内除多说外的组件似乎都强制用户登录才可以发表评论。我觉得这就像是我去旅游别人强制我买东西一样蛋疼…
+但是我" />
+    
 
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="icon"  sizes="16x16" href="/favicon.ico">
+    <link rel="icon" sizes="32x32" href="/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="/css/screen.css" />
     <link rel="stylesheet" href="/css/iDisqus.min.css">
@@ -62,11 +68,10 @@
                 <a href="http://www.1900.live/yun-gentie/#comment" class="post-comment post-none">有<span data-disqus-url="http://www.1900.live/yun-gentie/"></span>条评论</a>
                 <span class="post-date">总计1,017字</span>
                 <span class="post-date">预计4分钟读完</span>
-
             </section>
         </header>
 
-        <section class="post-content">
+        <section class="post-content entry">
             <p>2017年3月29日上午：（经测试发现无法评论）。。<br>2017年3月29日中午：刷新博客发现早上发的评论居然出来了，网易云跟帖的审核速度未免也太“快”了把？。。<br><strong>总结：还是不要使用该款评论组件。。</strong></p>
 <p>~~自从前几天多说宣布停止服务后我一直在寻找另外一个我喜欢的第三方评论组件，最喜欢的应该是disqus了，主要是因为他的游客评论功能，目前国内除多说外的组件似乎都强制用户登录才可以发表评论。我觉得这就像是我去旅游别人强制我买东西一样蛋疼…</p>
 <p>但是我还是妥协了，我发现国内似乎没有第二个多说这样的组件了，我很遗憾…，后来在这些流氓组件中选来选去最后还是考虑换上了<a href="https://gentie.163.com/index.html" target="_blank" rel="external">网易云跟帖</a>（各种不爽，各种无法自定义…），由于官方没有提供一些文档和接口，导致和我的主题各种水土不服…，当时的心情是崩溃的…，后来没辙，还是得想办法治呀。只得去研究网易的js。</p>
@@ -210,7 +215,12 @@ function(e) {//这是主函数，
 
     <footer class="site-footer clearfix">
         <section class="copyright"><a href="http://www.1900.live">我道</a> &copy; </section>
-        <section class="poweredby">Proudly published with <a href="https://hexo.io/"> ❤ Hexo</a> &amp; <a href="https://pages.github.com/">Github Pages</a></section>
+        <section class="poweredby">Proudly published with <a href="https://hexo.io/"> ❤ Hexo</a> &amp; 
+        <p>  Hosted by 
+        	<a href="https://pages.github.com/"> ❤ Github Pages</a> &amp; 
+       		<a href="https://pages.coding.me" style="font-weight: bold"> ❤ Coding Pages</a>
+    	</p>
+</section>
     </footer>
 
     <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>

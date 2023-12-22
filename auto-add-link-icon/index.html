@@ -3,13 +3,18 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>我道</title>
-    <meta name="description" content="我叫1900，普通男青年，学过三年编程。湖南人，现在在四川工作。2015年花了26天骑过一次318。有点伪文艺，喜欢比较玄学的东西。性格多变，疑似有人格分裂。" />
+    
+    <title>文章内链接自动增加网站icon | 我道 - 我叫1900，普通男青年，学过三年编程。湖南人，现在在四川工作。2015年花了26天骑过一次318。有点伪文艺，喜欢比较玄学的东西。性格多变，疑似有人格分裂。 </title>
+    <meta name="description" content="为什么做这个之前使用罗磊的一款名为【Yasuko】的主题时发现了一个很有意思的功能：文章内的链接能自动增加来源站的icon。效果大概是下面这样，如果你现在来看这篇文章应该已经实现好这个功能了。我感觉这个功能能给单调的文章增添一些活力，也能给那些来源站做做宣传=w=，所以便想着在现在的这个主题上增加这个功能。
+实现过程我查看了一下罗磊写的相关代码，发现他是单独做了一些判断，并且使用的是预设好的webfont字体做的图标，这样更为稳定，也更" />
+    
 
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="icon"  sizes="16x16" href="/favicon.ico">
+    <link rel="icon" sizes="32x32" href="/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="/css/screen.css" />
     <link rel="stylesheet" href="/css/iDisqus.min.css">
@@ -62,11 +67,10 @@
                 <a href="http://www.1900.live/auto-add-link-icon/#comment" class="post-comment post-none">有<span data-disqus-url="http://www.1900.live/auto-add-link-icon/"></span>条评论</a>
                 <span class="post-date">总计445字</span>
                 <span class="post-date">预计2分钟读完</span>
-
             </section>
         </header>
 
-        <section class="post-content">
+        <section class="post-content entry">
             <h3 id="为什么做这个"><a href="#为什么做这个" class="headerlink" title="为什么做这个"></a>为什么做这个</h3><p>之前使用<a href="https://luolei.org" target="_blank" rel="external">罗磊</a>的一款名为<a href="https://luolei.org/a-ghost-theme-yasuko-with-story/" target="_blank" rel="external">【Yasuko】</a>的主题时发现了一个很有意思的功能：文章内的链接能自动增加来源站的icon。效果大概是下面这样，如果你现在来看这篇文章应该已经实现好这个功能了。我感觉这个功能能给单调的文章增添一些活力，也能给那些来源站做做宣传=w=，所以便想着在现在的这个主题上增加这个功能。<br><img src="http://cdn.4zen.top/image/c/ef/c0b1b43e675ba9f4c37486223284e.png" alt=""></p>
 <h3 id="实现过程"><a href="#实现过程" class="headerlink" title="实现过程"></a>实现过程</h3><p>我查看了一下罗磊写的相关代码，发现他是单独做了一些判断，并且使用的是预设好的webfont字体做的图标，这样更为稳定，也更快速，但是缺陷就是大部分不在清单内的网站并不会显示网站图标。凑巧我知道一个黑科技，以前在使用wordpress的时候用过<a href="http://c7sky.com/" target="_blank" rel="external">小影</a>的<a href="http://c7sky.com/wordpress-theme-c7v5.html" target="_blank" rel="external">C7V5</a>的时候发现他做的<a href="http://c7sky.com/links" target="_blank" rel="external">友链页面</a>便可以自动获取网站的icon用作展示，发现只是一个第三方的获取网站icon的工具：//api.byi.pw/favicon?url=。你只需要把你想要获取icon的网站的地址放在url后输入浏览器便能轻松获取网站图标了。</p>
 <p>有了这个黑科技实现这个功能就更加简单了，用jquery获取文章内容主体内的所有a链接，并用echo函数遍历每一个链接对象后再单独设置每个链接的css即可。</p>
@@ -143,7 +147,12 @@ Disqus：目前在墙外，基本上不会科学上网的话是加载不出来�
 
     <footer class="site-footer clearfix">
         <section class="copyright"><a href="http://www.1900.live">我道</a> &copy; </section>
-        <section class="poweredby">Proudly published with <a href="https://hexo.io/"> ❤ Hexo</a> &amp; <a href="https://pages.github.com/">Github Pages</a></section>
+        <section class="poweredby">Proudly published with <a href="https://hexo.io/"> ❤ Hexo</a> &amp; 
+        <p>  Hosted by 
+        	<a href="https://pages.github.com/"> ❤ Github Pages</a> &amp; 
+       		<a href="https://pages.coding.me" style="font-weight: bold"> ❤ Coding Pages</a>
+    	</p>
+</section>
     </footer>
 
     <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>

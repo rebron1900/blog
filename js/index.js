@@ -41,7 +41,7 @@ var repURL = '4zen.top';
             forum: '4zen',
             api: 'http://api.fooleap.org/4zen',
             site: 'http://www.1900.live',
-            mode: 1,
+            mode: 2,
             timeout: 3000,
             init: true
         }); 
@@ -71,6 +71,8 @@ var repURL = '4zen.top';
                 addPBOX();
                 linkEV('.post-content blockquote[id^="fn"]  a[href^="#"]',-55);
                 linkEV('.post-content sup a[href^="#"]',-55);
+                addLinkico();
+                disq.count();
                 break;
             case "c-page":
                 addPBOX();
@@ -235,4 +237,32 @@ function linkEV(selector,fixSet = 0){
                     e.preventDefault();
                     $('html, body').animate({scrollTop: $(this.hash).offset().top+fixSet}, 400);
                 });
+}
+
+function addLinkico()
+{
+
+    if ($("#links").length != 0 || $(".archive-page-counter").length != 0)
+    {
+        return;
+    }
+
+    $(".post-content a[class!=headerlink]").each(function ()
+    {
+        if ($(this).find("img").length != 0)
+        {
+            return;
+        }
+
+        $(this).css(
+        {
+            "padding-left" : "20px",
+            "margin" : "0px 5px",
+            "background" : "url(//f.ydr.me/?url=" + this.hostname + ")  no-repeat"
+        }
+        );
+        $(this).attr("target", "_blank");
+    }
+    )
+
 }

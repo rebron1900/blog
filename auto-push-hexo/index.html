@@ -3,13 +3,18 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>我道</title>
-    <meta name="description" content="我叫1900，普通男青年，学过三年编程。湖南人，现在在四川工作。2015年花了26天骑过一次318。有点伪文艺，喜欢比较玄学的东西。性格多变，疑似有人格分裂。" />
+    
+    <title>hexo发布文章的批处理 | 我道 - 我叫1900，普通男青年，学过三年编程。湖南人，现在在四川工作。2015年花了26天骑过一次318。有点伪文艺，喜欢比较玄学的东西。性格多变，疑似有人格分裂。 </title>
+    <meta name="description" content="感觉hexo发布文章的流程略微繁琐，而且我这边在github pages上和qiniu均做了部署，尤其是qiniu那边我使用的是图形界面的同步工具。每次发布的时候要先打开git bash执行生成命令后在发布到github上，然后又要打开qiniu sync工具上传文件，太为繁琐。
+部署到github pageshexo默认安装的时候会自动给你装上github的部署插件hexo-deployer-git1，你可以在_config.yml里" />
+    
 
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="icon"  sizes="16x16" href="/favicon.ico">
+    <link rel="icon" sizes="32x32" href="/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="/css/screen.css" />
     <link rel="stylesheet" href="/css/iDisqus.min.css">
@@ -62,11 +67,10 @@
                 <a href="http://www.1900.live/auto-push-hexo/#comment" class="post-comment post-none">有<span data-disqus-url="http://www.1900.live/auto-push-hexo/"></span>条评论</a>
                 <span class="post-date">总计609字</span>
                 <span class="post-date">预计2分钟读完</span>
-
             </section>
         </header>
 
-        <section class="post-content">
+        <section class="post-content entry">
             <p>感觉hexo发布文章的流程略微繁琐，而且我这边在github pages上和qiniu均做了部署，尤其是qiniu那边我使用的是图形界面的同步工具。每次发布的时候要先打开git bash执行生成命令后在发布到github上，然后又要打开qiniu sync工具上传文件，太为繁琐。</p>
 <h4 id="部署到github-pages"><a href="#部署到github-pages" class="headerlink" title="部署到github pages"></a>部署到github pages</h4><p>hexo默认安装的时候会自动给你装上github的部署插件hexo-deployer-git<sup><a href="#fn_1" id="reffn_1">1</a></sup>，你可以在<code>_config.yml</code>里的<code>deploy</code>字段设置，我的设置如下。这里有个小技巧，我设置了<code>extend_dirs: source</code>这个配置想，在每次部署的时候插件会额外把source目录下的md文件全部备份一份进github里，避免以后出现电脑损坏文件丢失的情况。</p>
 <pre><code class="lang-yaml"># Deployment
@@ -180,7 +184,12 @@ call hexo qiniu s
 
     <footer class="site-footer clearfix">
         <section class="copyright"><a href="http://www.1900.live">我道</a> &copy; </section>
-        <section class="poweredby">Proudly published with <a href="https://hexo.io/"> ❤ Hexo</a> &amp; <a href="https://pages.github.com/">Github Pages</a></section>
+        <section class="poweredby">Proudly published with <a href="https://hexo.io/"> ❤ Hexo</a> &amp; 
+        <p>  Hosted by 
+        	<a href="https://pages.github.com/"> ❤ Github Pages</a> &amp; 
+       		<a href="https://pages.coding.me" style="font-weight: bold"> ❤ Coding Pages</a>
+    	</p>
+</section>
     </footer>
 
     <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>

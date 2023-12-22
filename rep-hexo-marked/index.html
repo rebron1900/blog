@@ -3,13 +3,21 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>我道</title>
-    <meta name="description" content="我叫1900，普通男青年，学过三年编程。湖南人，现在在四川工作。2015年花了26天骑过一次318。有点伪文艺，喜欢比较玄学的东西。性格多变，疑似有人格分裂。" />
+    
+    <title>解决hexo渲染的页面中有br的问题 | 我道 - 我叫1900，普通男青年，学过三年编程。湖南人，现在在四川工作。2015年花了26天骑过一次318。有点伪文艺，喜欢比较玄学的东西。性格多变，疑似有人格分裂。 </title>
+    <meta name="description" content="hexo的markdown有毒今天在移植主题和以前的一些页面数据的时候发现hexo生成的页面文件会出现很多奇怪的&lt;br&gt;符号。搞的我之前在ghost上写的很多内嵌有html的代码都出现了这个问题
+
+我自己估摸着是markdown的解析出了问题，之后在知呼的markdown回车换行？中发现有网友解答过这个问题。
+
+hexo支持的md语法规格为Github Flavored Markdown的方案，好像不是标准的md解析方案，所" />
+    
 
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="icon"  sizes="16x16" href="/favicon.ico">
+    <link rel="icon" sizes="32x32" href="/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="/css/screen.css" />
     <link rel="stylesheet" href="/css/iDisqus.min.css">
@@ -62,11 +70,10 @@
                 <a href="http://www.1900.live/rep-hexo-marked/#comment" class="post-comment post-none">有<span data-disqus-url="http://www.1900.live/rep-hexo-marked/"></span>条评论</a>
                 <span class="post-date">总计406字</span>
                 <span class="post-date">预计2分钟读完</span>
-
             </section>
         </header>
 
-        <section class="post-content">
+        <section class="post-content entry">
             <h3 id="hexo的markdown有毒"><a href="#hexo的markdown有毒" class="headerlink" title="hexo的markdown有毒"></a>hexo的markdown有毒</h3><p>今天在移植主题和以前的一些页面数据的时候发现hexo生成的页面文件会出现很多奇怪的<code>&lt;br&gt;</code>符号。搞的我之前在ghost上写的很多内嵌有html的代码都出现了这个问题</p>
 <p><img src="http://cdn.4zen.top/imgs/171026/g8D46FFI1I.png?imageslim" alt="排版混乱"></p>
 <p>我自己估摸着是markdown的解析出了问题，之后在知呼的<a href="https://www.zhihu.com/question/22524345" target="_blank" rel="external">markdown回车换行？</a>中发现有网友解答过这个问题。</p>
@@ -153,7 +160,12 @@ $ npm install hexo-renderer-kramed --save
 
     <footer class="site-footer clearfix">
         <section class="copyright"><a href="http://www.1900.live">我道</a> &copy; </section>
-        <section class="poweredby">Proudly published with <a href="https://hexo.io/"> ❤ Hexo</a> &amp; <a href="https://pages.github.com/">Github Pages</a></section>
+        <section class="poweredby">Proudly published with <a href="https://hexo.io/"> ❤ Hexo</a> &amp; 
+        <p>  Hosted by 
+        	<a href="https://pages.github.com/"> ❤ Github Pages</a> &amp; 
+       		<a href="https://pages.coding.me" style="font-weight: bold"> ❤ Coding Pages</a>
+    	</p>
+</section>
     </footer>
 
     <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>

@@ -3,13 +3,23 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>我道</title>
-    <meta name="description" content="我叫1900，普通男青年，学过三年编程。湖南人，现在在四川工作。2015年花了26天骑过一次318。有点伪文艺，喜欢比较玄学的东西。性格多变，疑似有人格分裂。" />
+    
+    <title>一条URL简单获取每日bing焦点图 | 我道 - 我叫1900，普通男青年，学过三年编程。湖南人，现在在四川工作。2015年花了26天骑过一次318。有点伪文艺，喜欢比较玄学的东西。性格多变，疑似有人格分裂。 </title>
+    <meta name="description" content="缘起看着每天都是一样的顶部图片忽然觉得有点了无生趣，没有惊喜，生活不该这样。
+而后又想到windows10登录界面时候的焦点图片可不可以用来做top图片，遂找了一下相关的资料，发现bing有一个接口返回的json里可以获取到焦点图片的url，操作了一下代码如下：
+json地址：http://cn.bing.com/HPImageArchive.aspx?format=js&amp;idx=0&amp;n=1
+返回的数据如下：
+
+{
+  " />
+    
 
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="icon"  sizes="16x16" href="/favicon.ico">
+    <link rel="icon" sizes="32x32" href="/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="/css/screen.css" />
     <link rel="stylesheet" href="/css/iDisqus.min.css">
@@ -62,11 +72,10 @@
                 <a href="http://www.1900.live/yi-tiao-dai-ma-jian-dan-huo-qu-mei-ri-bingjiao-dian-tu/#comment" class="post-comment post-none">有<span data-disqus-url="http://www.1900.live/yi-tiao-dai-ma-jian-dan-huo-qu-mei-ri-bingjiao-dian-tu/"></span>条评论</a>
                 <span class="post-date">总计543字</span>
                 <span class="post-date">预计2分钟读完</span>
-
             </section>
         </header>
 
-        <section class="post-content">
+        <section class="post-content entry">
             <h2 id="缘起"><a href="#缘起" class="headerlink" title="缘起"></a>缘起</h2><p>看着每天都是一样的顶部图片忽然觉得有点了无生趣，没有惊喜，生活不该这样。</p>
 <p>而后又想到windows10登录界面时候的焦点图片可不可以用来做top图片，遂找了一下相关的资料，发现bing有一个接口返回的json里可以获取到焦点图片的url，操作了一下代码如下：</p>
 <p><code>json地址：http://cn.bing.com/HPImageArchive.aspx?format=js&amp;idx=0&amp;n=1</code></p>
@@ -187,7 +196,12 @@ $(document).ready(function(){
 
     <footer class="site-footer clearfix">
         <section class="copyright"><a href="http://www.1900.live">我道</a> &copy; </section>
-        <section class="poweredby">Proudly published with <a href="https://hexo.io/"> ❤ Hexo</a> &amp; <a href="https://pages.github.com/">Github Pages</a></section>
+        <section class="poweredby">Proudly published with <a href="https://hexo.io/"> ❤ Hexo</a> &amp; 
+        <p>  Hosted by 
+        	<a href="https://pages.github.com/"> ❤ Github Pages</a> &amp; 
+       		<a href="https://pages.coding.me" style="font-weight: bold"> ❤ Coding Pages</a>
+    	</p>
+</section>
     </footer>
 
     <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
